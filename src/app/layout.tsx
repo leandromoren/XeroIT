@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head />
-      <body style={{ backgroundColor: "#0A0A0A" }}>
+      <body style={{ backgroundColor: "#EDEDED" }}>
         <ChakraProvider>
           <div>
             <Navbar />

@@ -21,21 +21,25 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import NextLink from 'next/link'
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
+  const verde = useColorModeValue("#03E100", "#03E100");
+  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
+  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("#EDEDED", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={negro}
         minH={"80px"}
         py={{ base: 2 }}
         px={{ base: 4, md: 20, lg: 32 }}
         borderBottom={1}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
+        borderColor={negro}
         align={"center"}
       >
         <Flex
@@ -45,8 +49,9 @@ export default function Navbar() {
         >
           <IconButton
             onClick={onToggle}
+            backgroundColor={blanco}
             icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+              isOpen ? <CloseIcon w={3} h={3} color={negro}/> : <HamburgerIcon w={5} h={5} color={negro} />
             }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
@@ -54,7 +59,7 @@ export default function Navbar() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
             <Text
-              color={"#03E100"}
+              color={verde}
               fontSize={"2xl"}
               fontWeight={"bold"}
               fontFamily={'"Heebo", sans-serif'}
@@ -79,11 +84,12 @@ export default function Navbar() {
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
-            color={"white"}
-            href="/signup"
-            bg={"#0A0A0A"}
+            color={blanco}
+            href="https://www.youtube.com/watch?v=zwsSPFI_mFc"
+            bg={negro}
+            border={"2px solid #1F1F1F"}
             _hover={{
-              bg: "#03E100",
+              bg: "#1F1F1F",
             }}
           >
             Cont{"\u00E1"}ctanos
@@ -99,14 +105,14 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("#0A0A0A", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const verde = useColorModeValue("#03E100", "gray.800")
+  const negro = useColorModeValue("#0A0A0A", "white")
+  const blanco = useColorModeValue("#EDEDED", "gray.800")
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack  direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box  key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
@@ -115,11 +121,11 @@ const DesktopNav = () => {
                 fontSize={"sm"}
                 fontWeight={"bold"}
                 fontFamily={'"Heebo", sans-serif'}
-                color={linkColor}
-                borderBottom="2px solid #EDEDED"
+                color={blanco}
+                borderBottom="2px solid #0A0A0A"
                 _hover={{
                   textDecoration: "none",
-                  color: linkHoverColor,
+                  color: blanco,
                   borderBottom: "2px solid #03E100",
                   transition: "all 0.3s ease 0s",
                 }}
@@ -132,9 +138,8 @@ const DesktopNav = () => {
               <PopoverContent
                 border={0}
                 boxShadow={"xl"}
-                bg={popoverContentBgColor}
+                bg={negro}
                 p={4}
-                rounded={"xl"}
                 minW={"sm"}
               >
                 <Stack>
@@ -152,25 +157,31 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+  const verde = useColorModeValue("#03E100", "#03E100");
+  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
+  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  const gris = useColorModeValue("#1F1F1F", "#1F1F1F");
   return (
     <Link
+      backgroundColor={negro}
       href={href}
       role={"group"}
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("green.50", "gray.900") }}
+      _hover={{ bg: gris}}
     >
-      <Stack direction={"row"} align={"center"}>
+      <Stack  direction={"row"} align={"center"}>
         <Box backdropBlur={"10px"} backdropFilter={"blur(10px)"}>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "#03E100" }}
+            color={blanco}
+            _groupHover={{ color: blanco }}
             fontWeight={500}
           >
             {label}
           </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+          <Text fontSize={"sm"} color={blanco}>{subLabel}</Text>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -181,7 +192,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"#03E100"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={blanco} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -189,20 +200,43 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 };
 
 const MobileNav = () => {
+  const verde = useColorModeValue("#03E100", "#03E100");
+  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
+  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  const gris = useColorModeValue("#FFFFFFEB", "#FFFFFFEB");
   return (
     <Stack
-      bg={useColorModeValue("white", "gray.800")}
+      bg={negro}
       p={4}
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem  key={navItem.label} {...navItem} />
       ))}
+      <Button
+      w={"full"}
+      as={"a"}
+      fontSize={"sm"}
+      fontWeight={600}
+      color={blanco}
+      href="/contacto"
+      bg={negro}
+      border={"2px solid #1F1F1F"}
+      _active={{
+        bg: "#1F1F1F",
+      }}
+      >
+        Cont{"\u00E1"}ctanos
+      </Button>
     </Stack>
   );
 };
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
+  const verde = useColorModeValue("#03E100", "#03E100");
+  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
+  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  const gris = useColorModeValue("#FFFFFFEB", "#FFFFFFEB");
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -219,7 +253,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
       >
         <Text
           fontWeight={"bold"}
-          color={useColorModeValue("Black.600", "gray.200")}
+          color={blanco}
           fontFamily={'"Heebo", sans-serif'}
         >
           {label}
@@ -227,6 +261,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         {children && (
           <Icon
             as={ChevronDownIcon}
+            color={blanco}
             transition={"all .25s ease-in-out"}
             transform={isOpen ? "rotate(180deg)" : ""}
             w={6}
@@ -241,7 +276,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           pl={4}
           borderLeft={1}
           borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
+          borderColor={blanco}
           backdropBlur={"blur"}
           align={"start"}
         >
@@ -252,7 +287,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                 py={2} 
                 href={child.href} 
                 fontFamily={'"Heebo", sans-serif'} 
-                color={"gray.600"}
+                color={blanco}
                 fontSize={"sm"}
                 >
                 - {child.label}
