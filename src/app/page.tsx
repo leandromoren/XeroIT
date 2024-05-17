@@ -2,7 +2,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Head from "./head";
 import Navbar from "@/components/NavBar";
-import HomeView from "@/views/HomeView";
+import HomeView from "@/app/inicio/page";
 
 export default function Home() {
   return (
@@ -11,7 +11,6 @@ export default function Home() {
       <body style={{ backgroundColor: "#EDEDED" }}>
         <ChakraProvider>
           <div>
-            <Navbar />
             <HomeView />
           </div>
         </ChakraProvider>

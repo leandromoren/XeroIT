@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Box,
   Flex,
@@ -21,7 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import NextLink from 'next/link'
+import NextLink from "next/link";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -51,23 +51,27 @@ export default function Navbar() {
             onClick={onToggle}
             backgroundColor={blanco}
             icon={
-              isOpen ? <CloseIcon w={3} h={3} color={negro}/> : <HamburgerIcon w={5} h={5} color={negro} />
+              isOpen ? (
+                <CloseIcon w={3} h={3} color={negro} />
+              ) : (
+                <HamburgerIcon w={5} h={5} color={negro} />
+              )
             }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-            <Text
-              color={verde}
-              fontSize={"2xl"}
-              fontWeight={"bold"}
-              fontFamily={'"Heebo", sans-serif'}
-              cursor={"pointer"}
-              id="inicio"
-            >
-              QAVALA
-            </Text>
+          <Text
+            color={verde}
+            fontSize={"2xl"}
+            fontWeight={"bold"}
+            fontFamily={'"Heebo", sans-serif'}
+            cursor={"pointer"}
+            id="inicio"
+          >
+            <NextLink href="/">QAVALA</NextLink>
+          </Text>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -85,7 +89,7 @@ export default function Navbar() {
             fontSize={"sm"}
             fontWeight={600}
             color={blanco}
-            href="http://localhost:3000/contactView"
+            href="http://localhost:3000/contacto"
             bg={negro}
             border={"2px solid #1F1F1F"}
             _hover={{
@@ -105,14 +109,14 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const verde = useColorModeValue("#03E100", "gray.800")
-  const negro = useColorModeValue("#0A0A0A", "white")
-  const blanco = useColorModeValue("#EDEDED", "gray.800")
+  const verde = useColorModeValue("#03E100", "gray.800");
+  const negro = useColorModeValue("#0A0A0A", "white");
+  const blanco = useColorModeValue("#EDEDED", "gray.800");
 
   return (
-    <Stack  direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box  key={navItem.label}>
+        <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
@@ -169,9 +173,9 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: gris}}
+      _hover={{ bg: gris }}
     >
-      <Stack  direction={"row"} align={"center"}>
+      <Stack direction={"row"} align={"center"}>
         <Box backdropBlur={"10px"} backdropFilter={"blur(10px)"}>
           <Text
             transition={"all .3s ease"}
@@ -181,7 +185,9 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           >
             {label}
           </Text>
-          <Text fontSize={"sm"} color={blanco}>{subLabel}</Text>
+          <Text fontSize={"sm"} color={blanco}>
+            {subLabel}
+          </Text>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -205,26 +211,22 @@ const MobileNav = () => {
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
   const gris = useColorModeValue("#FFFFFFEB", "#FFFFFFEB");
   return (
-    <Stack
-      bg={negro}
-      p={4}
-      display={{ md: "none" }}
-    >
+    <Stack bg={negro} p={4} display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem  key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} {...navItem} />
       ))}
       <Button
-      w={"full"}
-      as={"a"}
-      fontSize={"sm"}
-      fontWeight={600}
-      color={blanco}
-      href="/contacto"
-      bg={negro}
-      border={"2px solid #1F1F1F"}
-      _active={{
-        bg: "#1F1F1F",
-      }}
+        w={"full"}
+        as={"a"}
+        fontSize={"sm"}
+        fontWeight={600}
+        color={blanco}
+        href="/contacto"
+        bg={negro}
+        border={"2px solid #1F1F1F"}
+        _active={{
+          bg: "#1F1F1F",
+        }}
       >
         Cont{"\u00E1"}ctanos
       </Button>
@@ -282,14 +284,14 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link 
-                key={child.label} 
-                py={2} 
-                href={child.href} 
-                fontFamily={'"Heebo", sans-serif'} 
+              <Link
+                key={child.label}
+                py={2}
+                href={child.href}
+                fontFamily={'"Heebo", sans-serif'}
                 color={blanco}
                 fontSize={"sm"}
-                >
+              >
                 - {child.label}
               </Link>
             ))}
