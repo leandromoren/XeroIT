@@ -14,13 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <Head />
       <body style={{ backgroundColor: "#EDEDED" }}>
-        <ChakraProvider>
-          <div>
-            <Navbar />
             {children}
-            <HomeView />
-          </div>
-        </ChakraProvider>
       </body>
     </html>
   );

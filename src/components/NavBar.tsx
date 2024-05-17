@@ -85,7 +85,7 @@ export default function Navbar() {
             fontSize={"sm"}
             fontWeight={600}
             color={blanco}
-            href="https://www.youtube.com/watch?v=zwsSPFI_mFc"
+            href="http://localhost:3000/contactView"
             bg={negro}
             border={"2px solid #1F1F1F"}
             _hover={{
