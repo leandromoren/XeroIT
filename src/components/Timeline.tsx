@@ -7,15 +7,15 @@ export default function Timeline() {
   const [data, setData] = useState<
     { id: number; estado: string; servicio: string; descripcion: string }[]
   >([]);
-  
+
   useEffect(() => {
     setData(timelineData);
   }, []);
 
   return (
     <>
-      <h1 className={styles.title}>Servicios</h1>
-      <div className={styles.container}>
+      <h1 className={styles.title}>Nuestros servicios</h1>
+      <div id="serviciosId" className={styles.container}>
         <div className={styles.timeline}>
           <ul>
             {timelineData.map((item) => (

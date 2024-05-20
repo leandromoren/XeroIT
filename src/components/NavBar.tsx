@@ -29,6 +29,56 @@ export default function Navbar() {
   const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  // Obtener el elemento del navbar que contiene el enlace a "Servicios"
+
+  // Agregar un event listener al clic del enlace
+  document.addEventListener("click", (event) => {
+    // Verificar si el elemento clickeado tiene un atributo "href"
+    const target = event.target as HTMLElement;
+    if (target.hasAttribute("href")) {
+      event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+
+      // Obtener el elemento con el id "serviciosId"
+      const serviciosSection: HTMLElement | null =
+        document.getElementById("serviciosId");
+
+      if (serviciosSection) {
+        // Calcular la posición del elemento "serviciosId" relativa a la página
+        const offsetTop = serviciosSection.offsetTop;
+
+        // Función para realizar el scroll suave
+        const scrollToElement = (targetPosition: number, duration = 1000) => {
+          const startPosition = window.pageYOffset;
+          const distance = targetPosition - startPosition;
+          let startTime: number | null = null;
+
+          const animation = (currentTime: number) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) {
+              requestAnimationFrame(animation);
+            }
+          };
+
+          const ease = (t: number, b: number, c: number, d: number) => {
+            t /= d / 2;
+            if (t < 1) return (c / 2) * t * t + b;
+            t--;
+            return (-c / 2) * (t * (t - 2) - 1) + b;
+          };
+
+          requestAnimationFrame(animation);
+        };
+
+        // Ejecutar la función de scroll suave
+        scrollToElement(offsetTop);
+      } else {
+        console.error('Element with ID "serviciosId" not found in the DOM.');
+      }
+    }
+  });
 
   return (
     <Box>
@@ -303,6 +353,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 
 interface NavItem {
   label: string;
+  id?: string;
   subLabel?: string;
   children?: Array<NavItem>;
   href?: string;
@@ -311,6 +362,8 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Servicios",
+    id: "serviciosId",
+    href: "#serviciosId",
     children: [
       {
         label: "Servicios de QA",

@@ -111,7 +111,9 @@ export default function HomeView() {
           </Box>
         </Flex>
       </Stack>
-      <Timeline />
+      <section id="serviciosId">
+        <Timeline />
+      </section>
     </Container>
   );
 }
