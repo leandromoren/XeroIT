@@ -1,4 +1,5 @@
 "use client";
+import Timeline from "@/components/Timeline";
 import {
   Container,
   Stack,
@@ -9,14 +10,14 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
-import "next-cloudinary/dist/cld-video-player.css";
-import { CldVideoPlayer } from "next-cloudinary";
+import { CldVideoPlayer } from 'next-cloudinary';
+import 'next-cloudinary/dist/cld-video-player.css';
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
-  const videoCloudinary = "https://res.cloudinary.com/dq0japns7/video/upload/v1715927295/office1_jxbjfr.mp4"
+  const videoCloudinary = "https://res.cloudinary.com/dq0japns7/video/upload/v1715927295/office1_jxbjfr.mp4";
   return (
     <Container maxW={"7xl"}>
       <Stack
@@ -99,6 +100,7 @@ export default function HomeView() {
           </Box>
         </Flex>
       </Stack>
+      <Timeline />
     </Container>
   );
 }
