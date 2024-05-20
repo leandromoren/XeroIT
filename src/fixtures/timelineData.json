@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "estado": "Activo",
+        "servicio": "Reclutamiento",
+        "descripcion": "Buscamos los mejores talentos del mercado para tu negocio" 
+    },
+    {
+        "id": 2,
+        "estado": "Activo",
+        "servicio": "Desarrollo",
+        "descripcion": "Desarrollamos tu equipo de trabajo" 
+    },
+    {
+        "id": 3,
+        "estado": "Activo",
+        "servicio": "Gestion",
+        "descripcion": "Gestionamos tu equipo de trabajo" 
+    },
+    {
+        "id": 4,
+        "estado": "Activo",
+        "servicio": "Ciberseguridad",
+        "descripcion": "Protegemos tu informacion y tu equipo de trabajo" 
+    }
+]

@@ -36,6 +36,8 @@ export default function HomeView() {
               as={"span"}
               position={"relative"}
               color={negro}
+              fontSize={"5xl"}
+              fontFamily={'"DM Mono", sans-serif'}
               _after={{
                 content: "''",
                 width: "full",
@@ -50,11 +52,19 @@ export default function HomeView() {
               Descubriendo defectos,
             </Text>
             <br />
-            <Text as={"span"} color={verde}>
+            <Text 
+              as={"span"} 
+              color={verde}
+              fontSize={"5xl"}
+              fontFamily={'"DM Mono", sans-serif'}
+              >
               construyendo confianza
             </Text>
           </Heading>
-          <Text color={"gray.500"}>
+          <Text 
+            color={"gray.500"}
+            fontFamily={'"DM Mono", sans-serif'}
+          >
             Ayudamos a tu empresa a seguir siendo competitiva ofreciéndote
             servicios tecnológicos flexibles, seguros y fiables, adaptados a tus
             necesidades específicas, que contribuyen a impulsar el crecimiento,
@@ -66,8 +76,9 @@ export default function HomeView() {
           >
             <Button
               size={"lg"}
+              borderRadius={"none"}
               fontWeight={"normal"}
-              fontFamily={'"Heebo", sans-serif'}
+              fontFamily={'"DM Mono", sans-serif'}
               bg={"#03E100"}
               _hover={{ color: blanco }}
             >

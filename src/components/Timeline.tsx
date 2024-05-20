@@ -1,58 +1,35 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Timeline.module.css";
+import timelineData from "../fixtures/timelineData.json";
 
 export default function Timeline() {
+  const [data, setData] = useState<
+    { id: number; estado: string; servicio: string; descripcion: string }[]
+  >([]);
+  
+  useEffect(() => {
+    setData(timelineData);
+  }, []);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.timeline}>
-        <ul>
-          <li>
-            <div className={styles.timelineContent}>
-              <h3 className={styles.date}>20th may, 2010</h3>
-              <h1>Heading 1</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur tempora ab laudantium voluptatibus aut eos placeat
-                laborum, quibusdam exercitationem labore.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div className={styles.timelineContent}>
-              <h3 className={styles.date}>20th may, 2010</h3>
-              <h1>Heading 2</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur tempora ab laudantium voluptatibus aut eos placeat
-                laborum, quibusdam exercitationem labore.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div className={styles.timelineContent}>
-              <h3 className={styles.date}>20th may, 2010</h3>
-              <h1>Heading 3</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur tempora ab laudantium voluptatibus aut eos placeat
-                laborum, quibusdam exercitationem labore.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div className={styles.timelineContent}>
-              <h3 className={styles.date}>20th may, 2010</h3>
-              <h1>Heading 4</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur tempora ab laudantium voluptatibus aut eos placeat
-                laborum, quibusdam exercitationem labore.
-              </p>
-            </div>
-          </li>
-        </ul>
+    <>
+      <h1 className={styles.title}>Servicios</h1>
+      <div className={styles.container}>
+        <div className={styles.timeline}>
+          <ul>
+            {timelineData.map((item) => (
+              <li key={item.id}>
+                <div className={styles.timelineContent}>
+                  <h3 className={styles.state}>{item.estado}</h3>
+                  <h1>{item.servicio}</h1>
+                  <p>{item.descripcion}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
