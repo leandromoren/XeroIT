@@ -1,43 +1,52 @@
-export const ScrollTo = (id: string) => {
+export default function scrollAnimation(idSection: string) {
+  try {
+    document.addEventListener("click", (event) => {
+      // Verificar si el elemento clickeado tiene un atributo "href"
+      const target = event.target as HTMLElement;
+      if (target.hasAttribute("href")) {
+        event.preventDefault(); // Evitar el comportamiento por defecto del enlace
 
-  // Agregar un event listener al clic del enlace
-  document.addEventListener('click', (event) => {
-    event.preventDefault(); // Evitar el comportamiento por defecto del enlace
-  
-    // Obtener el elemento con el id "serviciosId"
-    const serviciosSection: any = document.getElementById(id);
-  
-    // Calcular la distancia del elemento hasta la parte superior de la página
-    const offsetTop = serviciosSection.offsetTop;
-  
-    // Función para hacer el scroll suave
-    const scrollToElement = (targetPosition: any, duration = 1000) => {
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      let startTime: any = null;
-  
-      const animation = (currentTime: any) => {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
+        const navSection: HTMLElement | null =
+          document.getElementById(idSection);
+
+        if (navSection) {
+          // Calcular la posición del elemento "serviciosId" relativa a la página
+          const offsetTop = navSection.offsetTop;
+
+          // Función para realizar el scroll suave
+          const scrollToElement = (targetPosition: number, duration = 1000) => {
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime: number | null = null;
+
+            const animation = (currentTime: number) => {
+              if (startTime === null) startTime = currentTime;
+              const timeElapsed = currentTime - startTime;
+              const run = ease(timeElapsed, startPosition, distance, duration);
+              window.scrollTo(0, run);
+              if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+              }
+            };
+
+            const ease = (t: number, b: number, c: number, d: number) => {
+              t /= d / 2;
+              if (t < 1) return (c / 2) * t * t + b;
+              t--;
+              return (-c / 2) * (t * (t - 2) - 1) + b;
+            };
+
+            requestAnimationFrame(animation);
+          };
+
+          // Ejecutar la función de scroll suave
+          scrollToElement(offsetTop);
+        } else {
+          console.error('Element with ID "serviciosId" not found in the DOM.');
         }
-      };
-  
-      const ease = (t:number, b:number, c:number, d:number) => {
-        t /= d / 2;
-        if (t < 1) return (c / 2) * t * t + b;
-        t--;
-        return (-c / 2) * (t * (t - 2) - 1) + b;
-      };
-  
-      requestAnimationFrame(animation);
-    };
-  
-    // Hacer el scroll suave hacia el elemento
-    scrollToElement(offsetTop);
-  });
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
-

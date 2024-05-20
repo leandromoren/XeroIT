@@ -22,6 +22,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import NextLink from "next/link";
+import scrollAnimation from "@/scripts/scrollAnimation.module";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -31,54 +32,8 @@ export default function Navbar() {
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
   // Obtener el elemento del navbar que contiene el enlace a "Servicios"
 
+  //scrollAnimation();
   // Agregar un event listener al clic del enlace
-  document.addEventListener("click", (event) => {
-    // Verificar si el elemento clickeado tiene un atributo "href"
-    const target = event.target as HTMLElement;
-    if (target.hasAttribute("href")) {
-      event.preventDefault(); // Evitar el comportamiento por defecto del enlace
-
-      // Obtener el elemento con el id "serviciosId"
-      const serviciosSection: HTMLElement | null =
-        document.getElementById("serviciosId");
-
-      if (serviciosSection) {
-        // Calcular la posición del elemento "serviciosId" relativa a la página
-        const offsetTop = serviciosSection.offsetTop;
-
-        // Función para realizar el scroll suave
-        const scrollToElement = (targetPosition: number, duration = 1000) => {
-          const startPosition = window.pageYOffset;
-          const distance = targetPosition - startPosition;
-          let startTime: number | null = null;
-
-          const animation = (currentTime: number) => {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const run = ease(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            if (timeElapsed < duration) {
-              requestAnimationFrame(animation);
-            }
-          };
-
-          const ease = (t: number, b: number, c: number, d: number) => {
-            t /= d / 2;
-            if (t < 1) return (c / 2) * t * t + b;
-            t--;
-            return (-c / 2) * (t * (t - 2) - 1) + b;
-          };
-
-          requestAnimationFrame(animation);
-        };
-
-        // Ejecutar la función de scroll suave
-        scrollToElement(offsetTop);
-      } else {
-        console.error('Element with ID "serviciosId" not found in the DOM.');
-      }
-    }
-  });
 
   return (
     <Box>
@@ -159,9 +114,23 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const verde = useColorModeValue("#03E100", "gray.800");
+  //const verde = useColorModeValue("#03E100", "gray.800");
   const negro = useColorModeValue("#0A0A0A", "white");
   const blanco = useColorModeValue("#EDEDED", "gray.800");
+
+  const handleNavItemClick = (event: React.MouseEvent<HTMLAnchorElement>, navItem: typeof NAV_ITEMS[number]) => {
+    if (navItem.label === "Servicios") {
+      scrollAnimation("serviciosId");
+    } else if (navItem.label === "Clientes") {
+      scrollAnimation("serviciosId");
+    } else if (navItem.label === "Nosotros") {
+      scrollAnimation("serviciosId");
+    } else if (navItem.label === "Publicaciones") {
+      scrollAnimation("serviciosId");
+    } else if (navItem.label === "Empleo") {
+      scrollAnimation("serviciosId");
+    }
+  };
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -183,6 +152,7 @@ const DesktopNav = () => {
                   borderBottom: "2px solid #03E100",
                   transition: "all 0.3s ease 0s",
                 }}
+                onClick={(e) => handleNavItemClick(e, navItem)}
               >
                 {navItem.label}
               </Link>
@@ -363,7 +333,6 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Servicios",
     id: "serviciosId",
-    href: "#serviciosId",
     children: [
       {
         label: "Servicios de QA",

@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { CldVideoPlayer } from 'next-cloudinary';
 import 'next-cloudinary/dist/cld-video-player.css';
+import Space from "@/components/Space";
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
@@ -19,7 +20,8 @@ export default function HomeView() {
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
   const videoCloudinary = "https://res.cloudinary.com/dq0japns7/video/upload/v1715927295/office1_jxbjfr.mp4";
   return (
-    <Container maxW={"7xl"}>
+    <>
+    <Container maxW={"7x1"}>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -31,6 +33,7 @@ export default function HomeView() {
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
+            paddingLeft={"10%"}
           >
             <Text
               as={"span"}
@@ -64,6 +67,8 @@ export default function HomeView() {
           <Text 
             color={"gray.500"}
             fontFamily={'"DM Mono", sans-serif'}
+            paddingLeft={"10%"}
+            maxW={"4xl"}
           >
             Ayudamos a tu empresa a seguir siendo competitiva ofreciéndote
             servicios tecnológicos flexibles, seguros y fiables, adaptados a tus
@@ -73,6 +78,7 @@ export default function HomeView() {
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: "column", sm: "row" }}
+            paddingLeft={"10%"}
           >
             <Button
               size={"lg"}
@@ -93,6 +99,7 @@ export default function HomeView() {
           position={"relative"}
           w={"full"}
           h={"auto"}
+          paddingRight={"10%"}
         >
           <Box
             position={"relative"}
@@ -101,6 +108,7 @@ export default function HomeView() {
             boxShadow={"2xl"}
             width={"full"}
             overflow={"hidden"}
+            
           >
             <CldVideoPlayer
               id="video-presentacion"
@@ -111,9 +119,11 @@ export default function HomeView() {
           </Box>
         </Flex>
       </Stack>
-      <section id="serviciosId">
-        <Timeline />
-      </section>
+      <Space />
     </Container>
+    <section id="serviciosId">
+      <Timeline />
+    </section>
+    </>
   );
 }
