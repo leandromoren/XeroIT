@@ -42,7 +42,7 @@ export default function scrollAnimation(idSection: string) {
           // Ejecutar la función de scroll suave
           scrollToElement(offsetTop);
         } else {
-          console.error('Element with ID "serviciosId" not found in the DOM.');
+          console.error("Element with ID " + idSection + " not found in the DOM.");
         }
       }
     });

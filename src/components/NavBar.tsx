@@ -29,7 +29,7 @@ export default function Navbar() {
 
   const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
-  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
   // Obtener el elemento del navbar que contiene el enlace a "Servicios"
 
   //scrollAnimation();
@@ -116,7 +116,7 @@ export default function Navbar() {
 const DesktopNav = () => {
   //const verde = useColorModeValue("#03E100", "gray.800");
   const negro = useColorModeValue("#0A0A0A", "white");
-  const blanco = useColorModeValue("#EDEDED", "gray.800");
+  const blanco = useColorModeValue("#f8f9fa", "gray.800");
 
   const handleNavItemClick = (event: React.MouseEvent<HTMLAnchorElement>, navItem: typeof NAV_ITEMS[number]) => {
     if (navItem.label === "Servicios") {
@@ -182,7 +182,7 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   const verde = useColorModeValue("#03E100", "#03E100");
-  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
+  const negro = useColorModeValue("#f8f9fa", "#FAFAFA");
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
   const gris = useColorModeValue("#1F1F1F", "#1F1F1F");
   return (
@@ -228,7 +228,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 const MobileNav = () => {
   const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
-  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
   const gris = useColorModeValue("#FFFFFFEB", "#FFFFFFEB");
   return (
     <Stack bg={negro} p={4} display={{ md: "none" }}>
@@ -257,7 +257,7 @@ const MobileNav = () => {
 const MobileNavItem = ({ label, children, href }: NavItem) => {
   const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
-  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
   const gris = useColorModeValue("#FFFFFFEB", "#FFFFFFEB");
   const { isOpen, onToggle } = useDisclosure();
 

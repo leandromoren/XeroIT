@@ -1,0 +1,52 @@
+.sliderContainer {
+  padding: 70px 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  width: auto;
+  font-size: 40px;
+  font-family: "heebo", sans-serif;
+  font-weight: bold;
+  margin-top: 15vh;
+}
+
+.logosContainer {
+  display: flex;
+  align-items: center;
+  width: 200%;
+  animation: slide 20s linear infinite;
+  animation-direction: alternate;
+}
+
+.line {
+  margin-top: 50px;
+  border: 1px solid #0A0A0A;
+}
+
+.logoItem {
+  flex: 0 0 auto;
+  margin-right: 150px;
+}
+
+.logoItem img {
+  height: 50px;
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+  .title {
+      font-size: 20px !important;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
