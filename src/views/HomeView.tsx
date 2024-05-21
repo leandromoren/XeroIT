@@ -2,18 +2,17 @@
 import {
   Container,
   Stack,
-  Flex,
-  Box,
   Heading,
   Text,
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { CldVideoPlayer } from "next-cloudinary";
+//import { CldVideoPlayer } from "next-cloudinary";
 import "next-cloudinary/dist/cld-video-player.css";
 import Space from "@/components/Space";
 import ClientSlide from "@/components/ClientSlide";
 import styles from "@/styles/HomeView.module.css";
+import {TTexts} from "../utils/textConstants";
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
@@ -28,19 +27,7 @@ export default function HomeView() {
             <source src={videoCloudinary} type="video/mp4" />
           </video>
         </div>
-         <div
-            className="videoOverlay"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(3, 225, 0, 0.2)" , // Color y opacidad del overlay
-              zIndex: 0,
-            }}
-          >
-        </div>
+         <div className="videoOverlay"></div>
         <Stack
           align={"center"}
           spacing={{ base: 8, md: 10 }}
@@ -71,7 +58,7 @@ export default function HomeView() {
                   zIndex: -1,
                 }}
               >
-                Descubriendo defectos,
+                {TTexts.mainTitleTop}
               </Text>
               <br />
               <Text
@@ -81,7 +68,7 @@ export default function HomeView() {
                 fontFamily={'"Segoe UI", sans-serif'}
                 position={"relative"}
               >
-                construyendo confianza
+                {TTexts.mainTitleBop}
               </Text>
             </Heading>
             <Text
@@ -92,11 +79,7 @@ export default function HomeView() {
               maxW={"4xl"}
               textAlign={"justify"}
             >
-              Ayudamos a tu empresa a seguir siendo competitiva ofreciéndote
-              servicios tecnológicos flexibles, seguros y fiables, adaptados a
-              tus necesidades específicas, que contribuyen a impulsar el
-              crecimiento, aumentar la eficacia, reducir los costes y lograr un
-              éxito medible.
+              {TTexts.descripcionHomeView}
             </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -111,7 +94,7 @@ export default function HomeView() {
                 bg={"#03E100"}
                 _hover={{ color: blanco }}
               >
-                ¿Por qué asociarse con Getronics?
+                {TTexts.buttonHomeView}
               </Button>
             </Stack>
           </Stack>
