@@ -4,6 +4,7 @@ import {
   Stack,
   Heading,
   Text,
+  Box,
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -22,12 +23,12 @@ export default function HomeView() {
   return (
     <>
       <Container maxW={"7x1"}  position={"relative"} overflow={"hidden"}>
-        <div className={styles.videoBackground}>
+        <Box className={styles.videoBackground}>
           <video autoPlay loop muted playsInline>
             <source src={videoCloudinary} type="video/mp4" />
           </video>
-        </div>
-         <div className="videoOverlay"></div>
+        </Box>
+         <div className={styles.videoOverlay}></div>
         <Stack
           align={"center"}
           spacing={{ base: 8, md: 10 }}

@@ -122,7 +122,7 @@ const DesktopNav = () => {
     if (navItem.label === "Servicios") {
       scrollAnimation("serviciosId");
     } else if (navItem.label === "Clientes") {
-      scrollAnimation("serviciosId");
+      scrollAnimation("clientesId");
     } else if (navItem.label === "Nosotros") {
       scrollAnimation("serviciosId");
     } else if (navItem.label === "Publicaciones") {

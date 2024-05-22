@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "value": "+100",
+        "ourInfo": "Health programs"
+    },
+    {
+        "id": 1,
+        "value": "+50",
+        "ourInfo": "Individual parameters"
+    },
+    {
+        "id": 1,
+        "value": "+2500",
+        "ourInfo": "Active users"
+    },
+    {
+        "id": 1,
+        "value": "10x",
+        "ourInfo": "Training efficiency"
+    }
+]

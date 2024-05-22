@@ -1,0 +1,23 @@
+.numberCounter {
+  padding: 2rem 0;
+}
+
+.numberCounterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.numberCounterItem {
+  text-align: center;
+}
+
+.numberCounterValue {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.numberCounterLabel {
+  font-size: 1.2rem;
+}

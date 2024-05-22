@@ -1,8 +1,18 @@
+import { TildesLetras } from "./tildes";
 export class TTexts {
   // HomeView texts
-  static mainTitleTop: string = "Descubriendo defectos,";
-  static mainTitleBop: string = "construyendo confianza";
-  static descripcionHomeView: string =
-    "Ayudamos a tu empresa a seguir siendo competitiva ofreciéndote servicios tecnológicos flexibles, seguros y fiables, adaptados a tus necesidades específicas, que contribuyen a impulsar el crecimiento, aumentar la eficacia, reducir los costes y lograr un éxito medible.";
-  static buttonHomeView: string = "¿Por qué asociarse con Getronics?";
+  public static mainTitleTop: String = "Descubriendo defectos,";
+  public static mainTitleBop: String = "construyendo confianza";
+  public static descripcionHomeView: String = `Ayudamos a tu empresa a seguir siendo competitiva ofreci${TildesLetras.TILDE_E}ndote servicios tecnológicos flexibles, seguros y fiables, adaptados a tus necesidades espec${TildesLetras.TILDE_I}ficas, que contribuyen a impulsar el crecimiento, aumentar la eficacia, reducir los costes y lograr un ${TildesLetras.TILDE_E}xito medible.`;
+  public static buttonHomeView: String = `¿Por qu${TildesLetras.TILDE_E} asociarse con Qavala?`;
+  public static clientSlideMainText: String = `Impulsando a m${TildesLetras.TILDE_A}s de 1200 de las empresas líderes del mundo`
+
+  // ContactView Texts
+  public static titleContactView: String = "Get In Touch";
+  public static textExplication1: String = "Fill up the form & our Team will get back to you within 12 hours.";
+  public static textExplication2: String = `Estamos aqu${TildesLetras.TILDE_I} para escucharte y ayudarte a encontrar la soluci${TildesLetras.TILDE_O}n perfecta para tus necesidades. Nuestro equipo de expertos est${TildesLetras.TILDE_A} listo para brindarte un servicio personalizado y de calidad. ¡No dudes en contactarnos!`;
+  public static textExplication3: String = `Juntos, encontraremos la mejor manera de hacer realidad tus ideas y proyectos. Conf${TildesLetras.TILDE_I}a en nosotros y d${TildesLetras.TILDE_E}janos ser parte de tu ${TildesLetras.TILDE_E}xito. ¡Estamos emocionados de conocerte!`;
+  public static textoButtonSubmit: String = "Enviar mensaje";
+
+  
 }
