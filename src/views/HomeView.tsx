@@ -47,7 +47,7 @@ export default function HomeView() {
                 position={"relative"}
                 color={blanco}
                 fontSize={"6xl"}
-                fontFamily={'"Segoe UI", sans-serif'}
+                fontFamily={'"Ubuntu", sans-serif'}
                 _after={{
                   content: "''",
                   width: "full",
@@ -66,7 +66,7 @@ export default function HomeView() {
                 as={"span"}
                 color={blanco}
                 fontSize={"6xl"}
-                fontFamily={'"Segoe UI", sans-serif'}
+                fontFamily={'"Ubuntu", sans-serif'}
                 position={"relative"}
               >
                 {TTexts.mainTitleBop}
@@ -75,7 +75,9 @@ export default function HomeView() {
             <Text
               position={"relative"}
               color={blanco}
-              fontFamily={'"Segoe UI", sans-serif'}
+              fontSize={"lg"}
+              fontWeight={500}
+              fontFamily={'"Ubuntu", sans-serif'}
               paddingLeft={"10%"}
               maxW={"4xl"}
               textAlign={"justify"}
@@ -91,7 +93,7 @@ export default function HomeView() {
                 size={"lg"}
                 borderRadius={"none"}
                 fontWeight={"bold"}
-                fontFamily={'"Segoe UI", sans-serif'}
+                fontFamily={'"Ubuntu", sans-serif'}
                 bg={"#03E100"}
                 _hover={{ color: blanco }}
               >
@@ -99,7 +101,6 @@ export default function HomeView() {
               </Button>
             </Stack>
           </Stack>
-          
         </Stack>
         <Space />
       </Container>

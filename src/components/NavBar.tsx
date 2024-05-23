@@ -124,7 +124,7 @@ const DesktopNav = () => {
     } else if (navItem.label === "Clientes") {
       scrollAnimation("clientesId");
     } else if (navItem.label === "Nosotros") {
-      scrollAnimation("serviciosId");
+      scrollAnimation("nosotrosId");
     } else if (navItem.label === "Publicaciones") {
       scrollAnimation("serviciosId");
     } else if (navItem.label === "Empleo") {
@@ -182,18 +182,18 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   const verde = useColorModeValue("#03E100", "#03E100");
-  const negro = useColorModeValue("#f8f9fa", "#FAFAFA");
+  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
   const gris = useColorModeValue("#1F1F1F", "#1F1F1F");
   return (
     <Link
-      backgroundColor={negro}
+      bg={negro}
       href={href}
       role={"group"}
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: gris }}
+      _hover={{ bg: gris}}
     >
       <Stack direction={"row"} align={"center"}>
         <Box backdropBlur={"10px"} backdropFilter={"blur(10px)"}>
@@ -368,7 +368,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Clientes",
-    href: "#",
+    href: "/clientes",
   },
   {
     label: "Publicaciones",

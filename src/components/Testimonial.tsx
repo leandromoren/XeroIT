@@ -1,75 +1,59 @@
-'use client'
-import styles from '../styles/Testimonials.module.css'
+"use client";
+import styles from "../styles/Testimonials.module.css";
+import testimonialsData from "../fixtures/testimonialsData.json";
+import React, { useEffect, useState } from "react";
 
 export default function Testimonials() {
-    return (
-        <>
-        <div className={styles.testimonialSection}>
-          <div className={styles.innerWidth}>
-            <h1>Testimonios</h1>
-            <div id="nav-tab" className={styles.testimonialPics}>
-              <img
-                src="https://i.postimg.cc/3xQK8g7V/p1.png"
-                id="0"
-                alt="img-1"
-                data-index="0"
-                className={styles.active}
-              />
-              <img
-                src="https://i.postimg.cc/Tw1x70qL/p2.png"
-                id="1"
-                alt="img-2"
-                data-index="1"
-              />
-              <img
-                src="https://i.postimg.cc/wj5977jv/p3.png"
-                id="2"
-                alt="img-3"
-                data-index="2"
-              />
-              <img
-                src="https://i.postimg.cc/vmQb9b4v/p4.png"
-                id="3"
-                alt="img-4"
-                data-index="3"
-              />
-            </div>
+  const [data, setData] = useState<
+    {
+      id: number;
+      nombre: string;
+      puesto: string;
+      testimonio: string;
+      img: string;
+    }[]
+  >([]);
 
-            <div className={styles.testimonialContents}>
-              <div className={`${styles.testimonial} ${styles.active}`}>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-                  consequatur et adipisci
-                </p>
-                <span className={styles.description}>Emy / Developer</span>
-              </div>
-
-              <div className={styles.testimonial}>
-                <p>Lorem</p>
-                <span className={styles.description}>Carla / Developer</span>
-              </div>
-
-              <div className={styles.testimonial}>
-                <p>
-                  Lorem similique, eum tenetur, numquam eligendi aliquid. Nulla
-                  sit, cupiditate corporis labore, modi natus officiis
-                  asperiores!
-                </p>
-                <span className={styles.description}>Thomas / Developer</span>
-              </div>
-
-              <div className={styles.testimonial}>
-                <p>
-                  Lorem ipsum dolorng elit. Ab consequatur et adipisci ut,
-                  impedit cumque, similique, eum tenetur, numquam eligendi
-                  aliquid. Nulla sit, cupiditate corporis labore, modi natus
-                  officiis asperiores!
-                </p>
-                <span className={styles.description}>Monica / Developer</span>
-              </div>
+  useEffect(() => {
+    setData(testimonialsData);
+  }, []);
+  return (
+    <>
+      <section className={styles.testimonialsSection}>
+        <div className={styles.testimonialsContainer}>
+          <div className={styles.testimonialsHeader}>
+            <h2 className={styles.testimonialsTitle}>Testimonios</h2>
+          </div>
+          <div className={styles.testimonialsContent}>
+            <p className={styles.testimonialsIntro}>
+              Conocemos los testimonios de profesionales que tuvieron la oportunidad
+              de trabajar con Qavala dandonos la posibilidad de demostrar la capacidad de nuestros servicios.
+            </p>
+            <div className={styles.testimonialsGrid}>
+              {data.map((item) => (
+                <div key={item.id} className={styles.testimonialsItem}>
+                  <div className={styles.testimonialsUser}>
+                    <img
+                      src={item.img}
+                      alt="Error"
+                      className={styles.testimonialsUserAvatar}
+                    />
+                  </div>
+                  <div className={styles.testimonialsInfo}>
+                    <h3 className={styles.testimonialsUserName}>{item.nombre}</h3>
+                    <span className={styles.testimonialsUserRole}>
+                      {item.puesto}
+                    </span>
+                    <p className={styles.testimonialsText}>
+                      {item.testimonio}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        </>
-    )
+      </section>
+    </>
+  );
 }

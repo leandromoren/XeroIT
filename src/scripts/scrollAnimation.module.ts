@@ -6,8 +6,7 @@ export default function scrollAnimation(idSection: string) {
       if (target.hasAttribute("href")) {
         event.preventDefault(); // Evitar el comportamiento por defecto del enlace
 
-        const navSection: HTMLElement | null =
-          document.getElementById(idSection);
+        const navSection: HTMLElement | null = document.getElementById(idSection);
 
         if (navSection) {
           // Calcular la posición del elemento "serviciosId" relativa a la página
@@ -42,7 +41,9 @@ export default function scrollAnimation(idSection: string) {
           // Ejecutar la función de scroll suave
           scrollToElement(offsetTop);
         } else {
-          console.error("Element with ID " + idSection + " not found in the DOM.");
+          console.error(
+            "Element with ID " + idSection + " not found in the DOM."
+          );
         }
       }
     });

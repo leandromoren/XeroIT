@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import clientsData from "../fixtures/clientsData.json";
 import styles from "../styles/ClientSlide.module.css";
 import { TTexts } from "../utils/textConstants";
-import ClientTestimonialJS from "../scripts/clientTestimonial.module";
 import LowStadistics from "./LowStadistics";
 import Testimonials from "./Testimonial";
 
@@ -20,7 +19,6 @@ export default function ClientSlider() {
     setData(clientsData);
   }, []);
 
-  ClientTestimonialJS();
 
   return (
     <>
