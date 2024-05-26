@@ -4,7 +4,6 @@ import clientsData from "../fixtures/clientsData.json";
 import styles from "../styles/ClientSlide.module.css";
 import { TTexts } from "../utils/textConstants";
 import LowStadistics from "./LowStadistics";
-import Testimonials from "./Testimonial";
 
 export default function ClientSlider() {
   const [data, setData] = useState<
@@ -18,7 +17,6 @@ export default function ClientSlider() {
   useEffect(() => {
     setData(clientsData);
   }, []);
-
 
   return (
     <>
@@ -48,8 +46,6 @@ export default function ClientSlider() {
         <hr className={styles.line} />
         {/* Aqui pondremos algunas estadisticas */}
         <LowStadistics />
-        {/* Aqui pondremos los testiomonios */}
-        <Testimonials />
       </div>
     </>
   );

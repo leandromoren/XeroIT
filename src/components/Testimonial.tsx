@@ -2,6 +2,7 @@
 import styles from "../styles/Testimonials.module.css";
 import testimonialsData from "../fixtures/testimonialsData.json";
 import React, { useEffect, useState } from "react";
+import { TTexts } from "@/utils/textConstants";
 
 export default function Testimonials() {
   const [data, setData] = useState<
@@ -26,8 +27,7 @@ export default function Testimonials() {
           </div>
           <div className={styles.testimonialsContent}>
             <p className={styles.testimonialsIntro}>
-              Conocemos los testimonios de profesionales que tuvieron la oportunidad
-              de trabajar con Qavala dandonos la posibilidad de demostrar la capacidad de nuestros servicios.
+              {TTexts.testimonialIntro}
             </p>
             <div className={styles.testimonialsGrid}>
               {data.map((item) => (

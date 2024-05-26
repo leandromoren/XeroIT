@@ -1,5 +1,5 @@
-"use client"
-import Head from "./head"
+"use client";
+import Head from "./head";
 
 export default function RootLayout({
   children,
@@ -7,10 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Head />
-      <body style={{ backgroundColor: "#EDEDED" }}>
-            {children}
+    <html lang="es">
+      <body>
+        <Head />
+        {children}
       </body>
     </html>
   );

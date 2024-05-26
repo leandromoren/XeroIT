@@ -16,8 +16,11 @@
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color:#03E100 
 }
 
 .numberCounterLabel {
   font-size: 1.2rem;
+  font-family: "Ubuntu", sans-serif;
+
 }

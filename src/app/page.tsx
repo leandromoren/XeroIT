@@ -2,13 +2,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Head from "./head";
 import HomeView from "@/app/inicio/page";
-import ClientTestimonialJS from "@/scripts/clientTestimonial.module";
 
 export default function Home() {
   return (
-    <html lang="en">
-      <Head />
-      <body style={{ backgroundColor: "#EDEDED" }}>
+    <html lang="es">
+      <body style={{ backgroundColor: "#f8f9fa" }}>
         <ChakraProvider>
           <div>
             <HomeView />

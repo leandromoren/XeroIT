@@ -14,6 +14,8 @@ import Space from "@/components/Space";
 import ClientSlide from "@/components/ClientSlide";
 import styles from "@/styles/HomeView.module.css";
 import {TTexts} from "../utils/textConstants";
+import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonial";
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
@@ -106,6 +108,12 @@ export default function HomeView() {
       </Container>
       <section id="clientesId">
         <ClientSlide />
+      </section>
+      <section id="serviceId">
+        <Services />
+      </section>
+      <section>
+      <Testimonials />
       </section>
     </>
   );

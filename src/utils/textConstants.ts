@@ -14,5 +14,6 @@ export class TTexts {
   public static textExplication3: String = `Juntos, encontraremos la mejor manera de hacer realidad tus ideas y proyectos. Conf${TildesLetras.TILDE_I}a en nosotros y d${TildesLetras.TILDE_E}janos ser parte de tu ${TildesLetras.TILDE_E}xito. ¡Estamos emocionados de conocerte!`;
   public static textoButtonSubmit: String = "Enviar mensaje";
 
-  
+  //Testimonios
+  public static testimonialIntro: String = `Conocemos los testimonios de profesionales que tuvieron la oportunidad de trabajar con Qavala d${TildesLetras.TILDE_A}ndonos la posibilidad de demostrar la capacidad de nuestros servicios.`
 }

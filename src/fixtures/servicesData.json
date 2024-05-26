@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "name": "Software testing",
+        "description": "Realizamos controles de calidad de software manuales y automatizados para aumentar la productividad y efectividad de su negocio.",
+        "href": "/reclutamiento",
+        "icon": "bx bx-search-alt-2"
+    },
+    {
+        "id": 2,
+        "name": "Reclutamiento IT",
+        "description": "Gestionamos equipos profesionales para asegurar que los proyectos de IT alcancen su máximo potencial",
+        "href": "/reclutamiento",
+        "icon": "bx bx-user-plus"
+    },
+    {
+        "id": 3,
+        "name": "Gestion de proyectos",
+        "description": "Buscamos los mejores talentos del mercado para tu negocio",
+        "href": "/reclutamiento",
+        "icon": "bx bx-task"
+    },
+    {
+        "id": 4,
+        "name": "Diseño de interfaces UX y UI",
+        "description": "Buscamos los mejores talentos del mercado para tu negocio",
+        "href": "/reclutamiento",
+        "icon": "bx bxs-color"
+    },
+    {
+        "id": 5,
+        "name": "Desarrollo de software",
+        "description": "Construimos el mejor equipo de profesionales para desarrollar e integrar tecnologías basadas en las necesidades y tiempos de nuestros clientes.",
+        "href": "/reclutamiento",
+        "icon": "bx bx-code"
+    }
+    
+
+]
