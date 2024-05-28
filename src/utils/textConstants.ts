@@ -20,6 +20,9 @@ export class TTexts {
   public static pTextJob: String = `Somos curiosos, tenaces y valientes, lo que nos permite ver siempre el cambio como una oportunidad. Cultivamos y desarrollamos el talento. Buscamos tu pasi${TildesLetras.TILDE_O}n para hacerlo crecer.`
   public static btnJob: String = "Ver todos los puestos vacantes"
 
+  // Contact form texts
+  public static mainTitleForm: String = `Cu${TildesLetras.TILDE_E}ntanos como podemos ayudarte`
+
   //Testimonios
   public static testimonialIntro: String = `Conocemos los testimonios de profesionales que tuvieron la oportunidad de trabajar con Qavala d${TildesLetras.TILDE_A}ndonos la posibilidad de demostrar la capacidad de nuestros servicios.`
 }

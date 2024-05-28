@@ -1,0 +1,115 @@
+.containerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-image: url("../../public/images/cybergreen.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.leftContent {
+  flex: 1;
+  padding-right: 2rem;
+  text-align: right;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.leftContent h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+  max-width: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.leftContent p {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.formContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.contactForm {
+  background-color: #fdfdfdbd;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.contactForm iframe {
+  width: 100%;
+  height: 800px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .containerForm {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .leftContent {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .leftContent h2 {
+    font-size: 1.8rem;
+  }
+
+  .leftContent p {
+    font-size: 1rem;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+
+  .contactForm {
+    padding: 1.5rem;
+  }
+
+  .contactForm iframe {
+    height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftContent h2 {
+    font-size: 1.6rem;
+  }
+
+  .leftContent p {
+    font-size: 0.9rem;
+  }
+
+  .contactForm iframe {
+    height: 500px;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

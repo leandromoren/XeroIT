@@ -16,6 +16,7 @@ import {TTexts} from "../utils/textConstants";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonial";
 import JobUs from "@/components/JobUs";
+import ContactForm from "@/components/ContactForm";
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
@@ -117,6 +118,9 @@ export default function HomeView() {
       </section>
       <section>
         <JobUs />
+      </section>
+      <section>
+        <ContactForm />
       </section>
     </>
   );
