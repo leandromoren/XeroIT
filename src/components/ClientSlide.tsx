@@ -44,7 +44,6 @@ export default function ClientSlider() {
           ))}
         </div>
         <hr className={styles.line} />
-        {/* Aqui pondremos algunas estadisticas */}
         <LowStadistics />
       </div>
     </>

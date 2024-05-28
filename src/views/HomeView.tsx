@@ -8,7 +8,6 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
-//import { CldVideoPlayer } from "next-cloudinary";
 import "next-cloudinary/dist/cld-video-player.css";
 import Space from "@/components/Space";
 import ClientSlide from "@/components/ClientSlide";
@@ -16,6 +15,7 @@ import styles from "@/styles/HomeView.module.css";
 import {TTexts} from "../utils/textConstants";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonial";
+import JobUs from "@/components/JobUs";
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
@@ -114,6 +114,9 @@ export default function HomeView() {
       </section>
       <section>
       <Testimonials />
+      </section>
+      <section>
+        <JobUs />
       </section>
     </>
   );

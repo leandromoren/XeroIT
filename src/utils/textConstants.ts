@@ -14,6 +14,12 @@ export class TTexts {
   public static textExplication3: String = `Juntos, encontraremos la mejor manera de hacer realidad tus ideas y proyectos. Conf${TildesLetras.TILDE_I}a en nosotros y d${TildesLetras.TILDE_E}janos ser parte de tu ${TildesLetras.TILDE_E}xito. ¡Estamos emocionados de conocerte!`;
   public static textoButtonSubmit: String = "Enviar mensaje";
 
+  // Trabajemos juntos texts
+  public static mainTitleJob: String = "Trabajemos juntos"
+  public static strongTextJob: String = `${TildesLetras.TILDE_U}nete a nuestro equipo`
+  public static pTextJob: String = `Somos curiosos, tenaces y valientes, lo que nos permite ver siempre el cambio como una oportunidad. Cultivamos y desarrollamos el talento. Buscamos tu pasi${TildesLetras.TILDE_O}n para hacerlo crecer.`
+  public static btnJob: String = "Ver todos los puestos vacantes"
+
   //Testimonios
   public static testimonialIntro: String = `Conocemos los testimonios de profesionales que tuvieron la oportunidad de trabajar con Qavala d${TildesLetras.TILDE_A}ndonos la posibilidad de demostrar la capacidad de nuestros servicios.`
 }
