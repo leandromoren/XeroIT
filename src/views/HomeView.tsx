@@ -12,26 +12,28 @@ import "next-cloudinary/dist/cld-video-player.css";
 import Space from "@/components/Space";
 import ClientSlide from "@/components/ClientSlide";
 import styles from "@/styles/HomeView.module.css";
-import {TTexts} from "../utils/textConstants";
+import { TTexts } from "../utils/textConstants";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonial";
 import JobUs from "@/components/JobUs";
 import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
-  const videoCloudinary = "https://res.cloudinary.com/dq0japns7/video/upload/v1715927295/office1_jxbjfr.mp4";
+  const videoCloudinary =
+    "https://res.cloudinary.com/dq0japns7/video/upload/v1715927295/office1_jxbjfr.mp4";
   return (
     <>
-      <Container maxW={"7x1"}  position={"relative"} overflow={"hidden"}>
+      <Container maxW={"7x1"} position={"relative"} overflow={"hidden"}>
         <Box className={styles.videoBackground}>
           <video autoPlay loop muted playsInline>
             <source src={videoCloudinary} type="video/mp4" />
           </video>
         </Box>
-         <div className={styles.videoOverlay}></div>
+        <div className={styles.videoOverlay}></div>
         <Stack
           align={"center"}
           spacing={{ base: 8, md: 10 }}
@@ -72,7 +74,7 @@ export default function HomeView() {
                 fontFamily={'"Ubuntu", sans-serif'}
                 position={"relative"}
               >
-                {TTexts.mainTitleBop}
+                {TTexts.mainTitleBot}
               </Text>
             </Heading>
             <Text
@@ -107,20 +109,23 @@ export default function HomeView() {
         </Stack>
         <Space />
       </Container>
-      <section id="clientesId">
+      <section>
         <ClientSlide />
       </section>
-      <section id="serviceId">
+      <section>
         <Services />
       </section>
       <section>
-      <Testimonials />
+        <Testimonials />
       </section>
       <section>
         <JobUs />
       </section>
       <section>
         <ContactForm />
+      </section>
+      <section>
+        <Footer />
       </section>
     </>
   );

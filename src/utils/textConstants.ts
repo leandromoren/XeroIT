@@ -2,7 +2,7 @@ import { TildesLetras } from "./tildes";
 export class TTexts {
   // HomeView texts
   public static mainTitleTop: String = "Descubriendo defectos,";
-  public static mainTitleBop: String = "construyendo confianza";
+  public static mainTitleBot: String = "construyendo confianza";
   public static descripcionHomeView: String = `Ayudamos a tu empresa a seguir siendo competitiva ofreci${TildesLetras.TILDE_E}ndote servicios tecnológicos flexibles, seguros y fiables, adaptados a tus necesidades espec${TildesLetras.TILDE_I}ficas, que contribuyen a impulsar el crecimiento, aumentar la eficacia, reducir los costes y lograr un ${TildesLetras.TILDE_E}xito medible.`;
   public static buttonHomeView: String = `¿Por qu${TildesLetras.TILDE_E} asociarse con Qavala?`;
   public static clientSlideMainText: String = `Impulsando a m${TildesLetras.TILDE_A}s de 1200 de las empresas líderes del mundo`
@@ -23,6 +23,7 @@ export class TTexts {
   // Contact form texts
   public static mainTitleForm: String = `Cu${TildesLetras.TILDE_E}ntanos como podemos ayudarte`
   public static pTextForm: String = "Llena el formulario y nos pondremos en contacto contigo a la brevedad."
+  
   //Testimonios
   public static testimonialIntro: String = `Conocemos los testimonios de profesionales que tuvieron la oportunidad de trabajar con Qavala d${TildesLetras.TILDE_A}ndonos la posibilidad de demostrar la capacidad de nuestros servicios.`
 }
