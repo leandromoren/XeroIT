@@ -1,12 +1,37 @@
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  min-height: 20vh;
-  padding: 5%; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
-  background-color: #fff;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.imageContainer {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.imageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textContent {
+  width: 60%;
+  text-align: left;
+  padding-left: 2rem;
 }
 
 .title {
@@ -24,14 +49,14 @@
 }
 
 .containerP {
-  max-width: 40%;
+  max-width: 100%;
 }
 
 .pText {
   margin-bottom: 1.5rem;
   font-size: 17px;
-  text-align: center;
   font-family: "Ubuntu", sans-serif;
+  max-width: 100%;
 }
 
 .btn {
@@ -47,15 +72,24 @@
   transition: 0.2s;
 }
 
-.imageContainer {
-  width: 80%; /* Ajusta el ancho de la imagen según tus necesidades */
-  height: 30%; /* Esto mantendrá la relación de aspecto de la imagen */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.imageContainer img {
-  max-width: 100%; /* Esto asegura que la imagen no se salga del contenedor */
-  height: 30%; /* Esto mantendrá la relación de aspecto de la imagen */
+  .imageContainer {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .textContent {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pText {
+    max-width: 100%;
+  }
 }

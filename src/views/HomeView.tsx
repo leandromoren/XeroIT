@@ -115,9 +115,11 @@ export default function HomeView() {
       <section>
         <Services />
       </section>
-      <section>
+      {
+      /*<section>
         <Testimonials />
-      </section>
+        </section>*/
+      }
       <section>
         <JobUs />
       </section>

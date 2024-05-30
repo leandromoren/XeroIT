@@ -4,10 +4,7 @@
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
-  background-image: url("../../public/images/cybergreen.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #0A0A0A;
 }
 
 .leftContent {
@@ -33,6 +30,7 @@
 .leftContent p {
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
+  color: #03e100;
 }
 
 .formContainer {
@@ -42,7 +40,7 @@
 }
 
 .contactForm {
-  background-color: #fdfdfdbd;
+  background-color: #333;
   padding: 2rem;
   border-radius: 8px;
   width: 100%;

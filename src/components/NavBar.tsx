@@ -332,16 +332,30 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Servicios",
-    id: "serviciosId",
     children: [
       {
-        label: "Servicios de QA",
+        label: "Software testing",
         subLabel: "Mejora de la experiencia del cliente",
         href: "#",
       },
       {
-        label: "Servicios de Reclutamiento",
+        label: "Reclutamiento IT",
         subLabel: "Te ofrecemos el mejor talento",
+        href: "#",
+      },
+      {
+        label: "Gestion de proyectos",
+        subLabel: "Tenemos los mejores Project managers",
+        href: "#",
+      },
+      {
+        label: "Diseño UX / UI",
+        subLabel: "Te ofrecemos el mejor talento",
+        href: "#",
+      },
+      {
+        label: "Desarrolo de software",
+        subLabel: "Un gran equipo de profesionales de la programacion",
         href: "#",
       },
     ],
@@ -364,11 +378,11 @@ const NAV_ITEMS: Array<NavItem> = [
         subLabel: "Nuestra misi\u00F3n y visi\u00F3n",
         href: "#",
       },
+      {
+        label: "Partners",
+        href: "#",
+      },
     ],
-  },
-  {
-    label: "Clientes",
-    href: "/clientes",
   },
   {
     label: "Publicaciones",
@@ -379,12 +393,23 @@ const NAV_ITEMS: Array<NavItem> = [
         href: "#",
       },
       {
-        label: "Caso de est\u00E1ndar",
+        label: "Eventos",
+        subLabel: "Enterate de los proximos eventos",
+        href: "#"
       },
     ],
   },
   {
     label: "Empleo",
-    href: "#",
+    children: [
+      {
+        label: "Programa de practicas",
+        href: '#'
+      },
+      {
+        label: "Puestos vacantes",
+        href: '#'
+      }
+    ]
   },
 ];

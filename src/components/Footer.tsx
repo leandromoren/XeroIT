@@ -7,82 +7,62 @@ export default function Footer() {
         <div className={styles.footerInfo}>
           <div className={styles.footerLogo}>
             <a href="#">
-              <img src="https://i.ibb.co/QDy827D/ak-logo.png" alt="logo" />
+              <strong className={styles.footerLogo}>QAVALA</strong>
             </a>
           </div>
           <div className={styles.footerText}>
             <p>
-              Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do
-              eiusmod tempor incididuntut consec tetur adipisicing elit,Lorem
-              ipsum dolor sit amet.
+              Somos curiosos, tenaces y valientes, lo que nos permite ver
+              siempre el cambio como una oportunidad. Cultivamos y desarrollamos
+              el talento. Buscamos tu pasión para hacerlo crecer
             </p>
           </div>
           <div className={styles.footerSocial}>
-            <span>Follow us</span>
+            <span>Seguinos</span>
             <a href="#">
-              <i className="fab fa-facebook-f"></i>
+              <i className="bx bxl-facebook"></i>
             </a>
             <a href="#">
-              <i className="fab fa-twitter"></i>
+              <i className="bx bxl-instagram"></i>
             </a>
             <a href="#">
-              <i className="fab fa-google-plus-g"></i>
+              <i className="bx bxl-linkedin-square"></i>
             </a>
           </div>
         </div>
         <div className={styles.footerLinks}>
           <div className={styles.footerLinksHeading}>
-            <h3>Useful Links</h3>
+            <h3>Enlaces</h3>
           </div>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="#">Inicio</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#">Sobre nosotros</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="#">Servicios</a>
             </li>
             <li>
-              <a href="#">Portfolio</a>
+              <a href="#">Equipo</a>
             </li>
             <li>
-              <a href="#">Contact</a>
-            </li>
-            <li>
-              <a href="#">About us</a>
-            </li>
-            <li>
-              <a href="#">Our Services</a>
-            </li>
-            <li>
-              <a href="#">Expert Team</a>
-            </li>
-            <li>
-              <a href="#">Contact us</a>
-            </li>
-            <li>
-              <a href="#">Latest News</a>
+              <a href="#">Contactanos</a>
             </li>
           </ul>
         </div>
         <div className={styles.footerSubscribe}>
           <div className={styles.footerSubscribeHeading}>
-            <h3>Subscribe</h3>
+            <h3>Suscribete</h3>
           </div>
           <div className={styles.footerSubscribeText}>
-            <p>
-              Don't miss to subscribe to our new feeds, kindly fill the form
-              below.
-            </p>
+            <p>Suscribete para obtener las ultimas novedades sobre QAVALA</p>
           </div>
           <div className={styles.footerSubscribeForm}>
             <form>
               <input type="text" placeholder="Email Address" />
-              <button type="submit">
-                <i className="fab fa-telegram-plane"></i>
-              </button>
+              <button type="submit">Suscribir</button>
             </form>
           </div>
         </div>
@@ -97,19 +77,19 @@ export default function Footer() {
         <div className={styles.footerMenu}>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="#">Inicio</a>
             </li>
             <li>
-              <a href="#">Terms</a>
+              <a href="#">Terminos del servicio</a>
             </li>
             <li>
-              <a href="#">Privacy</a>
+              <a href="#">Politica de privacidad</a>
             </li>
             <li>
-              <a href="#">Policy</a>
+              <a href="#">Politicas</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#">Contacto</a>
             </li>
           </ul>
         </div>
