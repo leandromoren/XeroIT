@@ -94,7 +94,7 @@ export default function Navbar() {
             fontSize={"sm"}
             fontWeight={600}
             color={blanco}
-            href="http://localhost:3000/contacto"
+            href="/contacto"
             bg={negro}
             border={"2px solid #1F1F1F"}
             _hover={{
