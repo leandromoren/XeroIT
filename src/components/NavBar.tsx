@@ -332,83 +332,87 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Servicios",
+    href: "/servicios",
     children: [
       {
         label: "Software testing",
         subLabel: "Mejora de la experiencia del cliente",
-        href: "#",
+        href: "/servicios/software-testing",
       },
       {
         label: "Reclutamiento IT",
         subLabel: "Te ofrecemos el mejor talento",
-        href: "#",
+        href: "/servicios/reclutamiento-it",
       },
       {
         label: "Gestion de proyectos",
         subLabel: "Tenemos los mejores Project managers",
-        href: "#",
+        href: "/servicios/gestion-de-proyectos",
       },
       {
         label: "Diseño UX / UI",
         subLabel: "Te ofrecemos el mejor talento",
-        href: "#",
+        href: "/servicios/ux-ui",
       },
       {
-        label: "Desarrolo de software",
+        label: "Desarrollo de software",
         subLabel: "Un gran equipo de profesionales de la programacion",
-        href: "#",
+        href: "/servicios/desarrollo-software",
       },
     ],
   },
   {
     label: "Nosotros",
+    href: "/nosotros",
     children: [
       {
         label: "Nuestro equipo",
         subLabel: "Conoce a quienes hacen posible este proyecto",
-        href: "#",
+        href: "/nosotros/nuestro-equipo",
       },
       {
         label: "Nuestra historia",
         subLabel: "Un poco de nuestra experiencia",
-        href: "#",
+        href: "/nosotros/nuestra-historia",
       },
       {
         label: "Nuestros valores",
         subLabel: "Nuestra misi\u00F3n y visi\u00F3n",
-        href: "#",
+        href: "/nosotros/nuestros-valores",
       },
       {
         label: "Partners",
-        href: "#",
+        href: "/nosotros/partners",
       },
     ],
   },
   {
     label: "Publicaciones",
+    href: "/publicaciones",
     children: [
       {
         label: "Historia de clientes",
         subLabel: "Nuestros art\u00EDculos",
-        href: "#",
+        href: "/publicaciones/historia-de-clientes",
       },
       {
         label: "Eventos",
         subLabel: "Enterate de los proximos eventos",
-        href: "#"
+        href: "/publicaciones/eventos",
       },
     ],
   },
   {
     label: "Empleo",
+    href: "/empleo",
     children: [
       {
         label: "Programa de practicas",
-        href: '#'
+        href: '/empleo/programa-de-practicas',
       },
       {
         label: "Puestos vacantes",
-        href: '#'
+        href: '/empleo/vacantes'
       }
     ]
   },
