@@ -2,14 +2,13 @@
 import styles from "../styles/Services.module.css";
 import servicesData from "../fixtures/servicesData.json";
 import { useEffect, useState } from "react";
-//import 'boxicons';
 export default function Services() {
   const [data, setData] = useState<
     {
       id: number;
       name: string;
       description: string;
-      href?: string;
+      href: string;
       icon: string;
     }[]
   >([]);

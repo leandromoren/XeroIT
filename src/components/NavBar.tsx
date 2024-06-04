@@ -22,7 +22,6 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import NextLink from "next/link";
-import scrollAnimation from "@/scripts/scrollAnimation.module";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -118,20 +117,6 @@ const DesktopNav = () => {
   const negro = useColorModeValue("#0A0A0A", "white");
   const blanco = useColorModeValue("#f8f9fa", "gray.800");
 
-  const handleNavItemClick = (event: React.MouseEvent<HTMLAnchorElement>, navItem: typeof NAV_ITEMS[number]) => {
-    if (navItem.label === "Servicios") {
-      scrollAnimation("serviciosId");
-    } else if (navItem.label === "Clientes") {
-      scrollAnimation("clientesId");
-    } else if (navItem.label === "Nosotros") {
-      scrollAnimation("nosotrosId");
-    } else if (navItem.label === "Publicaciones") {
-      scrollAnimation("serviciosId");
-    } else if (navItem.label === "Empleo") {
-      scrollAnimation("serviciosId");
-    }
-  };
-
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -152,7 +137,6 @@ const DesktopNav = () => {
                   borderBottom: "2px solid #03E100",
                   transition: "all 0.3s ease 0s",
                 }}
-                onClick={(e) => handleNavItemClick(e, navItem)}
               >
                 {navItem.label}
               </Link>

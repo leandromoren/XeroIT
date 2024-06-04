@@ -1,0 +1,162 @@
+.navLogo .logo {
+  max-width: 200px;
+}
+
+/* Services Section Styles */
+.servicesHeaderImg {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+#services {
+  padding: 2rem;
+  text-align: center;
+}
+
+#services h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f4f4f4;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#services p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #f4f4f4;
+}
+
+/* Cards Section Styles */
+#cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.main {
+  background-color: #0a0a0a;
+}
+
+.card {
+  background-color: #0c0b0b;
+  color: #f8f9fa;
+  font-family: "ubuntu", sans-serif;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #74747454;
+  border-radius: 2%;
+}
+.card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+}
+
+.card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+/* Facts Section Styles */
+#facts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+#factsContent {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+#factsContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+.services-info-img {
+  max-width: 400px;
+}
+
+.btn {
+  background-color: #03e100;
+  color: #0a0a0a;
+  font-family: "ubuntu", sans-serif;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  align-self: center;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #0a0a0a;
+  color: #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  #cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #facts {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #factsContent {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .services-info-img {
+    max-width: 100%;
+  }
+
+  #cardsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
