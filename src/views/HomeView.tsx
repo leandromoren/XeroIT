@@ -14,7 +14,6 @@ import ClientSlide from "@/components/ClientSlide";
 import styles from "@/styles/HomeView.module.css";
 import { TTexts } from "../utils/textConstants";
 import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonial";
 import JobUs from "@/components/JobUs";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
