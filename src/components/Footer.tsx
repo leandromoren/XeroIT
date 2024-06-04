@@ -1,4 +1,5 @@
 "use client";
+import { TTexts } from "@/utils/textConstants";
 import styles from "../styles/Footer.module.css";
 export default function Footer() {
   return (
@@ -32,23 +33,23 @@ export default function Footer() {
         </div>
         <div className={styles.footerLinks}>
           <div className={styles.footerLinksHeading}>
-            <h3>Enlaces</h3>
+            <h3>{`Gu\u00EDa`}</h3>
           </div>
           <ul>
             <li>
-              <a href="#">Inicio</a>
+              <a href="/">Inicio</a>
             </li>
             <li>
-              <a href="#">Sobre nosotros</a>
+              <a href="/nosotros">Sobre nosotros</a>
             </li>
             <li>
-              <a href="#">Servicios</a>
+              <a href="/servicios">Servicios</a>
             </li>
             <li>
-              <a href="#">Equipo</a>
+              <a href="/equipo">Equipo</a>
             </li>
             <li>
-              <a href="#">Contactanos</a>
+              <a href="/contacto">{`Cont\u00E1ctanos`}</a>
             </li>
           </ul>
         </div>
@@ -57,7 +58,7 @@ export default function Footer() {
             <h3>Suscribete</h3>
           </div>
           <div className={styles.footerSubscribeText}>
-            <p>Suscribete para obtener las ultimas novedades sobre QAVALA</p>
+            <p>{TTexts.subscribeText}</p>
           </div>
           <div className={styles.footerSubscribeForm}>
             <form>

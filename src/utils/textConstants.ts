@@ -24,6 +24,6 @@ export class TTexts {
   public static mainTitleForm: String = `Cu${TildesLetras.TILDE_E}ntanos como podemos ayudarte`
   public static pTextForm: String = "Llena el formulario y nos pondremos en contacto contigo a la brevedad."
   
-  //Testimonios
-  public static testimonialIntro: String = `Conocemos los testimonios de profesionales que tuvieron la oportunidad de trabajar con Qavala d${TildesLetras.TILDE_A}ndonos la posibilidad de demostrar la capacidad de nuestros servicios.`
+  // Footer TEXTS
+  public static subscribeText: String = `Suscr${TildesLetras.TILDE_I}bete para obtener las ultimas novedades sobre QAVALA`
 }
