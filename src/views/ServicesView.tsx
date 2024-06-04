@@ -35,7 +35,7 @@ export default function ServicesVista() {
         </section>
         <section id={styles.cardsContainer}>
           {data.map((service) => (
-            <section className={styles.card}>
+            <section key={service.id} className={styles.card}>
               <img src="https://raw.githubusercontent.com/LambdaSchool/UI-III-Flexbox/master/great-idea/img/services-header.jpg" alt="Imagen del servicio"></img>
               <h1>{service.name}</h1>
               <p>{service.description}</p>
