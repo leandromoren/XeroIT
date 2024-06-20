@@ -15,8 +15,9 @@ import styles from "@/styles/HomeView.module.css";
 import { TTexts } from "../utils/textConstants";
 import Services from "@/components/Services";
 import JobUs from "@/components/JobUs";
-import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Formulario from "@/components/Formulario";
+import News from "@/components/News";
 
 export default function HomeView() {
   const verde = useColorModeValue("#03E100", "#03E100");
@@ -115,10 +116,13 @@ export default function HomeView() {
         <Services />
       </section>
       <section>
+        <News />
+      </section>
+      <section>
         <JobUs />
       </section>
       <section>
-        <ContactForm />
+        <Formulario />
       </section>
       <section>
         <Footer />

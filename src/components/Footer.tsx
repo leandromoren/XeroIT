@@ -1,13 +1,18 @@
 "use client";
 import { TTexts } from "@/utils/textConstants";
 import styles from "../styles/Footer.module.css";
+
 export default function Footer() {
+  const linkLinkedin = "";
+  const linkFacebook = "";
+  const linkInstagram = "";
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerInfo}>
           <div className={styles.footerLogo}>
-            <a href="#">
+            <a href="/">
               <strong className={styles.footerLogo}>QAVALA</strong>
             </a>
           </div>
@@ -20,13 +25,13 @@ export default function Footer() {
           </div>
           <div className={styles.footerSocial}>
             <span>Seguinos</span>
-            <a href="#">
+            <a href={linkFacebook}>
               <i className="bx bxl-facebook"></i>
             </a>
-            <a href="#">
+            <a href={linkInstagram}>
               <i className="bx bxl-instagram"></i>
             </a>
-            <a href="#">
+            <a href={linkLinkedin}>
               <i className="bx bxl-linkedin-square"></i>
             </a>
           </div>
@@ -72,25 +77,25 @@ export default function Footer() {
         <div className={styles.footerCopyright}>
           <p>
             Copyright &copy; 2018, All Right Reserved{" "}
-            <a href="https://codepen.io/anupkumar92/">QAVALA</a>
+            <a href="/">QAVALA</a>
           </p>
         </div>
         <div className={styles.footerMenu}>
           <ul>
             <li>
-              <a href="#">Inicio</a>
+              <a href="/">Inicio</a>
             </li>
             <li>
-              <a href="#">Terminos del servicio</a>
+              <a href="/terminos-servicio">Terminos del servicio</a>
             </li>
             <li>
-              <a href="#">Politica de privacidad</a>
+              <a href="/politicas-de-privacidad">Politica de privacidad</a>
             </li>
             <li>
-              <a href="#">Politicas</a>
+              <a href="/politicas">Politicas</a>
             </li>
             <li>
-              <a href="#">Contacto</a>
+              <a href="/contacto">Contacto</a>
             </li>
           </ul>
         </div>

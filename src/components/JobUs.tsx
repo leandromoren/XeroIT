@@ -1,9 +1,10 @@
 "use cliente";
 import styles from "@/styles/JobUs.module.css";
 import { TTexts } from "@/utils/textConstants";
+
 export default function JobUs() {
   return (
-      <div className={styles.contentWrapper}>
+    <div className={styles.contentWrapper}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
           <img src={`images/image.png`} />

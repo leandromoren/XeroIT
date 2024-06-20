@@ -2,6 +2,7 @@
 import styles from "../styles/Services.module.css";
 import servicesData from "../fixtures/servicesData.json";
 import { useEffect, useState } from "react";
+
 export default function Services() {
   const [data, setData] = useState<
     {

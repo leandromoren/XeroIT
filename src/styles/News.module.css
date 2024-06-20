@@ -1,0 +1,10 @@
+
+.contentStyle {
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+}

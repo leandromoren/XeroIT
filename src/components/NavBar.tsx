@@ -29,10 +29,6 @@ export default function Navbar() {
   const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
-  // Obtener el elemento del navbar que contiene el enlace a "Servicios"
-
-  //scrollAnimation();
-  // Agregar un event listener al clic del enlace
 
   return (
     <Box>
