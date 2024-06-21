@@ -5,6 +5,7 @@ import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
 import styles from "../styles/Formulario.module.css";
 
+//TODO: falta agregar funcionalidad al boton de "solicitar servicio" para que los datos de los inputs lleguen a mi correo
 export default function Formulario() {
   const [country, setCountries] = useState<
     {
@@ -26,10 +27,6 @@ export default function Formulario() {
   useEffect(() => {
     setCountries(countries);
   }, []);
-
-  const onFinish = (values) => {
-    console.log(values);
-  };
 
   const layout = {
     labelCol: {
@@ -63,7 +60,6 @@ export default function Formulario() {
             flex: 1,
           }}
           colon={false}
-          onFinish={onFinish}
           style={{
             maxWidth: 650,
             backgroundColor: "#f8f9fa",
