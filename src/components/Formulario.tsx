@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, useEffect, useRef, useState } from "react";
+import React, { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { Button, Form, Input, Select, InputNumber } from "antd";
 import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
@@ -46,6 +46,10 @@ export default function Formulario() {
     script.defer = true;
     document.body.appendChild(script);
   }, []);
+
+  const handleReCAPTCHAChange = useCallback((value: React.SetStateAction<string | null | undefined>) => {
+    setCaptcha(value);
+  }, [setCaptcha]);
 
   useEffect(() => {
     setData(servicesData);
@@ -219,7 +223,8 @@ export default function Formulario() {
           <ReCAPTCHA 
             ref={recaptchaRef} 
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} 
-            style={{justifyContent: "center", display: "flex"}} onChange={setCaptcha}
+            style={{justifyContent: "center", display: "flex"}} 
+            onChange={handleReCAPTCHAChange}
           />
           <Space />
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
