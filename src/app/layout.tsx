@@ -9,11 +9,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <script
-          src={`https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-          async
-          defer
-        ></script>
+       
         <Head />
         {children}
       </body>
