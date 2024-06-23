@@ -34,6 +34,7 @@ export default function Formulario() {
     if (captcha) {
       //console.log(captcha)
       alert("ReCAPTCHA verificado")
+      console.log(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
     } else {
       alert("Completa el recapthcxa")
     }

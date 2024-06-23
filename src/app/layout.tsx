@@ -10,7 +10,7 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <script
-          src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+          src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit"
           async
           defer
         ></script>
