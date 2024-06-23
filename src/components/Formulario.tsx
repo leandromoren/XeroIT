@@ -40,17 +40,9 @@ export default function Formulario() {
     }
   }
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-  }, []);
-
-  const handleReCAPTCHAChange = useCallback((value: React.SetStateAction<string | null | undefined>) => {
-    setCaptcha(value);
-  }, [setCaptcha]);
+  const onChange = (value: any) => {
+    console.log("Captcha value: ", value)
+  }
 
   useEffect(() => {
     setData(servicesData);
@@ -222,10 +214,9 @@ export default function Formulario() {
             <Input.TextArea />
           </Form.Item>
           <ReCAPTCHA 
-            ref={recaptchaRef} 
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} 
             style={{justifyContent: "center", display: "flex"}} 
-            onChange={handleReCAPTCHAChange}
+            onChange={onChange}
           />
           <Space />
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
