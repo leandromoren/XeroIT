@@ -205,13 +205,8 @@ export default function Formulario() {
           >
             <Input.TextArea />
           </Form.Item>
-          <ReCAPTCHA 
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} 
-            style={{justifyContent: "center", display: "flex"}}
-            onChange={setCaptcha}
-            />
           <Space />
-          
+
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
             <Button
               className={styles.formSubmitButton}
