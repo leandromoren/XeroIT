@@ -211,6 +211,7 @@ export default function Formulario() {
             onChange={setCaptcha}
             />
           <Space />
+          
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
             <Button
               className={styles.formSubmitButton}
