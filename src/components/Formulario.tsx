@@ -1,9 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { Button, Form, Input, Select, InputNumber } from "antd";
 import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
 import styles from "../styles/Formulario.module.css";
+import { TTexts } from "@/utils/textConstants";
+import ReCAPTCHA from "react-google-recaptcha";
+import Space from "./Space";
 
 //TODO: falta agregar funcionalidad al boton de "solicitar servicio" para que los datos de los inputs lleguen a mi correo
 export default function Formulario() {
@@ -13,12 +16,24 @@ export default function Formulario() {
       name: string;
     }[]
   >([]);
+  
   const [data, setData] = useState<
     {
       id: number;
       name: string;
     }[]
   >([]);
+
+  const [captcha, setCaptcha] = useState<string | null>()
+
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault()
+    if (captcha) {
+      alert("ReCAPTCHA verificado")
+    } else {
+      alert("Completa el recapthcxa")
+    }
+  }
 
   useEffect(() => {
     setData(servicesData);
@@ -49,6 +64,7 @@ export default function Formulario() {
       </div>
       <div className={styles.formContainer}>
         <Form
+          onSubmitCapture={onSubmit}
           className={styles.form}
           {...layout}
           name="wrap"
@@ -66,7 +82,6 @@ export default function Formulario() {
             padding: 30,
             marginLeft: "auto",
             fontSize: "16px",
-
             border: "1px solid #03e100",
           }}
           autoComplete="off"
@@ -74,11 +89,7 @@ export default function Formulario() {
           <div className={styles.formHeader}>
             <h2 className={styles.formTitle}>Formulario de Contacto</h2>
             <p className={styles.formDescription}>
-              Por favor, completa este formulario para que podamos conocer los
-              detalles de tu proyecto. Nuestro equipo de expertos analizará tu
-              idea y te contactará para diseñar una solución a tu medida. ¡No
-              dejes pasar esta oportunidad de llevar tu proyecto al siguiente
-              nivel!
+              {TTexts.pTextForm}
             </p>
           </div>
           <Form.Item
@@ -193,16 +204,15 @@ export default function Formulario() {
           >
             <Input.TextArea />
           </Form.Item>
+          <ReCAPTCHA 
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} 
+            style={{justifyContent: "center", display: "flex"}}
+            onChange={setCaptcha}
+            />
+          <Space />
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
             <Button
-              style={{
-                backgroundColor: "#03e100",
-                width: "100%",
-                borderRadius: "0",
-                color: "#333",
-                fontFamily: "Ubuntu",
-                border: "none",
-              }}
+              className={styles.formSubmitButton}
               htmlType="submit"
             >
               Solicitar servicio

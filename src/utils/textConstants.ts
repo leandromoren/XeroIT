@@ -21,8 +21,7 @@ export class TTexts {
   public static btnJob: String = "Ver todos los puestos vacantes"
 
   // Contact form texts
-  public static mainTitleForm: String = `Cu${TildesLetras.TILDE_E}ntanos como podemos ayudarte`
-  public static pTextForm: String = "Llena el formulario y nos pondremos en contacto contigo a la brevedad."
+  public static pTextForm: String = "Por favor, completa este formulario para que podamos conocer los detalles de tu proyecto. Nuestro equipo de expertos analizará tu idea y te contactará para diseñar una solución a tu medida. ¡No dejes pasar esta oportunidad de llevar tu proyecto al siguiente nivel!"
   
   // Footer TEXTS
   public static subscribeText: String = `Suscr${TildesLetras.TILDE_I}bete para obtener las ultimas novedades sobre QAVALA`

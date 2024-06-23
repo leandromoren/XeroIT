@@ -13,7 +13,7 @@ import Space from "@/components/Space";
 import ClientSlide from "@/components/ClientSlide";
 import styles from "@/styles/HomeView.module.css";
 import { TTexts } from "../utils/textConstants";
-import Services from "@/components/Services";
+//import Services from "@/components/Services";
 import JobUs from "@/components/JobUs";
 import Footer from "@/components/Footer";
 import Formulario from "@/components/Formulario";
@@ -111,9 +111,6 @@ export default function HomeView() {
       </Container>
       <section>
         <ClientSlide />
-      </section>
-      <section>
-        <Services />
       </section>
       <section>
         <News />

@@ -1,6 +1,5 @@
 "use client";
 import { ChakraProvider } from "@chakra-ui/react";
-import Head from "./head";
 import HomeView from "@/app/inicio/page";
 
 export default function Home() {
