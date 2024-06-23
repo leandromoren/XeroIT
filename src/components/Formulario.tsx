@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import { Button, Form, Input, Select, InputNumber } from "antd";
 import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
@@ -25,16 +25,27 @@ export default function Formulario() {
   >([]);
 
   const [captcha, setCaptcha] = useState<string | null>()
-
+  
+  const recaptchaRef = useRef(null)
+  
   //TODO: Modificar mensajes agregando algun pop up diciendo que se envio correctamente o eliminarlos
   const onSubmit = (event: FormEvent) => {
     event.preventDefault()
     if (captcha) {
+      //console.log(captcha)
       alert("ReCAPTCHA verificado")
     } else {
       alert("Completa el recapthcxa")
     }
   }
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
 
   useEffect(() => {
     setData(servicesData);
@@ -205,7 +216,11 @@ export default function Formulario() {
           >
             <Input.TextArea />
           </Form.Item>
-          <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} style={{justifyContent: "center", display: "flex"}} onChange={setCaptcha}/>
+          <ReCAPTCHA 
+            ref={recaptchaRef} 
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} 
+            style={{justifyContent: "center", display: "flex"}} onChange={setCaptcha}
+          />
           <Space />
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
             <Button
