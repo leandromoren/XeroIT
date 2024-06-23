@@ -26,6 +26,7 @@ export default function Formulario() {
 
   const [captcha, setCaptcha] = useState<string | null>()
 
+  //TODO: Modificar mensajes agregando algun pop up diciendo que se envio correctamente o eliminarlos
   const onSubmit = (event: FormEvent) => {
     event.preventDefault()
     if (captcha) {

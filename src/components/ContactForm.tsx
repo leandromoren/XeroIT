@@ -5,7 +5,7 @@ export default function ContactForm() {
   return (
     <div className={styles.containerForm}>
       <div className={styles.leftContent}>
-        <h2>{TTexts.mainTitleForm}</h2>
+        <h2>{TTexts.mainTitleTop}</h2>
         <p>
           {TTexts.pTextForm}
         </p>
