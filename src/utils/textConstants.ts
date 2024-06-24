@@ -18,7 +18,7 @@ export class TTexts {
   public static mainTitleJob: String = "Trabajemos juntos"
   public static strongTextJob: String = `${TildesLetras.TILDE_U}nete a nuestro equipo`
   public static pTextJob: String = `Somos curiosos, tenaces y valientes, lo que nos permite ver siempre el cambio como una oportunidad. Cultivamos y desarrollamos el talento. Buscamos tu pasi${TildesLetras.TILDE_O}n para hacerlo crecer.`
-  public static btnJob: String = "Ver todos los puestos vacantes"
+  public static btnJob: String = "Ver puestos en qavala"
 
   // Contact form texts
   public static pTextForm: String = "Por favor, completa este formulario para que podamos conocer los detalles de tu proyecto. Nuestro equipo de expertos analizará tu idea y te contactará para diseñar una solución a tu medida. ¡No dejes pasar esta oportunidad de llevar tu proyecto al siguiente nivel!"

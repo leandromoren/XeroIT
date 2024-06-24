@@ -1,5 +1,9 @@
 "use client";
-import React, { FormEvent, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  FormEvent,
+  useEffect,
+  useState,
+} from "react";
 import { Button, Form, Input, Select, InputNumber } from "antd";
 import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
@@ -8,7 +12,7 @@ import { TTexts } from "@/utils/textConstants";
 import ReCAPTCHA from "react-google-recaptcha";
 import Space from "./Space";
 
-//TODO: falta agregar funcionalidad al boton de "solicitar servicio" para que los datos de los inputs lleguen a mi correo
+//TODO: si quiero ver los mails tengo que activar el formulario desde el mail y aparecen todos los submits
 export default function Formulario() {
   const [country, setCountries] = useState<
     {
@@ -16,7 +20,7 @@ export default function Formulario() {
       name: string;
     }[]
   >([]);
-  
+
   const [data, setData] = useState<
     {
       id: number;
@@ -24,25 +28,35 @@ export default function Formulario() {
     }[]
   >([]);
 
-  const [captcha, setCaptcha] = useState<string | null>()
-  
-  const recaptchaRef = useRef(null)
-  
-  //TODO: Modificar mensajes agregando algun pop up diciendo que se envio correctamente o eliminarlos
-  const onSubmit = (event: FormEvent) => {
-    event.preventDefault()
-    if (captcha) {
-      //console.log(captcha)
-      alert("ReCAPTCHA verificado")
-      console.log(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
-    } else {
-      alert("Completa el recapthcxa")
-    }
-  }
+  const [captcha, setCaptcha] = useState<string | null>();
 
-  const onChange = (value: any) => {
-    console.log("Captcha value: ", value)
-  }
+  const [form] = Form.useForm();
+
+  //TODO: Modificar mensajes agregando algun pop up diciendo que se envio correctamente o eliminarlos
+  const onSubmit = async (event: FormEvent) => {
+    if (captcha) {
+      try {
+        const formData = new FormData(event.target as HTMLFormElement);
+        const response = await fetch("https://formsubmit.co/abe34ac3e8cea0be152e3379c9fe427d ", {
+          method: "POST",
+          body: formData,
+        });
+        console.log(response)
+        if (response.ok) {
+          console.log("Form submitted successfully!");
+          form.resetFields();
+          window.location.reload();
+        } else {
+          console.error("Error submitting form:", response.status);
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+
+    } else {
+      console.log("Debes aceptar el ReCAPTCHA")
+    }
+  };
 
   useEffect(() => {
     setData(servicesData);
@@ -73,6 +87,9 @@ export default function Formulario() {
       </div>
       <div className={styles.formContainer}>
         <Form
+          
+          form={form}
+          
           onSubmitCapture={onSubmit}
           className={styles.form}
           {...layout}
@@ -97,9 +114,7 @@ export default function Formulario() {
         >
           <div className={styles.formHeader}>
             <h2 className={styles.formTitle}>Formulario de Contacto</h2>
-            <p className={styles.formDescription}>
-              {TTexts.pTextForm}
-            </p>
+            <p className={styles.formDescription}>{TTexts.pTextForm}</p>
           </div>
           <Form.Item
             label="Pais de residencia:"
@@ -111,7 +126,7 @@ export default function Formulario() {
               },
             ]}
           >
-            <Select>
+            <Select placeholder="Selecciona tu país">
               {countries.map((country) => (
                 <Select.Option key={country.code} value={country.name}>
                   {country.name}
@@ -130,7 +145,7 @@ export default function Formulario() {
               },
             ]}
           >
-            <Select>
+            <Select placeholder="Selecciona un servicio">
               {data.map((service) => (
                 <Select.Option key={service.id} value={service.name}>
                   {service.name}
@@ -150,6 +165,9 @@ export default function Formulario() {
             ]}
           >
             <Input
+              placeholder="John Doe"
+              type="text"
+              name="name"
               style={{
                 maxWidth: 250,
               }}
@@ -157,7 +175,7 @@ export default function Formulario() {
           </Form.Item>
           <Form.Item
             label="Compañía:"
-            name={["user", "RSocial"]}
+            name={["user", "empresa"]}
             style={{
               maxWidth: 600,
             }}
@@ -168,7 +186,7 @@ export default function Formulario() {
               },
             ]}
           >
-            <Input />
+            <Input type="text" name="empresa" placeholder="Qavala" />
           </Form.Item>
           <Form.Item
             label="Email de contacto:"
@@ -181,7 +199,11 @@ export default function Formulario() {
               },
             ]}
           >
-            <Input />
+            <Input
+              placeholder="info@example.com"
+              name="email"
+              type="text"
+            />
           </Form.Item>
           <Form.Item
             label="Tel. / Cel."
@@ -195,6 +217,9 @@ export default function Formulario() {
             ]}
           >
             <InputNumber
+              placeholder="+541234567890"
+              name="tel"
+              type="number"
               style={{
                 minWidth: "70%",
               }}
@@ -211,18 +236,19 @@ export default function Formulario() {
               },
             ]}
           >
-            <Input.TextArea />
+            <Input.TextArea placeholder="Describe tu idea" name="description" />
           </Form.Item>
-          <ReCAPTCHA 
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} 
-            style={{justifyContent: "center", display: "flex"}} 
-            onChange={onChange}
-          />
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+            style={{ justifyContent: "center", display: "flex" }}
+            onChange={setCaptcha}
+          /> 
           <Space />
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
             <Button
               className={styles.formSubmitButton}
               htmlType="submit"
+              type="primary"
             >
               Solicitar servicio
             </Button>
