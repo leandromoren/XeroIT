@@ -1,18 +1,17 @@
 "use client";
-import React, {
-  FormEvent,
-  useEffect,
-  useState,
-} from "react";
-import { Button, Form, Input, Select, InputNumber } from "antd";
+import React, { FormEvent, useEffect, useState } from "react";
+import { Button, Form, Input, Select, InputNumber, Alert } from "antd";
 import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
 import styles from "../styles/Formulario.module.css";
 import { TTexts } from "@/utils/textConstants";
 import ReCAPTCHA from "react-google-recaptcha";
 import Space from "./Space";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
 
 //TODO: si quiero ver los mails tengo que activar el formulario desde el mail y aparecen todos los submits
+//TODO: Reemplazar el Select de servicios por un checkbox para que pueda seleccionar mas de 1
 export default function Formulario() {
   const [country, setCountries] = useState<
     {
@@ -32,29 +31,64 @@ export default function Formulario() {
 
   const [form] = Form.useForm();
 
-  //TODO: Modificar mensajes agregando algun pop up diciendo que se envio correctamente o eliminarlos
+  const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState(false);
+
+  const [getCaptcha, setReCaptcha] = useState(false);
+
+  const validateFields = () => {
+    const fieldsToValidate = [
+      { key: ["user", "pais"], label: "País de residencia" },
+      { key: ["user", "servicio"], label: "Servicio" },
+      { key: ["user", "name"], label: "Nombre completo" },
+      { key: ["user", "empresa"], label: "Compañía" },
+      { key: ["user", "email"], label: "Email de contacto" },
+      { key: ["user", "cel"], label: "Tel. / Cel." },
+      { key: "TextArea", label: "Describe tu idea" },
+    ];
+
+    for (let field of fieldsToValidate) {
+      const value = form.getFieldValue(field.key);
+      if (!value || (Array.isArray(value) && value.length === 0)) {
+        return `${field.label} es requerido`;
+      }
+    }
+
+    return null; // Todos los campos requeridos están llenos
+  };
+
   const onSubmit = async (event: FormEvent) => {
     if (captcha) {
       try {
+        const validationError = validateFields();
+        if (validationError) {
+          console.error(validationError);
+          return; // Evita activar el loading si los campos estan vacios
+        }
+        setReCaptcha(false);
+        setLoading(true);
         const formData = new FormData(event.target as HTMLFormElement);
-        const response = await fetch("https://formsubmit.co/abe34ac3e8cea0be152e3379c9fe427d ", {
-          method: "POST",
-          body: formData,
-        });
-        console.log(response)
+        const response = await fetch(
+          "https://formsubmit.co/abe34ac3e8cea0be152e3379c9fe427d",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
         if (response.ok) {
-          console.log("Form submitted successfully!");
+          setLoading(false);
           form.resetFields();
           window.location.reload();
         } else {
+          setError(true);
           console.error("Error submitting form:", response.status);
         }
       } catch (error) {
         console.error("Error submitting form:", error);
       }
-
-    } else {
-      console.log("Debes aceptar el ReCAPTCHA")
+    } else if (!captcha) {
+      setReCaptcha(true);
     }
   };
 
@@ -85,11 +119,10 @@ export default function Formulario() {
           fuga aliquid?
         </p>
       </div>
+
       <div className={styles.formContainer}>
         <Form
-          
           form={form}
-          
           onSubmitCapture={onSubmit}
           className={styles.form}
           {...layout}
@@ -141,7 +174,7 @@ export default function Formulario() {
             rules={[
               {
                 required: true,
-                message: "Este campo es necesario.",
+                message: "Selecciona un servicio",
               },
             ]}
           >
@@ -160,7 +193,7 @@ export default function Formulario() {
             rules={[
               {
                 required: true,
-                message: "Este campo es necesario.",
+                message: "Ingresa un nombre.",
               },
             ]}
           >
@@ -174,7 +207,7 @@ export default function Formulario() {
             />
           </Form.Item>
           <Form.Item
-            label="Compañía:"
+            label="Empresa"
             name={["user", "empresa"]}
             style={{
               maxWidth: 600,
@@ -182,7 +215,7 @@ export default function Formulario() {
             rules={[
               {
                 required: true,
-                message: "Ingresa el nombre de tu compañía",
+                message: "Ingresa el nombre de tu empresa.",
               },
             ]}
           >
@@ -195,15 +228,11 @@ export default function Formulario() {
             rules={[
               {
                 required: true,
-                message: "El campo email es necesario",
+                message: "Ingresa un email válido",
               },
             ]}
           >
-            <Input
-              placeholder="info@example.com"
-              name="email"
-              type="text"
-            />
+            <Input placeholder="info@example.com" name="email" type="text" />
           </Form.Item>
           <Form.Item
             label="Tel. / Cel."
@@ -232,7 +261,7 @@ export default function Formulario() {
             rules={[
               {
                 required: true,
-                message: "Este campo es necesario.",
+                message: "Ingresa una descripción.",
               },
             ]}
           >
@@ -242,8 +271,33 @@ export default function Formulario() {
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
             style={{ justifyContent: "center", display: "flex" }}
             onChange={setCaptcha}
-          /> 
-          <Space />
+          />
+          <br />
+          {loading ? (
+            <Spin
+              indicator={<LoadingOutlined spin />}
+              style={{
+                justifyContent: "center",
+                display: "flex",
+                fontSize: "48",
+              }}
+              size="large"
+            />
+          ) : null}
+          {error ? (
+            <>
+              <Alert
+                message="Hubo un error al enviar datos del formulario."
+                type="error"
+              />
+            </>
+          ) : null}
+          {getCaptcha ? (
+            <>
+              <Alert message="Debes marcar el reCAPTCHA." type="warning" />
+            </>
+          ) : null}
+          <br />
           <Form.Item style={{ display: "flex", justifyContent: "center" }}>
             <Button
               className={styles.formSubmitButton}
