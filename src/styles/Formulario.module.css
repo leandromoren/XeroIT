@@ -71,6 +71,29 @@
   color: #ffffff !important;
 }
 
+.serviceCheckbox {
+  margin-right: 10px;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerTerms {
+  justify-content: center;
+  display: flex;
+}
+
+.terms {
+  color: rgb(47, 47, 245);
+}
+
+.terms:hover {
+  color: rgb(10, 10, 255);
+  text-decoration: underline;
+}
+
 @keyframes moveText {
   0% {
     transform: translateY(0);

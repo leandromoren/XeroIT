@@ -1,12 +1,19 @@
 "use client";
 import React, { FormEvent, useEffect, useState } from "react";
-import { Button, Form, Input, Select, InputNumber, Alert } from "antd";
+import {
+  Button,
+  Form,
+  Input,
+  Select,
+  InputNumber,
+  Alert,
+  Checkbox,
+} from "antd";
 import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
 import styles from "../styles/Formulario.module.css";
 import { TTexts } from "@/utils/textConstants";
 import ReCAPTCHA from "react-google-recaptcha";
-import Space from "./Space";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 
@@ -168,23 +175,28 @@ export default function Formulario() {
             </Select>
           </Form.Item>
           <Form.Item
-            label="Servicio:"
+            label="Servicios:"
             name={["user", "servicio"]}
-            style={{}}
             rules={[
               {
                 required: true,
-                message: "Selecciona un servicio",
+                message: "Selecciona al menos un servicio",
               },
             ]}
           >
-            <Select placeholder="Selecciona un servicio">
+            <div className={styles.checkboxGroup}>
               {data.map((service) => (
-                <Select.Option key={service.id} value={service.name}>
+                <Checkbox
+                  type="checkbox"
+                  name="servicios"
+                  className={styles.serviceCheckbox}
+                  key={service.id}
+                  value={service.name}
+                >
                   {service.name}
-                </Select.Option>
+                </Checkbox>
               ))}
-            </Select>
+            </div>
           </Form.Item>
           <Form.Item
             label="Nombre completo:"
@@ -266,6 +278,23 @@ export default function Formulario() {
             ]}
           >
             <Input.TextArea placeholder="Describe tu idea" name="description" />
+          </Form.Item>
+          <Form.Item
+            name="agreement"
+            valuePropName="checked"
+            className={styles.containerTerms}
+            rules={[
+              {
+                validator: (_, value) =>
+                  value
+                    ? Promise.resolve()
+                    : Promise.reject(new Error("Should accept agreement")),
+              },
+            ]}
+          >
+            <Checkbox>
+              He leído y acepto los <a href="" className={styles.terms}>términos</a> y <a href="" className={styles.terms}>condiciones</a>
+            </Checkbox>
           </Form.Item>
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
