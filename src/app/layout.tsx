@@ -9,14 +9,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <script
-          src="https://www.google.com/recaptcha/api.js?
-onload=onloadCallback
-&render=explicit
-&hl={{app.request.locale|default(defaultLang) }}"
-          async
-          defer
-        ></script>
         <Head />
         {children}
       </body>

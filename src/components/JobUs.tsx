@@ -3,11 +3,13 @@ import styles from "@/styles/JobUs.module.css";
 import { TTexts } from "@/utils/textConstants";
 
 export default function JobUs() {
+  const IMAGE_PATH = "images/handsJob.jpg"
+
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <img src={`images/image.png`} />
+          <img className={styles.image} src={IMAGE_PATH} />
         </div>
         <div className={styles.textContent}>
           <h2 className={styles.title}>{TTexts.mainTitleJob}</h2>

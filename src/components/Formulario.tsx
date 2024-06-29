@@ -16,9 +16,10 @@ import { TTexts } from "@/utils/textConstants";
 import ReCAPTCHA from "react-google-recaptcha";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
+import { ValidationError, useForm } from "@formspree/react";
+import axios from "axios";
 
-//TODO: si quiero ver los mails tengo que activar el formulario desde el mail y aparecen todos los submits
-//TODO: Reemplazar el Select de servicios por un checkbox para que pueda seleccionar mas de 1
+//TODO: HACER QUE EL FORMULARIO ENVIE LOS SERVICIOS Y EL PAIS
 export default function Formulario() {
   const [country, setCountries] = useState<
     {
@@ -34,7 +35,7 @@ export default function Formulario() {
     }[]
   >([]);
 
-  const [captcha, setCaptcha] = useState<string | null>();
+  //const [captcha, setCaptcha] = useState<string | null>();
 
   const [form] = Form.useForm();
 
@@ -42,62 +43,59 @@ export default function Formulario() {
 
   const [error, setError] = useState(false);
 
-  const [getCaptcha, setReCaptcha] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const validateFields = () => {
-    const fieldsToValidate = [
-      { key: ["user", "pais"], label: "País de residencia" },
-      { key: ["user", "servicio"], label: "Servicio" },
-      { key: ["user", "name"], label: "Nombre completo" },
-      { key: ["user", "empresa"], label: "Compañía" },
-      { key: ["user", "email"], label: "Email de contacto" },
-      { key: ["user", "cel"], label: "Tel. / Cel." },
-      { key: "TextArea", label: "Describe tu idea" },
-    ];
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
-    for (let field of fieldsToValidate) {
-      const value = form.getFieldValue(field.key);
-      if (!value || (Array.isArray(value) && value.length === 0)) {
-        return `${field.label} es requerido`;
-      }
-    }
+  //const [getCaptcha, setReCaptcha] = useState(false);
 
-    return null; // Todos los campos requeridos están llenos
+  const handleCheckboxChange = (checkedValues: string[]) => {
+    setSelectedServices(checkedValues);
   };
 
-  const onSubmit = async (event: FormEvent) => {
-    if (captcha) {
-      try {
-        const validationError = validateFields();
-        if (validationError) {
-          console.error(validationError);
-          return; // Evita activar el loading si los campos estan vacios
+  const handleClose = () => {
+    setSuccess(false);
+  };
+
+  const onFinish = async (values: any) => {
+    setLoading(true);
+    setError(false);
+
+    try {
+      const response = await axios.post(
+        "https://formspree.io/xwpeegww",
+        {
+          ...values,
+          servicio: selectedServices, // Incluimos los servicios seleccionados
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-        setReCaptcha(false);
-        setLoading(true);
-        const formData = new FormData(event.target as HTMLFormElement);
-        const response = await fetch(
-          "https://formsubmit.co/abe34ac3e8cea0be152e3379c9fe427d",
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
-        if (response.ok) {
-          setLoading(false);
-          form.resetFields();
-          window.location.reload();
-        } else {
-          setError(true);
-          console.error("Error submitting form:", response.status);
-        }
-      } catch (error) {
-        console.error("Error submitting form:", error);
+      );
+
+      if (response.status === 200) {
+        setSuccess(true);
+      } else {
+        setError(true);
       }
-    } else if (!captcha) {
-      setReCaptcha(true);
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      setError(true);
+    } finally {
+      setLoading(false);
     }
   };
+
+  // useEffect(() => {
+  //   if (state.succeeded) {
+  //     setSuccess(true);
+  //     form.resetFields();
+  //   } else if (state.errors) {
+  //     setError(true);
+  //   }
+  // }, [state]);
 
   useEffect(() => {
     setData(servicesData);
@@ -119,18 +117,29 @@ export default function Formulario() {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          dolore asperiores vero velit ducimus obcaecati molestiae rerum
-          doloribus sed, fugit alias voluptatum aut, error veniam sequi ab natus
-          fuga aliquid?
-        </p>
+        <p className={styles.text}>Completa el formulario</p>
+        <p className={styles.subText}>Habla con uno de nuestros expertos</p>
+        <br />
+        {/** TODO: agregar un video enseñando la empresa o explicando quienes somos */}
+        <div className={styles.videoWrapper}>
+          <iframe
+            width="960"
+            height="515"
+            src="https://www.youtube.com/embed/5_HpmV_izJk?si=7ehFRsB1IkLi697H"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       <div className={styles.formContainer}>
         <Form
+          onFinish={onFinish}
+          method="POST"
           form={form}
-          onSubmitCapture={onSubmit}
           className={styles.form}
           {...layout}
           name="wrap"
@@ -158,7 +167,7 @@ export default function Formulario() {
           </div>
           <Form.Item
             label="Pais de residencia:"
-            name={["user", "pais"]}
+            name="pais"
             rules={[
               {
                 required: true,
@@ -166,7 +175,7 @@ export default function Formulario() {
               },
             ]}
           >
-            <Select placeholder="Selecciona tu país">
+            <Select value={"pais"} placeholder="Selecciona tu país">
               {countries.map((country) => (
                 <Select.Option key={country.code} value={country.name}>
                   {country.name}
@@ -176,7 +185,8 @@ export default function Formulario() {
           </Form.Item>
           <Form.Item
             label="Servicios:"
-            name={["user", "servicio"]}
+            name="servicio"
+            id="itemCheckbox"
             rules={[
               {
                 required: true,
@@ -184,24 +194,26 @@ export default function Formulario() {
               },
             ]}
           >
-            <div className={styles.checkboxGroup}>
+            <Checkbox.Group
+              value={selectedServices}
+              onChange={handleCheckboxChange}
+              className={styles.checkboxGroup}
+            >
               {data.map((service) => (
                 <Checkbox
-                  type="checkbox"
-                  name="servicios"
-                  className={styles.serviceCheckbox}
-                  key={service.id}
+                  name="servicio"
                   value={service.name}
+                  key={service.id}
+                  className={styles.serviceCheckbox}
                 >
                   {service.name}
                 </Checkbox>
               ))}
-            </div>
+            </Checkbox.Group>
           </Form.Item>
           <Form.Item
             label="Nombre completo:"
-            name={["user", "name"]}
-            style={{}}
+            name="nombre"
             rules={[
               {
                 required: true,
@@ -212,7 +224,7 @@ export default function Formulario() {
             <Input
               placeholder="John Doe"
               type="text"
-              name="name"
+              name="nombre"
               style={{
                 maxWidth: 250,
               }}
@@ -220,7 +232,7 @@ export default function Formulario() {
           </Form.Item>
           <Form.Item
             label="Empresa"
-            name={["user", "empresa"]}
+            name="empresa"
             style={{
               maxWidth: 600,
             }}
@@ -235,8 +247,7 @@ export default function Formulario() {
           </Form.Item>
           <Form.Item
             label="Email de contacto:"
-            name={["user", "email"]}
-            style={{}}
+            name="email"
             rules={[
               {
                 required: true,
@@ -248,8 +259,7 @@ export default function Formulario() {
           </Form.Item>
           <Form.Item
             label="Tel. / Cel."
-            name={["user", "cel"]}
-            style={{}}
+            name="celular"
             rules={[
               {
                 required: true,
@@ -259,7 +269,7 @@ export default function Formulario() {
           >
             <InputNumber
               placeholder="+541234567890"
-              name="tel"
+              name="celular"
               type="number"
               style={{
                 minWidth: "70%",
@@ -268,8 +278,7 @@ export default function Formulario() {
           </Form.Item>
           <Form.Item
             label="Describe tu idea:"
-            name="TextArea"
-            style={{}}
+            name="descripcion"
             rules={[
               {
                 required: true,
@@ -277,10 +286,10 @@ export default function Formulario() {
               },
             ]}
           >
-            <Input.TextArea placeholder="Describe tu idea" name="description" />
+            <Input.TextArea placeholder="Describe tu idea" name="descripcion" />
           </Form.Item>
           <Form.Item
-            name="agreement"
+            name="condiciones"
             valuePropName="checked"
             className={styles.containerTerms}
             rules={[
@@ -288,42 +297,41 @@ export default function Formulario() {
                 validator: (_, value) =>
                   value
                     ? Promise.resolve()
-                    : Promise.reject(new Error("Should accept agreement")),
+                    : Promise.reject(
+                        new Error("Debes aceptar los términos y condiciones.")
+                      ),
               },
             ]}
           >
             <Checkbox>
-              He leído y acepto los <a href="" className={styles.terms}>términos</a> y <a href="" className={styles.terms}>condiciones</a>
+              He leído y acepto los{" "}
+              <a href="" className={styles.terms}>
+                términos
+              </a>{" "}
+              y{" "}
+              <a href="" className={styles.terms}>
+                condiciones
+              </a>
             </Checkbox>
           </Form.Item>
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-            style={{ justifyContent: "center", display: "flex" }}
-            onChange={setCaptcha}
-          />
+          <div className={styles.recaptchaContainer}></div>
           <br />
-          {loading ? (
-            <Spin
-              indicator={<LoadingOutlined spin />}
-              style={{
-                justifyContent: "center",
-                display: "flex",
-                fontSize: "48",
-              }}
-              size="large"
-            />
-          ) : null}
           {error ? (
             <>
               <Alert
-                message="Hubo un error al enviar datos del formulario."
+                message="Hubo un error al enviar los datos del formulario."
                 type="error"
               />
             </>
           ) : null}
-          {getCaptcha ? (
+          {success ? (
             <>
-              <Alert message="Debes marcar el reCAPTCHA." type="warning" />
+              <Alert
+                message="Formulario enviado exitosamente."
+                type="success"
+                closable
+                afterClose={handleClose}
+              />
             </>
           ) : null}
           <br />

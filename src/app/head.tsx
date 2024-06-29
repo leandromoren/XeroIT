@@ -3,7 +3,7 @@ export default function Head() {
   return (
     <header>
       <title>Qavala</title>
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <meta name="description" content="Consultora IT" />
       <link rel="icon" href="../assets/favicon.ico" />
       <link
