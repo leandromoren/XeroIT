@@ -1,5 +1,11 @@
+/*
+ TODO: HACER QUE LA PAGINA ACTUALICE LUEGO DE ENVIAR EL FORMULARIO
+ TODO: INTENTAR VOLVER A AGREGAR EL RECAPTCHA
+ TODO: ARREGLAR VALIDACIONS, CONTEMPLAR AGREGAR UN TIMEOUT PARA LOS ALERTS
+*/
+
 "use client";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Form,
@@ -13,13 +19,12 @@ import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
 import styles from "../styles/Formulario.module.css";
 import { TTexts } from "@/utils/textConstants";
-import ReCAPTCHA from "react-google-recaptcha";
-import { LoadingOutlined } from "@ant-design/icons";
-import { Spin } from "antd";
-import { ValidationError, useForm } from "@formspree/react";
+// import ReCAPTCHA from "react-google-recaptcha";
+// import { LoadingOutlined } from "@ant-design/icons";
+// import { Spin } from "antd";
+// import { ValidationError, useForm } from "@formspree/react";
 import axios from "axios";
 
-//TODO: HACER QUE EL FORMULARIO ENVIE LOS SERVICIOS Y EL PAIS
 export default function Formulario() {
   const [country, setCountries] = useState<
     {
