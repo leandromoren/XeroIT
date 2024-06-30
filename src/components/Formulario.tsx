@@ -1,9 +1,3 @@
-/*
- TODO: HACER QUE LA PAGINA ACTUALICE LUEGO DE ENVIAR EL FORMULARIO
- TODO: INTENTAR VOLVER A AGREGAR EL RECAPTCHA
- TODO: ARREGLAR VALIDACIONS, CONTEMPLAR AGREGAR UN TIMEOUT PARA LOS ALERTS
-*/
-
 "use client";
 import React, { useEffect, useState } from "react";
 import {
@@ -19,10 +13,6 @@ import countries from "../fixtures/countries.json";
 import servicesData from "../fixtures/servicesData.json";
 import styles from "../styles/Formulario.module.css";
 import { TTexts } from "@/utils/textConstants";
-// import ReCAPTCHA from "react-google-recaptcha";
-// import { LoadingOutlined } from "@ant-design/icons";
-// import { Spin } from "antd";
-// import { ValidationError, useForm } from "@formspree/react";
 import axios from "axios";
 import EmbedVideoYT from "./EmbedVideoYT";
 
@@ -41,8 +31,6 @@ export default function Formulario() {
     }[]
   >([]);
 
-  //const [captcha, setCaptcha] = useState<string | null>();
-
   const [form] = Form.useForm();
 
   const [loading, setLoading] = useState(false);
@@ -52,8 +40,6 @@ export default function Formulario() {
   const [success, setSuccess] = useState(false);
 
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-
-  //const [getCaptcha, setReCaptcha] = useState(false);
 
   const handleCheckboxChange = (checkedValues: string[]) => {
     setSelectedServices(checkedValues);
@@ -66,13 +52,13 @@ export default function Formulario() {
   const onFinish = async (values: any) => {
     setLoading(true);
     setError(false);
-
+    
     try {
       const response = await axios.post(
         "https://formspree.io/xwpeegww",
         {
           ...values,
-          servicio: selectedServices, // Incluimos los servicios seleccionados
+          servicio: selectedServices,
         },
         {
           headers: {
@@ -80,11 +66,10 @@ export default function Formulario() {
           },
         }
       );
-
       if (response.status === 200) {
         setSuccess(true);
         form.resetFields();
-        window.location.reload
+        window.location.reload()
       } else {
         setError(true);
       }
@@ -96,14 +81,6 @@ export default function Formulario() {
     }
   };
 
-  // useEffect(() => {
-  //   if (state.succeeded) {
-  //     setSuccess(true);
-  //     form.resetFields();
-  //   } else if (state.errors) {
-  //     setError(true);
-  //   }
-  // }, [state]);
 
   useEffect(() => {
     setData(servicesData);

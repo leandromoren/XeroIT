@@ -9,33 +9,11 @@
   overflow-x: hidden; /* Ocultar cualquier desbordamiento horizontal */
 }
 
-.textContainer, .formContainer {
+.formContainer {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 10px;
-}
-
-.textContainer {
-  text-align: center;
-}
-
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-  height: 0;
-  overflow: hidden;
-  width: 100%;
-  background: #000;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
 }
 
 @media (min-width: 768px) {
@@ -43,8 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
-
-  .textContainer, .formContainer {
+  .formContainer {
     max-width: 45%;
   }
 }
@@ -54,7 +31,7 @@
     padding: 10px;
   }
 
-  .textContainer, .formContainer {
+  .formContainer {
     width: 100%;
     padding: 0 10px;
   }
@@ -86,14 +63,6 @@
   .formItem .ant-checkbox-group {
     width: 100%;
   }
-}
-
-.recaptchaContainer {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  transform: scale(0.75); /* Ajusta el valor de escala según sea necesario */
-  transform-origin: 0 0;
 }
 
 .form {
@@ -176,19 +145,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-
-  .textContainer {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .text {
-    margin-bottom: 20px;
-    text-align: center;
-    max-width: 80%;
   }
 
   .formContainer {
