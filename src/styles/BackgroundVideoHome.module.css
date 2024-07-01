@@ -58,7 +58,7 @@
 
 .strongText {
   color: #03e100;
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", "sans serif";
 }
 
 .content h1 {
@@ -66,7 +66,8 @@
   line-height: 1.2em;
   font-weight: 600;
   color: #fff;
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", "sans serif";
+
 }
 
 .content p {
@@ -74,7 +75,7 @@
   line-height: 1.5em;
   margin-top: 20px;
   color: #fff;
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", "sans serif";
   font-weight: 600;
 }
 

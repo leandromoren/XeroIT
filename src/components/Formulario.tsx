@@ -33,8 +33,6 @@ export default function Formulario() {
 
   const [form] = Form.useForm();
 
-  const [loading, setLoading] = useState(false);
-
   const [error, setError] = useState(false);
 
   const [success, setSuccess] = useState(false);
@@ -50,9 +48,7 @@ export default function Formulario() {
   };
 
   const onFinish = async (values: any) => {
-    setLoading(true);
     setError(false);
-    
     try {
       const response = await axios.post(
         "https://formspree.io/xwpeegww",
@@ -69,18 +65,15 @@ export default function Formulario() {
       if (response.status === 200) {
         setSuccess(true);
         form.resetFields();
-        window.location.reload()
+        window.location.reload();
       } else {
         setError(true);
       }
     } catch (error) {
       console.error("Error submitting the form:", error);
       setError(true);
-    } finally {
-      setLoading(false);
     }
   };
-
 
   useEffect(() => {
     setData(servicesData);
@@ -118,14 +111,6 @@ export default function Formulario() {
             flex: 1,
           }}
           colon={false}
-          style={{
-            maxWidth: 650,
-            backgroundColor: "#f8f9fa",
-            padding: 30,
-            marginLeft: "auto",
-            fontSize: "16px",
-            border: "1px solid #03e100",
-          }}
           autoComplete="off"
         >
           <div className={styles.formHeader}>

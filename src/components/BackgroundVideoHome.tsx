@@ -8,10 +8,6 @@ export default function BackgroundVideoHome() {
   const videoCloudinary =
     "https://res.cloudinary.com/dq0japns7/video/upload/v1715927295/office1_jxbjfr.mp4";
 
-  const onClick = () => {
-    console.log("/asociado");
-  };
-  
   return (
     <div className={styles.videoContainer}>
       <video autoPlay loop muted className={styles.videoBackground}>
@@ -27,9 +23,9 @@ export default function BackgroundVideoHome() {
           </h1>
           <p className={styles.slideLeft}>{TTexts.descripcionHomeView}</p>
           <div className={styles.buttonContainer}>
-            <button onClick={onClick} className={styles.button}>
+            <a href="/nosotros" className={styles.button}>
               {TTexts.buttonHomeView}
-            </button>
+            </a>
           </div>
         </div>
       </div>

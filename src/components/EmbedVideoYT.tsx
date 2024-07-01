@@ -2,13 +2,13 @@
 import React from "react";
 import styles from "../styles/EmbedVideoYT.module.css";
 
+//TODO: agregar un video enseñando la empresa o explicando quienes somos
 export default function EmbedVideoYT() {
   return (
     <div className={styles.textContainer}>
       <p className={styles.text}>Completa el formulario</p>
       <p className={styles.subText}>Habla con uno de nuestros expertos</p>
       <br />
-      {/** TODO: agregar un video enseñando la empresa o explicando quienes somos */}
       <div className={styles.videoWrapper}>
         <iframe
           width="960"

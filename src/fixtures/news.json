@@ -1,27 +1,42 @@
 [
     {
-        "id":1,
-        "link":"blog",
-        "image": "https://www.deskidea.com/blog/wp-content/uploads/2023/05/ventajas-desventajas-oficina-abierta-997.png"
+        "id": 1,
+        "link": "http://example.com/news1",
+        "image": "../images/teamwork.jpg",
+        "title": "Título de la Noticia 1",
+        "description": "Descripción de la Noticia 1",
+        "date": "2024-07-01"
     },
     {
-        "id":2,
-        "link":"blog",
-        "image": "https://www.deskidea.com/blog/wp-content/uploads/2023/05/ventajas-desventajas-oficina-abierta-997.png"
+        "id": 2,
+        "link": "http://example.com/news2",
+        "image": "../images/teamwork.jpg",
+        "title": "Título de la Noticia 2",
+        "description": "Descripción de la Noticia 2",
+        "date": "2024-07-02"
     },
     {
-        "id":3,
-        "link":"blog",
-        "image": "https://www.deskidea.com/blog/wp-content/uploads/2023/05/ventajas-desventajas-oficina-abierta-997.png"
+        "id": 3,
+        "link": "http://example.com/news1",
+        "image": "../images/teamwork.jpg",
+        "title": "Título de la Noticia 3",
+        "description": "Descripción de la Noticia 3",
+        "date": "2024-07-01"
     },
     {
-        "id":4,
-        "link":"blog",
-        "image": "https://www.deskidea.com/blog/wp-content/uploads/2023/05/ventajas-desventajas-oficina-abierta-997.png"
+        "id": 4,
+        "link": "http://example.com/news1",
+        "image": "../images/teamwork.jpg",
+        "title": "Título de la Noticia 4",
+        "description": "Descripción de la Noticia 4",
+        "date": "2024-07-01"
     },
     {
-        "id":5,
-        "link":"blog",
-        "image": "https://www.deskidea.com/blog/wp-content/uploads/2023/05/ventajas-desventajas-oficina-abierta-997.png"
+        "id": 5,
+        "link": "http://example.com/news1",
+        "image": "../images/teamwork.jpg",
+        "title": "Título de la Noticia 5",
+        "description": "Descripción de la Noticia 5",
+        "date": "2024-07-01"
     }
 ]

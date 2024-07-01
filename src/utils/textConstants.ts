@@ -7,6 +7,9 @@ export class TTexts {
   public static buttonHomeView: String = `¿Por qu${TildesLetras.TILDE_E} asociarse con Qavala?`;
   public static clientSlideMainText: String = `Impulsando a m${TildesLetras.TILDE_A}s de 1200 de las empresas líderes del mundo`
 
+  //NEWS Texts
+  public static newsTitleMain: String = "¡Hecha un vistazo a nuestro blog y entérate de las novedades mas recientes!"
+
   // ContactView Texts
   public static titleContactView: String = "Get In Touch";
   public static textExplication1: String = "Fill up the form & our Team will get back to you within 12 hours.";
