@@ -109,7 +109,6 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  //const verde = useColorModeValue("#03E100", "gray.800");
   const negro = useColorModeValue("#0A0A0A", "white");
   const blanco = useColorModeValue("#f8f9fa", "gray.800");
 
@@ -161,7 +160,6 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
   const gris = useColorModeValue("#1F1F1F", "#1F1F1F");
@@ -173,7 +171,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: gris}}
+      _hover={{ bg: gris }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box backdropBlur={"10px"} backdropFilter={"blur(10px)"}>
@@ -206,10 +204,8 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 };
 
 const MobileNav = () => {
-  const verde = useColorModeValue("#03E100", "#03E100");
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
-  const gris = useColorModeValue("#FFFFFFEB", "#FFFFFFEB");
   return (
     <Stack bg={negro} p={4} display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
@@ -235,10 +231,7 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const verde = useColorModeValue("#03E100", "#03E100");
-  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
-  const gris = useColorModeValue("#FFFFFFEB", "#FFFFFFEB");
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -388,12 +381,12 @@ const NAV_ITEMS: Array<NavItem> = [
     children: [
       {
         label: "Programa de practicas",
-        href: '/empleo/programa-de-practicas',
+        href: "/empleo/programa-de-practicas",
       },
       {
         label: "Puestos vacantes",
-        href: '/empleo/vacantes'
-      }
-    ]
+        href: "/empleo/vacantes",
+      },
+    ],
   },
 ];

@@ -7,7 +7,7 @@ import Formulario from "@/components/Formulario";
 import News from "@/components/News";
 import BackgroundVideoHome from "@/components/BackgroundVideoHome";
 
-export default function HomeView() {
+export default function HomeVista() {
   return (
     <>
       <section>

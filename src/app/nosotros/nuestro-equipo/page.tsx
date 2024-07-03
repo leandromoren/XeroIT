@@ -1,14 +1,16 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
-import ServicesVista from "@/views/ServicesVista";
+import NuestroEquipoVista from "@/views/NuestroEquipoVista";
 import { ChakraProvider } from "@chakra-ui/react";
-export default function ServiciosView() {
+import React from "react";
+
+export default function NuestroEquipoPage() {
   return (
     <>
       <ChakraProvider>
         <Navbar />
-        <ServicesVista />
+        <NuestroEquipoVista />
         <Footer />
       </ChakraProvider>
     </>

@@ -1,0 +1,83 @@
+[
+    {
+        "ceo": [
+            {
+                "id": 1,
+                "nombre": "Leandro Moren",
+                "rol": "CEO - Founder",
+                "foto": "../images/perfil.jpg"
+            }
+        ],
+        "manager": [
+            {
+                "id": 1,
+                "nombre": "Franco Corvalan",
+                "rol": "Testing Lead",
+                "foto": "../images/team/francoCorvalan.jpeg",
+                "link": "https://www.linkedin.com/in/francocorvalan30/",
+                "team": [
+                    {
+                        "id": 1,
+                        "nombre": "Pato Piolo",
+                        "rol": "Backend Developer",
+                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "link": ""
+                    },
+                    {
+                        "id": 2,
+                        "nombre": "Pato Piolo",
+                        "rol": "Backend Developer",
+                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "link": ""
+                    },
+                    {
+                        "id": 3,
+                        "nombre": "Pato Piolo",
+                        "rol": "Backend Developer",
+                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "nombre": "Lionel Messi",
+                "rol": "Tech Lead developer",
+                "foto": "../images/team/messi.jpeg",
+                "link": "",
+                "team": [
+                    {
+                        "id": 1,
+                        "nombre": "Pato Piolo",
+                        "rol": "Backend Developer",
+                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "link": ""
+                    },
+                    {
+                        "id": 2,
+                        "nombre": "Pato Piolo",
+                        "rol": "Backend Developer",
+                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "nombre": "Cristiano Ronaldo",
+                "rol": "Product & Marketing",
+                "foto": "../images/team/cr7.jpeg",
+                "link": "",
+                "team": [
+                    {
+                        "id": 1,
+                        "nombre": "Pato Piolo",
+                        "rol": "Backend Developer",
+                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "link": ""
+                    }
+                ]
+            }
+        ]
+    }
+]

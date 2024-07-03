@@ -47,6 +47,10 @@ export default function Formulario() {
     setSuccess(false);
   };
 
+  const actualizarPagina = () => {
+    return window.location.reload() 
+  }
+
   const onFinish = async (values: any) => {
     setError(false);
     try {
@@ -65,7 +69,7 @@ export default function Formulario() {
       if (response.status === 200) {
         setSuccess(true);
         form.resetFields();
-        window.location.reload();
+        actualizarPagina();
       } else {
         setError(true);
       }
