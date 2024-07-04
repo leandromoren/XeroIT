@@ -1,10 +1,6 @@
 import { ratelimit } from "../../../lib/ratelimiter";
 import { NextRequest, NextResponse } from "next/server";
 
-export const config = {
-    matcher: '/'
-}
-
 export async function GET(req: NextRequest) {
     const ip = req.ip ?? "127.0.0.1";
     const { success, pending, limit, reset, remaining } = await ratelimit.limit(
