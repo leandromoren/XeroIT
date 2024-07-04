@@ -20,7 +20,7 @@ export default function ClientSlider() {
 
   return (
     <>
-      <h3 id="clientsId" className={styles.title}>
+      <h3 id={styles.clientsId} className={styles.title}>
         {TTexts.clientSlideMainText}
       </h3>
       <div className={styles.sliderContainer}>

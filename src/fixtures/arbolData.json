@@ -12,68 +12,84 @@
             {
                 "id": 1,
                 "nombre": "Franco Corvalan",
-                "rol": "Testing Lead",
+                "rol": "Testing",
                 "foto": "../images/team/francoCorvalan.jpeg",
                 "link": "https://www.linkedin.com/in/francocorvalan30/",
                 "team": [
                     {
                         "id": 1,
-                        "nombre": "Pato Piolo",
-                        "rol": "Backend Developer",
-                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
                         "link": ""
                     },
                     {
                         "id": 2,
-                        "nombre": "Pato Piolo",
-                        "rol": "Backend Developer",
-                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
                         "link": ""
                     },
                     {
                         "id": 3,
-                        "nombre": "Pato Piolo",
-                        "rol": "Backend Developer",
-                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
                         "link": ""
                     }
                 ]
             },
             {
                 "id": 2,
-                "nombre": "Lionel Messi",
-                "rol": "Tech Lead developer",
-                "foto": "../images/team/messi.jpeg",
+                "nombre": "Uknown",
+                "rol": "Front-End",
+                "foto": "../images/team/sinFoto.png",
                 "link": "",
                 "team": [
                     {
                         "id": 1,
-                        "nombre": "Pato Piolo",
-                        "rol": "Backend Developer",
-                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
                         "link": ""
                     },
                     {
                         "id": 2,
-                        "nombre": "Pato Piolo",
-                        "rol": "Backend Developer",
-                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
                         "link": ""
                     }
                 ]
             },
             {
                 "id": 3,
-                "nombre": "Cristiano Ronaldo",
-                "rol": "Product & Marketing",
-                "foto": "../images/team/cr7.jpeg",
+                "nombre": "Uknown",
+                "rol": "Back-end",
+                "foto": "../images/team/sinFoto.png",
                 "link": "",
                 "team": [
                     {
                         "id": 1,
-                        "nombre": "Pato Piolo",
-                        "rol": "Backend Developer",
-                        "foto": "../images/team/francoCorvalan.jpeg",
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
+                        "link": ""
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "nombre": "Uknown",
+                "rol": "Diseño",
+                "foto": "../images/team/sinFoto.png",
+                "link": "",
+                "team": [
+                    {
+                        "id": 1,
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
                         "link": ""
                     }
                 ]

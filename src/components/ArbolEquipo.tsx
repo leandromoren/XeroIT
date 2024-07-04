@@ -17,7 +17,7 @@ export default function ArbolEquipo() {
     <>
       <div className={styles.containerText}>
         <h2 className={styles.title}>
-          <span>Quienes hacen posible</span> QAVALA
+          <span>Quienes hacen posible</span> QAVALA {new Date().getFullYear()}
         </h2>
       </div>
       <div className={styles.containerTree}>
