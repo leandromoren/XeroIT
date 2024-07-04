@@ -75,6 +75,13 @@
                         "rol": "Uknown",
                         "foto": "../images/team/sinFoto.png",
                         "link": ""
+                    },
+                    {
+                        "id": 2,
+                        "nombre": "Uknown",
+                        "rol": "Uknown",
+                        "foto": "../images/team/sinFoto.png",
+                        "link": ""
                     }
                 ]
             },
