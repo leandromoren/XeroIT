@@ -13,7 +13,7 @@ export default function Footer() {
 
   const [nosotros, setNosotros] = useState(nosotrosData);
 
-  const [publicaiones, setPublicaciones] = useState(publicacioneData);
+  const [publicaciones, setPublicaciones] = useState(publicacioneData);
 
   const [empleo, setEmpleo] = useState(empleoData);
 
@@ -50,7 +50,7 @@ export default function Footer() {
         <div className={styles.footerColumn}>
           <h3>Publicaciones</h3>
           <ul>
-            {publicaiones.map((e) => (
+            {publicaciones.map((e) => (
               <li key={e.id}>
                 <a href={e.href}>{e.name}</a>
               </li>
@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <p>©2024 Getronics</p>
+        <p>©2024 Qavala</p>
         <div className={styles.footerBottomRight}>
           <a href="/politica-de-privacidad">Política de privacidad</a> ·
           <a href="/certificaciones">Certificaciones</a> ·
