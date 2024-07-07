@@ -17,19 +17,9 @@ import axios from "axios";
 import EmbedVideoYT from "./EmbedVideoYT";
 
 export default function Formulario() {
-  const [country, setCountries] = useState<
-    {
-      code: string;
-      name: string;
-    }[]
-  >([]);
+  const [country, setCountries] = useState(countries)
 
-  const [data, setData] = useState<
-    {
-      id: number;
-      name: string;
-    }[]
-  >([]);
+  const [data, setData] = useState(servicesData)
 
   const [form] = Form.useForm();
 
@@ -48,7 +38,7 @@ export default function Formulario() {
   };
 
   const actualizarPagina = () => {
-    return window.location.reload() 
+    return window.location.reload();
   }
 
   const onFinish = async (values: any) => {
@@ -132,9 +122,9 @@ export default function Formulario() {
             ]}
           >
             <Select value={"pais"} placeholder="Selecciona tu país">
-              {countries.map((country) => (
-                <Select.Option key={country.code} value={country.name}>
-                  {country.name}
+              {country.map((c) => (
+                <Select.Option key={c.code} value={c.name}>
+                  {c.name}
                 </Select.Option>
               ))}
             </Select>

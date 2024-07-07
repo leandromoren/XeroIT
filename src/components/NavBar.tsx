@@ -120,7 +120,6 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={"bold"}
                 fontFamily={'"Heebo", sans-serif'}
@@ -305,7 +304,6 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Servicios",
-    href: "/servicios",
     children: [
       {
         label: "Software testing",
@@ -336,7 +334,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Nosotros",
-    href: "/nosotros",
     children: [
       {
         label: "Nuestro equipo",
@@ -361,7 +358,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Publicaciones",
-    href: "/publicaciones",
     children: [
       {
         label: "Historia de clientes",
@@ -377,7 +373,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Empleo",
-    href: "/empleo",
     children: [
       {
         label: "Programa de practicas",

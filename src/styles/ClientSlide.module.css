@@ -1,13 +1,6 @@
-.sliderContainer {
-  padding: 100px;
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
-  background-color: #f8f9fa;
-}
-
 .title {
   text-align: center;
+  background-color: #ffffff;
   width: auto;
   font-size: 40px;
   font-family: "Ubuntu", sans-serif;
@@ -15,41 +8,26 @@
   margin-top: 10vh;
 }
 
-.logosContainer {
-  display: flex;
-  align-items: center;
-  width: 200%;
-  animation: slide 20s linear infinite;
-  animation-direction: alternate;
+.container {
+  padding: 40px;
+  background-color: #ffffff;
+  padding-bottom: 40px;
 }
 
-.line {
-  margin-top: 50px;
-  border: 1px solid #e2e2e2;
+.image {
   width: 100%;
+  max-height: 90px;
+  object-fit: scale-down;
+  padding-bottom: 20px;
 }
 
-.logoItem {
-  flex: 0 0 auto;
-  margin-right: 150px;
+.stadisticsContainer {
+  border-top: 1px solid #333;
+  padding-top: 20px;
 }
-
-.logoItem img {
-  height: 50px;
-}
-
 
 @media (min-width: 320px) and (max-width: 640px) {
   .title {
     font-size: 20px !important;
-  }
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }

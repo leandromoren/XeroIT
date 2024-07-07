@@ -5,7 +5,7 @@ import HomeView from "@/app/inicio/page";
 export default function Home() {
   return (
     <html lang="es">
-      <body style={{ backgroundColor: "#f8f9fa" }}>
+      <body style={{ backgroundColor: "#fff" }}>
         <ChakraProvider>
           <div>
             <HomeView />

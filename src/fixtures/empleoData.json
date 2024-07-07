@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Trabaja con nosotros",
+        "href": "/empleo/trabaja-con-nosotros"
+    },
+    {
+        "id": 2,
+        "name": "Sube tu CV",
+        "href": "/empleo/subir-curriculum"
+    },
+    {
+        "id": 3,
+        "name": "Pasantía",
+        "href": "/empleo/pasantía"
+    }
+]

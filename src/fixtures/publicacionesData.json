@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Noticias",
+        "href": "/publicaciones/noticias"
+    },
+    {
+        "id": 2,
+        "name": "Historias de clientes",
+        "href": "/publicaciones/historias-de-clientes"
+    },
+    {
+        "id": 3,
+        "name": "Eventos",
+        "href": "/publicaciones/eventos"
+    },
+    {
+        "id": 4,
+        "name": "Blog",
+        "href": "/publicaciones/blog"
+    }
+]

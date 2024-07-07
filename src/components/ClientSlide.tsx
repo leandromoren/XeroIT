@@ -4,47 +4,49 @@ import clientsData from "../fixtures/clientsData.json";
 import styles from "../styles/ClientSlide.module.css";
 import { TTexts } from "../utils/textConstants";
 import LowStadistics from "./LowStadistics";
+import { Carousel } from "antd";
 
 export default function ClientSlider() {
-  const [data, setData] = useState<
-    {
-      id: number;
-      nombre: string;
-      logo: string;
-    }[]
-  >([]);
+  const [data, setData] = useState(clientsData);
 
   useEffect(() => {
     setData(clientsData);
   }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <>
       <h3 id={styles.clientsId} className={styles.title}>
         {TTexts.clientSlideMainText}
       </h3>
-      <div className={styles.sliderContainer}>
-        <div className={styles.logosContainer}>
-          {clientsData.map((client) => (
-            <div key={client.id} className={styles.logoItem}>
-              <img
-                src={`/${process.env.PUBLIC_URL}/${client.logo}`}
-                alt={client.nombre}
-              />
+      <div className={styles.container}>
+        <Carousel {...settings} autoplay className={styles.carouselMain}>
+          {data.map((n) => (
+            <div key={n.id} className={styles.carouselItem}>
+              <img className={styles.image} src={n.logo} alt={n.logo} />
             </div>
           ))}
-          {/* Repetimos los logos para que den la vuelta */}
-          {clientsData.map((client) => (
-            <div key={client.id + "repeat"} className={styles.logoItem}>
-              <img
-                src={`/${process.env.PUBLIC_URL}/${client.logo}`}
-                alt={client.nombre}
-              />
-            </div>
-          ))}
+        </Carousel>
+        <div className={styles.stadisticsContainer}>
+          <LowStadistics />
         </div>
-        <hr className={styles.line} />
-        <LowStadistics />
       </div>
     </>
   );

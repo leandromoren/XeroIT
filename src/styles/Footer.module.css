@@ -1,176 +1,137 @@
+/* Footer.module.css */
+
 .footer {
-  background-color: #0a0a0a;
+  background-color: #171818;
   color: #fff;
-  padding: 80px 0;
-  font-family: Arial, sans-serif;
+  padding: 40px 20px;
 }
 
 .footerContent {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-around;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
-.footerInfo {
-  flex-basis: 25%;
-  margin-right: 30px;
+.footerColumn {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
 }
 
-.footerLogo {
-  max-width: 180px;
-  font-size: 40px;
-  color: #03e100;
-  font-family: 'ubuntu', sans-serif;
+.footerColumn h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
-.footerText {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-top: 25px;
-}
-
-.footerText p {
-  font-family: 'ubuntu', sans-serif;
-}
-
-.footerSocial {
-  margin-top: 25px;
-}
-
-.footerSocial span {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.footerSocial a {
-  display: inline-block;
-  margin-right: 15px;
-  color: #fff;
-  font-size: 20px;
-  transition: color 0.3s;
-}
-
-.footerSocial a:hover {
-  color: #03e100;
-}
-
-.footerLinks {
-  flex-basis: 25%;
-}
-
-.footerLinksHeading h3 {
-  font-size: 20px;
-  margin-bottom: 22px;
-}
-
-.footerLinks ul {
+.footerColumn ul {
   list-style: none;
   padding: 0;
 }
 
-.footerLinks ul li {
-  margin-bottom: 12px;
+.footerColumn li {
+  margin: 5px 0;
 }
 
-.footerLinks ul li a {
-  color: #fff;
+.footerColumn a {
+  color: #00ff00; /* Color verde para los enlaces */
   text-decoration: none;
-  font-size: 15px;
-  transition: color 0.3s;
 }
 
-.footerLinks ul li a:hover {
-  color: #03e100;
-}
-
-.footerSubscribe {
-  flex-basis: 25%;
-  max-width: 100%;
-}
-
-.footerSubscribeHeading h3 {
-  font-size: 20px;
-  margin-bottom: 22px;
-}
-
-.footerSubscribeText {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 22px;
-}
-
-.footerSubscribeForm input {
-  width: 70%;
-  padding: 12px;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  font-size: 15px;
-}
-
-.footerSubscribeForm button {
-  width: 30%;
-  padding: 12px;
-  background-color: #03e100;
-  color: #fff;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: "ubuntu", sans-serif;
-}
-
-.footerSubscribeForm button:hover {
-  background-color: #0056b3;
+.footerColumn a:hover {
+  text-decoration: underline;
 }
 
 .footerBottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
-  padding-top: 25px;
   border-top: 1px solid #444;
+  padding-top: 10px;
   max-width: 1200px;
-  margin: 50px auto 0;
+  margin: 20px auto 0 auto;
+  flex-wrap: wrap;
 }
 
-.footerCopyright p {
-  font-size: 15px;
-  color: #aaa;
-}
-
-.footerCopyright a {
-  color: #03e100;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footerCopyright a:hover {
-  color: #fff;
-}
-
-.footerMenu ul {
-  list-style: none;
+.footerBottomLeft,
+.footerBottomRight {
   display: flex;
-  padding: 0;
+  align-items: center;
 }
 
-.footerMenu ul li {
-  margin-left: 25px;
+.footerBottomLeft {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
-.footerMenu ul li a {
-  color: #aaa;
+.footerBottomRight {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footerBottomLeft img {
+  max-width: 50px; /* Ajusta el tamaño del logo según sea necesario */
+  margin-right: 10px;
+}
+
+.footerBottomLeft p {
+  margin: 0;
+}
+
+.footerBottomRight a {
+  color: #00ff00;
   text-decoration: none;
-  font-size: 15px;
-  transition: color 0.3s;
+  margin: 0 5px;
 }
 
-.footerMenu ul li a:hover {
+.footerBottomRight a:hover {
+  text-decoration: underline;
+}
+
+.footerSocial {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.footerSocial a {
   color: #fff;
+  font-size: 1.5em;
+  margin: 0 10px;
+}
+
+.footerSocial a:hover {
+  color: #00ff00;
+}
+
+.footerBottom p {
+  margin: 10px 0 0 0;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footerBottomLeft,
+  .footerBottomRight {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  .footerBottomRight {
+    flex-direction: column;
+    align-items: center;
+  }
 }
