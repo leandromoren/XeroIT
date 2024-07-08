@@ -7,6 +7,7 @@ import empleoData from "../fixtures/empleoData.json";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
+  //TODO: Crear un linkedin para qavala
   const linkedinQavala: string = "https://linkedin.com/in/leandromoren";
 
   const [servicios, setServicios] = useState(servicesData);
@@ -77,7 +78,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <p>©2024 Qavala</p>
+        <p>&copy;2024 Qavala</p>
         <div className={styles.footerBottomRight}>
           <a href="/politica-de-privacidad">Política de privacidad</a> ·
           <a href="/certificaciones">Certificaciones</a> ·

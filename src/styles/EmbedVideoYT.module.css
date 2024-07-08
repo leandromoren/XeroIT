@@ -3,11 +3,13 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Iosevka";
+  letter-spacing: -2px;
 }
 
-.textContainer {
-  text-align: center;
-}
 
 .videoWrapper {
   position: relative;

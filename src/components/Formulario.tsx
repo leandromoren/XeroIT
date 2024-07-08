@@ -15,6 +15,7 @@ import styles from "../styles/Formulario.module.css";
 import { TTexts } from "@/utils/textConstants";
 import axios from "axios";
 import EmbedVideoYT from "./EmbedVideoYT";
+import { Mentions } from 'antd';
 
 export default function Formulario() {
   const [country, setCountries] = useState(countries)
@@ -232,7 +233,11 @@ export default function Formulario() {
               },
             ]}
           >
-            <Input.TextArea placeholder="Describe tu idea" name="descripcion" />
+            <Mentions 
+              placeholder="Describe tu idea" 
+              allowClear 
+              rows={3} 
+            />
           </Form.Item>
           <Form.Item
             name="condiciones"
