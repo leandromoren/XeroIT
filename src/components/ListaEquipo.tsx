@@ -6,6 +6,7 @@ import { Avatar, Card, Col, Input, Row, Button } from "antd";
 
 export default function ListaEquipo() {
   const [data, setData] = useState(teamData);
+  
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
