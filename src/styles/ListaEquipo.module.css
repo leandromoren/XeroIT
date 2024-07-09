@@ -1,89 +1,30 @@
 .containerText {
   text-align: center;
-  padding: 10px;
-  font-size: 30px;
-  font-weight: 700;
-  font-family: "SF Mono";
-  color: #03e100;
+  margin-bottom: 50px;
 }
 
-.containerText > h2 > span {
-  color: #0a0a0a;
-}
-
-.listaContainer {
-  max-width: 90%;
-  max-height: 65vh;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fcfcfc;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-
-@media (min-width: 576px) {
-  .listaContainer {
-    max-width: 80%;
-  }
-}
-
-@media (min-width: 768px) {
-  .listaContainer {
-    max-width: 70%;
-  }
-}
-
-@media (min-width: 992px) {
-  .listaContainer {
-    max-width: 60%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .listaContainer {
-    max-width: 50%;
-  }
-}
-
-@media (min-width: 1400px) {
-  .listaContainer {
-    max-width: 40%;
-  }
-}
-
-.listaItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.listaItemMeta {
-  flex: 1;
-  margin-left: 10px;
-}
-
-.listaItemMeta a {
-  font-size: 16px;
-  font-weight: bold;
+.title {
+  font-size: 44px;
+  margin-top: 20px;
   color: #333;
 }
 
-.listaItemMeta span {
-  display: block;
-  font-size: 14px;
-  color: #666;
+.listaContainer {
+  padding: 20px;
 }
 
-.edadData {
-  font-size: 14px;
+.goToLinkendinTag {
   color: #03e100;
-  font-weight: 600;
+  text-decoration: underline;
 }
 
-.goToLinkedinTag {
-  color: #d6d6d6 !important;
-  font-size: 40px;
+.goToLinkendinTag:hover {
+  color: #04ad01;
+  text-decoration: underline;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }

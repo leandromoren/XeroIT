@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-       "nombre": "Cristiano",
+        "nombre": "Cristiano",
         "apellido": "Ronaldo",
         "edad": "39",
         "perfil_foto": "../images/team/cr7.jpeg",

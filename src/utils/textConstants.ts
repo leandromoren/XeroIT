@@ -26,6 +26,13 @@ export class TTexts {
   // Contact form texts
   public static pTextForm: String = "Por favor, completa este formulario para que podamos conocer los detalles de tu proyecto. Nuestro equipo de expertos analizará tu idea y te contactará para diseñar una solución a tu medida. ¡No dejes pasar esta oportunidad de llevar tu proyecto al siguiente nivel!"
   
+  // nuestro equipo texts
+  public static introTextTeamView: String = "En nuestra empresa, valoramos la colaboración y el espíritu de equipo como pilares fundamentales de nuestro éxito, Cada uno de nosotros aporta una mezcla única de habilidades, experiencia y pasión, pero lo que realmente nos diferencia es nuestra dedicación mutua y el amigable ambiente en el que trabajamos."
+  public static introTextTeamView2: String = "Somos más que colegas; somos un equipo unidos por un objetivo común: ofrecer lo mejore a nuestros clientes. Nuesta cultura de apoyo y respeto nos permite superar cualquier desafío y celebrar cada logro juntos."
+  public static strongIntroTextTeamView: String = "Te invitamos a conocer a las personas que están detrás de nuestros proyectos, quienes con su talento y compromiso, hacen posible que cada día sea una oportunidad para innovar y crecer."
+  public static nuestraMisionTextTeamView: String = "En Qavala, nuestra misión es empoderar a las organizaciones a través de soluciones tecnológicas innovadoras y personalizadas. Nos dedicamos a entender las necesidades únicas de cada cliente y a proporcionar servicios de consultoría que no solo aborden sus desafíos actuales, sino que también impulsen su crecimiento y éxito futuros."
+  public static nuestraMisionTextTeamView2: String = "Nos esforzamos por ser un socio de confianza para nuestros clientes, ofreciendo asesoramiento experto y apoyo continuo. Nuestra pasión por la texnología, combinada con un enfoque centrado en el cliente, nos permite crear estrategias efectivas y soluciones prácticas que transforman la manera en que las empresas operan y se adaptan en un entorno digital en constante evolución."
+
   // Footer TEXTS
   public static subscribeText: String = `Suscr${TildesLetras.TILDE_I}bete para obtener las ultimas novedades sobre QAVALA`
 }

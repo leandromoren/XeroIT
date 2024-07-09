@@ -1,0 +1,29 @@
+.containerTypo {
+  padding: 20px;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cecece;
+  min-width: 20%;
+  padding: 10px;
+}
+
+.contactName {
+  margin: 0; 
+  padding-bottom: 0px; 
+  font-size: 32px;
+}
+
+.contactRol {
+  margin: 0;
+  padding-bottom: 0px;
+}
+
+.email {
+  margin: 0;
+  color: #03e100;
+  font-weight: 600;
+  text-decoration: underline;
+}

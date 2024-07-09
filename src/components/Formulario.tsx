@@ -72,9 +72,6 @@ export default function Formulario() {
 
   useEffect(() => {
     setData(servicesData);
-  }, []);
-
-  useEffect(() => {
     setCountries(countries);
   }, []);
 
@@ -256,11 +253,11 @@ export default function Formulario() {
           >
             <Checkbox>
               He leído y acepto los{" "}
-              <a href="" className={styles.terms}>
+              <a href="/terminos-y-condiciones" className={styles.terms}>
                 términos
               </a>{" "}
               y{" "}
-              <a href="" className={styles.terms}>
+              <a href="/terminos-y-condiciones" className={styles.terms}>
                 condiciones
               </a>
             </Checkbox>
