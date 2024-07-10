@@ -3,8 +3,9 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
 import NuestroEquipoVista from "@/views/NuestroEquipoVista";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Spin } from "antd";
+import { Space, Spin } from "antd";
 import React, { useEffect, useState } from "react";
+import { LoadingOutlined } from "@ant-design/icons";
 
 export default function NuestroEquipoPage() {
   const [loading, setLoading] = useState(true);
@@ -29,7 +30,12 @@ export default function NuestroEquipoPage() {
               height: 100,
             }}
           >
-            <Spin size="large" />
+            <Space>
+              <Spin
+                indicator={<LoadingOutlined spin />}
+                size="large"
+              />
+            </Space>
           </div>
         </>
       ) : (
