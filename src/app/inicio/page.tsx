@@ -1,3 +1,4 @@
+"use client"
 import Navbar from "@/components/NavBar";
 import HomeView from "@/views/HomeVista";
 import { ChakraProvider } from "@chakra-ui/react";
