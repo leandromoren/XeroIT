@@ -1,18 +1,19 @@
 "use client"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/NavBar"
-import PoliticasDePrivacidadVista from "@/views/PoliticasDePrivacidadVista"
+import NuestrasOficinasVista from "@/views/NuestrasOficinasVista"
 import { ChakraProvider } from "@chakra-ui/react"
 import React from "react"
 
-export default function PoliticaDePrivacidadPage() {
+
+export default function NuestrasOficiasPage() {
     return (
         <>
-           <ChakraProvider>
+            <ChakraProvider>
                 <Navbar />
-                <PoliticasDePrivacidadVista />
+                <NuestrasOficinasVista />
                 <Footer />
-           </ChakraProvider>
+            </ChakraProvider>
         </>
     )
 }

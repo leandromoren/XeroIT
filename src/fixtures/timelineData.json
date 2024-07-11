@@ -1,30 +1,8 @@
 [
     {
         "id": 1,
-        "estado": "Activo",
-        "servicio": "Reclutamiento",
-        "descripcion": "Buscamos los mejores talentos del mercado para tu negocio" ,
-        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbK-rUyDOnvuIJd70HKTPJEcrWS0L5w1So2A&s"
-    },
-    {
-        "id": 2,
-        "estado": "Activo",
-        "servicio": "Desarrollo",
-        "descripcion": "Desarrollamos tu equipo de trabajo",
-        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWTWHPiuF4Dw7-f7oMXp_qBGyAV8G4DAAzuw&s"
-    },
-    {
-        "id": 3,
-        "estado": "Activo",
-        "servicio": "Gestion",
-        "descripcion": "Gestionamos tu equipo de trabajo",
-        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2IpfpCmtUvZhSXjCOO69ABt_DdoICNUJpUw&s"
-    },
-    {
-        "id": 4,
-        "estado": "Activo",
-        "servicio": "QA Testing",
-        "descripcion": "Protegemos tu informacion y tu equipo de trabajo",
-        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7yT1k_ov55yDlCtAhiiXuTrzqwhMshRoqg&s"
+        "anio": "2024",
+        "etapa": "Web y modelo de negocio",
+        "descripcion": "Sé comenzó a desarrollar la web de Qavala y establecer el modelo de negocio de lo que vendría a ser la consultoría."
     }
 ]
