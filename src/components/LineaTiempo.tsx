@@ -18,7 +18,7 @@ export default function LineaTiempo() {
         </div>
         <ul className={styles.timeline}>
           {data.map((d) => (
-            <li className={styles.timelineitem}>
+            <li key={d.id} className={styles.timelineitem}>
               <div className={styles.timelinecontent}>
                 <h3 className={styles.timelinetitle}>{d.etapa}</h3>
                 <p className={styles.timelinedate}>{d.anio}</p>
