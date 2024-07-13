@@ -21,7 +21,7 @@ export default function LineaTiempo() {
             <li key={d.id} className={styles.timelineitem}>
               <div className={styles.timelinecontent}>
                 <h3 className={styles.timelinetitle}>{d.etapa}</h3>
-                <p className={styles.timelinedate}>{d.anio}</p>
+                <p className={styles.timelinedate}>{d.fecha}</p>
                 <p className={styles.timelinedescription}>
                   {d.descripcion}
                 </p>

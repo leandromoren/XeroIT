@@ -25,9 +25,6 @@ export default function HomeVista() {
       <section>
         <Formulario />
       </section>
-      <section>
-        <Footer />
-      </section>
     </>
   );
 }

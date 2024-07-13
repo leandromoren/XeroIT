@@ -1,11 +1,12 @@
 "use client"
 import React from "react";
 import Navbar from "@/components/NavBar";
-import HomeView from "@/views/HomeVista";
+import HomeVista from "@/views/HomeVista";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Space, Spin } from "antd";
 import { useEffect, useState } from "react";
 import { LoadingOutlined } from "@ant-design/icons";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -42,7 +43,8 @@ export default function HomePage() {
         <>
           <ChakraProvider>
             <Navbar />
-            <HomeView />
+            <HomeVista />
+            <Footer />
           </ChakraProvider>
         </>
       )}

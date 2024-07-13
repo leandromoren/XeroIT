@@ -2,19 +2,18 @@
 import styles from "../styles/Footer.module.css";
 import servicesData from "../fixtures/servicesData.json";
 import nosotrosData from "../fixtures/nosotrosData.json";
-import publicacioneData from "../fixtures/publicacionesData.json";
+import publicacionesData from "../fixtures/publicacionesData.json";
 import empleoData from "../fixtures/empleoData.json";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
-  //TODO: Crear un linkedin para qavala
   const linkedinQavala: string = "https://linkedin.com/in/leandromoren";
 
   const [servicios, setServicios] = useState(servicesData);
 
   const [nosotros, setNosotros] = useState(nosotrosData);
 
-  const [publicaciones, setPublicaciones] = useState(publicacioneData);
+  const [publicaciones, setPublicaciones] = useState(publicacionesData);
 
   const [empleo, setEmpleo] = useState(empleoData);
 
@@ -22,7 +21,7 @@ export default function Footer() {
     setServicios(servicesData);
     setNosotros(nosotrosData);
     setEmpleo(empleoData);
-    setPublicaciones(publicacioneData);
+    setPublicaciones(publicacionesData);
   });
 
   return (

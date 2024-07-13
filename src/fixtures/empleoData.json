@@ -11,7 +11,12 @@
     },
     {
         "id": 3,
-        "name": "Pasantía",
-        "href": "/empleo/pasantía"
+        "name": "Programa de prácticas",
+        "href": "/empleo/programa-de-practicas"
+    },
+    {
+        "id": 4,
+        "name": "Puestos vacantes",
+        "href": "/empleo/vacantes"
     }
 ]

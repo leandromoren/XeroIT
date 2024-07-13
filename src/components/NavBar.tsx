@@ -387,6 +387,14 @@ const NAV_ITEMS: Array<NavItem> = [
         label: "Puestos vacantes",
         href: "/empleo/vacantes",
       },
+      {
+        label: "Trabaja con nosotros",
+        href: "/empleo/trabaja-con-nosotros"
+      },
+      {
+        label: "Sube tu CV",
+        href: "/empleo/subir-curriculum"
+      }
     ],
   },
 ];
