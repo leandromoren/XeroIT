@@ -1,11 +1,13 @@
 "use client";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/NavBar";
-import NuestroEquipoVista from "@/views/NuestroEquipoVista";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Space, Spin } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { LoadingOutlined } from "@ant-design/icons";
+import ErrorBoundary from "@/components/ErrorBoundary";
+
+const Footer = lazy(() => import("@/components/Footer"));
+const Navbar = lazy(() => import("@/components/NavBar"));
+const NuestroEquipoVista = lazy(() => import("@/views/NuestroEquipoVista"));
 
 export default function NuestroEquipoPage() {
   const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ export default function NuestroEquipoPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -21,28 +23,42 @@ export default function NuestroEquipoPage() {
   return (
     <>
       {loading ? (
-        <>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: 100,
-            }}
-          >
-            <Space>
-              <Spin
-                indicator={<LoadingOutlined spin />}
-                size="large"
-              />
-            </Space>
-          </div>
-        </>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <Space>
+            <Spin indicator={<LoadingOutlined spin />} size="large" />
+          </Space>
+        </div>
       ) : (
         <ChakraProvider>
-          <Navbar />
-          <NuestroEquipoVista />
-          <Footer />
+          <ErrorBoundary>
+            <Suspense
+              fallback={
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100vh",
+                  }}
+                >
+                  <Space>
+                    <Spin indicator={<LoadingOutlined spin />} size="large" />
+                  </Space>
+                </div>
+              }
+            >
+              <Navbar />
+              <NuestroEquipoVista />
+              <Footer />
+            </Suspense>
+          </ErrorBoundary>
         </ChakraProvider>
       )}
     </>

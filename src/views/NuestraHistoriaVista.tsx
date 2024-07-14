@@ -5,6 +5,8 @@ import React from "react";
 
 export default function NuestrHistoriaVista() {
   //todo: revisar otras paginas de consultoras para ver que tienen en la seccion de nuestra historia
+  
+  
   return (
     <>
       <section>

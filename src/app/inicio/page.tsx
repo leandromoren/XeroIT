@@ -1,12 +1,14 @@
 "use client"
-import React from "react";
-import Navbar from "@/components/NavBar";
-import HomeVista from "@/views/HomeVista";
+import React, { lazy, Suspense } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Space, Spin } from "antd";
 import { useEffect, useState } from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import Footer from "@/components/Footer";
+import ErrorBoundary from "@/components/ErrorBoundary";
+
+const Footer = lazy(() => import("@/components/Footer"));
+const Navbar = lazy(() => import("@/components/NavBar"));
+const HomeVista = lazy(() => import("@/views/HomeVista"));
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -14,7 +16,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -22,31 +24,43 @@ export default function HomePage() {
   return (
     <>
       {loading ? (
-        <>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: 100,
-            }}
-          >
-            <Space>
-              <Spin
-                indicator={<LoadingOutlined spin />}
-                size="large"
-              />
-            </Space>
-          </div>
-        </>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <Space>
+            <Spin indicator={<LoadingOutlined spin />} size="large" />
+          </Space>
+        </div>
       ) : (
-        <>
-          <ChakraProvider>
-            <Navbar />
-            <HomeVista />
-            <Footer />
-          </ChakraProvider>
-        </>
+        <ChakraProvider>
+          <ErrorBoundary>
+            <Suspense
+              fallback={
+                <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100vh",
+                }}
+              >
+                <Space>
+                  <Spin indicator={<LoadingOutlined spin />} size="large" />
+                </Space>
+              </div>
+              }
+            >
+              <Navbar />
+              <HomeVista />
+              <Footer />
+            </Suspense>
+          </ErrorBoundary>
+        </ChakraProvider>
       )}
     </>
   );
