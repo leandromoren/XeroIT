@@ -4,13 +4,13 @@ import styles from "../styles/Comunidades.module.css";
 
 export default function Comunidades() {
   const linkedinQavala: string = "";
-  const pathOficinas: string = "";
+  const pathOficinas: string = "/nosotros/nuestras-oficinas";
 
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.iconcontainer}>
-        <i className='bx bxs-building-house' style={{fontSize: 40}}></i>
+        <i className="bx bxs-building-house" style={{fontSize: 40}}></i>
         </div>
         <div className={styles.content}>
           <h2>Our offices</h2>
@@ -18,7 +18,7 @@ export default function Comunidades() {
             Find where our more than 40 offices are based around the world
             (Europe, LATAM, APAC).
           </p>
-          <a href="#" className={styles.btn}>
+          <a href={pathOficinas} className={styles.btn}>
             Nuestras oficinas
           </a>
         </div>
@@ -30,10 +30,9 @@ export default function Comunidades() {
         <div className={styles.content}>
           <h2>Follow us</h2>
           <p>
-            If you don't want to miss our activity and events, you can connect
-            with Getronics on LinkedIn.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur quia quos inventore voluptatibus reiciendis eum sapiente dolor eveniet temporibus animi quod sint repellat labore numquam, eaque perspiciatis harum sed! Eum.
           </p>
-          <a href="#" className={styles.btn}>
+          <a href={linkedinQavala} className={styles.btn}>
             Linkedin
           </a>
         </div>
