@@ -1,16 +1,15 @@
-"use cliente";
+"use client";
 import styles from "@/styles/JobUs.module.css";
 import { TTexts } from "@/utils/textConstants";
 
 export default function JobUs() {
-  const IMAGE_PATH = "images/handsJob.jpg"
+  //todo corregir componente para que sea responsive
+  const IMAGE_PATH = "images/handsJob.jpg";
 
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.container}>
-        <div className={styles.imageContainer}>
-          <img className={styles.image} src={IMAGE_PATH} />
-        </div>
+        
         <div className={styles.textContent}>
           <h2 className={styles.title}>{TTexts.mainTitleJob}</h2>
           <strong className={styles.strongText}>{TTexts.strongTextJob}</strong>

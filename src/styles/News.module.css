@@ -17,13 +17,12 @@
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .carouselItem:last-child {
-  margin-right: 0; /* Elimina el margen derecho del último elemento */
+  margin-right: 0;
 }
 
 .image {
@@ -31,22 +30,27 @@
   height: auto;
   max-height: 700px;
   object-fit: scale-down;
+  border-radius: 10px;
 }
 
 .title {
   font-size: 1.2em;
   font-weight: bold;
   margin: 10px 0;
+  color: #fff;
+  text-align: center;
 }
 
 .description {
   font-size: 1em;
   margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
 }
 
 .date {
   font-size: 0.8em;
-  color: #666;
+  color: #fdfdfd;
   margin-bottom: 10px; /* Agregar margen inferior para separar del botón */
 }
 
@@ -61,6 +65,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: "JetBrains Mono", "Sans serif";
+  display: flex;
+  justify-content: center;
 }
 
 .button:hover {

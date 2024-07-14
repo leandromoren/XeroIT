@@ -46,9 +46,9 @@ export default function News() {
         {data.map((n) => (
           <div key={n.id} className={styles.carouselItem}>
             <img className={styles.image} src={n.image} alt={n.title} />
+            <div className={styles.date}>Publicado el: {n.date}</div>
             <div className={styles.title}>{n.title}</div>
             <div className={styles.description}>{n.description}</div>
-            <div className={styles.date}>Publicado el: {n.date}</div>
             <a href={n.link} className={styles.button}>
               Ver más
             </a>

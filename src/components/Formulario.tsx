@@ -86,7 +86,6 @@ export default function Formulario() {
 
   return (
     <div className={styles.container}>
-      <EmbedVideoYT />
       <div className={styles.formContainer}>
         <Form
           onFinish={onFinish}
