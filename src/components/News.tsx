@@ -6,23 +6,14 @@ import newsData from "../fixtures/news.json";
 import { TTexts } from "@/utils/textConstants";
 
 export default function News() {
-  const [data, setData] = useState<
-    {
-      id: number;
-      link: string;
-      image: string;
-      title: string;
-      description: string;
-      date: string;
-    }[]
-  >([]);
+  const [data, setData] = useState(newsData);
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [

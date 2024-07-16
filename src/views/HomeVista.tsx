@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Formulario from "@/components/Formulario";
 import News from "@/components/News";
 import BackgroundVideoHome from "@/components/BackgroundVideoHome";
+import Comunidades from "@/components/Comunidades";
 
 export default function HomeVista() {
   return (
@@ -17,7 +18,7 @@ export default function HomeVista() {
         <ClientSlide />
       </section>
       <section>
-        <News />
+       <Comunidades />
       </section>
       <section>
         <JobUs />

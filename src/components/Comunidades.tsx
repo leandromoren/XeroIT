@@ -13,10 +13,9 @@ export default function Comunidades() {
         <i className="bx bxs-building-house" style={{fontSize: 40}}></i>
         </div>
         <div className={styles.content}>
-          <h2>Our offices</h2>
+          <h2>Nuestras oficinas</h2>
           <p>
-            Find where our more than 40 offices are based around the world
-            (Europe, LATAM, APAC).
+           Donde se encuentra ubicada nuestra oficina (LATAM)
           </p>
           <a href={pathOficinas} className={styles.btn}>
             Nuestras oficinas
@@ -25,12 +24,12 @@ export default function Comunidades() {
       </div>
       <div className={styles.card}>
         <div className={styles.iconcontainer}>
-          <i className="bx bxl-linkedin-square" style={{fontSize: 40}}></i>
+          <i className="bx bxl-linkedin-square" style={{fontSize: 40, color: "#0077B5"}}></i>
         </div>
         <div className={styles.content}>
-          <h2>Follow us</h2>
+          <h2>Seguínos en redes sociales</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur quia quos inventore voluptatibus reiciendis eum sapiente dolor eveniet temporibus animi quod sint repellat labore numquam, eaque perspiciatis harum sed! Eum.
+          Si no quieres perderte nuestra actividad y eventos, puedes seguirnos en LinkedIn.
           </p>
           <a href={linkedinQavala} className={styles.btn}>
             Linkedin
