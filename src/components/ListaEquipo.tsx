@@ -69,6 +69,7 @@ export default function ListaEquipo() {
                   <div className={styles.cardContent}>
                     <div className={styles.name}>
                       <a
+                        target="_blank"
                         href={item.linkedin}
                         className={styles.goToLinkendinTag}
                       >
