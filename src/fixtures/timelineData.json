@@ -1,8 +1,14 @@
 [
     {
         "id": 1,
-        "fecha": "16 mayo - 2024",
+        "fecha": "Mayo 16 - 2024",
         "etapa": "Web y modelo de negocio",
         "descripcion": "Sé comenzó a desarrollar la web de Qavala y establecer el modelo de negocio de lo que vendría a ser la consultoría."
+    },
+    {
+        "id": 2,
+        "fecha": "Julio 17 - 2024",
+        "etapa": "Marketing y logística",
+        "descripcion": "Sé comenzó a desarrollar el planeamiento de las estrategias de Marketing y logística comercial."
     }
 ]

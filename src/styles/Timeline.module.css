@@ -16,7 +16,7 @@
   font-size: 32px;
   font-weight: 700;
   margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Inconsolata";
 }
 
 .timeline {
@@ -44,6 +44,16 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.timelineitem:after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 10px;
+  top: 2px;
+}
+
 .timelinecontent {
   background-color: #f0f0f0;
   border-radius: 10px;
@@ -56,6 +66,7 @@
   margin-top: 0;
   font-size: 20px;
   font-weight: 700;
+  font-family: "Gesit mono";
 }
 
 .timelinedate {
@@ -63,10 +74,12 @@
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 10px;
+  font-family: "Gesit mono";
 }
 
 .timelinedescription {
   color: #333;
   font-size: 16px;
   line-height: 1.5;
+  font-family: "Gesit mono";
 }

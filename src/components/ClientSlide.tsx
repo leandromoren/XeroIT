@@ -6,7 +6,7 @@ import { TTexts } from "../utils/textConstants";
 import LowStadistics from "./LowStadistics";
 import { Carousel } from "antd";
 
-export default function ClientSlider() {
+export default function ClientSlide() {
   const [data, setData] = useState(clientsData);
 
   useEffect(() => {

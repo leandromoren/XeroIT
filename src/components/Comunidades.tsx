@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../styles/Comunidades.module.css";
 
 export default function Comunidades() {
-  const linkedinQavala: string = "";
+  const linkedinQavala: string = "https://linkedin.com/in/leandromoren";
   const pathOficinas: string = "/nosotros/nuestras-oficinas";
 
   return (
