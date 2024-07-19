@@ -58,7 +58,7 @@ export default function Head() {
 
   return (
     <header>
-      <title>{obtenerTituloEnProduccion()}</title>
+      <title>{"Qavala - " + obtenerTituloEnProduccion()}</title>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
