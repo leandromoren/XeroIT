@@ -1,4 +1,17 @@
+"use client"
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
 export default function Head() {
+  const router = useRouter();
+  const [currentUrl, setCurrentUrl] = useState('');
+
+  useEffect(() => {
+    // Verificar si el objeto `window` existe antes de usarlo
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
   return (
     <header>
       <title>{obtenerTituloEnProduccion()}</title>
