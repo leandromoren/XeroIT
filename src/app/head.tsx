@@ -2,7 +2,7 @@
 export default function Head() {
   return (
     <header>
-      <title>{"Qavala - " + obtenerTituloEnProduccion()}</title>
+      <title>{"Qavala - " + obtenerTituloEnProduccion()?.toString()}</title>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
