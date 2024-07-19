@@ -2,9 +2,7 @@
 import "next-cloudinary/dist/cld-video-player.css";
 import ClientSlide from "@/components/ClientSlide";
 import JobUs from "@/components/JobUs";
-import Footer from "@/components/Footer";
 import Formulario from "@/components/Formulario";
-import News from "@/components/News";
 import BackgroundVideoHome from "@/components/BackgroundVideoHome";
 import Comunidades from "@/components/Comunidades";
 

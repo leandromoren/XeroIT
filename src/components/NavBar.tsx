@@ -351,7 +351,7 @@ const NAV_ITEMS: Array<NavItem> = [
         href: "/nosotros/nuestros-valores",
       },
       {
-        label: "Nuestras oficiinas",
+        label: "Nuestras oficinas",
         subLabel: "Oficinas de Qavala",
         href: "/nosotros/nuestras-oficinas",
       },
