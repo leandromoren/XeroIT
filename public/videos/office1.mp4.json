@@ -1,1 +1,9 @@
-{"status":"sourced","originalFilePath":"src\\images\\office1.mp4","provider":"mux","providerMetadata":{},"createdAt":1716262584650,"updatedAt":1716262584650,"size":6225321}
+{
+    "status": "sourced",
+    "originalFilePath": "src\\images\\office1.mp4",
+    "provider": "mux",
+    "providerMetadata": {},
+    "createdAt": 1716262584650,
+    "updatedAt": 1716262584650,
+    "size": 6225321
+}

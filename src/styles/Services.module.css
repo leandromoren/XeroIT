@@ -9,7 +9,7 @@
   padding-bottom: 55px;
   color: #0a0a0a;
   font-size: 40px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: '"Heebo", sans-serif';
 }
 
 .container .boxContainer {
@@ -50,7 +50,7 @@
   display: inline-block;
   background: #03e100;
   color: #0a0a0a;
-  font-family: "Ubuntu", sans-serif;
+  font-family: '"Heebo", sans-serif';
   font-size: 17px;
   border-radius: 4%;
   padding: 8px 25px;
@@ -62,7 +62,7 @@
   display: inline-block;
   background: #0a0a0a;
   color: #f8f9fa;
-  font-family: "Ubuntu", sans-serif;
+  font-family: '"Heebo", sans-serif';
   font-size: 17px;
   border-radius: 4%;
   padding: 8px 25px;

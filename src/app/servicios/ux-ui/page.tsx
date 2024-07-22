@@ -1,16 +1,16 @@
 "use client";
-import ConstruccionView from "@/components/ConstruccionView";
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
+import UxUiVista from "@/views/servicios/UxUiVista";
 import { ChakraProvider } from "@chakra-ui/react";
-import React from "react";
 
-export default function CertificacionesPage() {
+export default function UxUiPage() {
   return (
     <>
       <ChakraProvider>
         <Navbar />
-        <ConstruccionView />
+        <UxUiVista />
         <Footer />
       </ChakraProvider>
     </>
