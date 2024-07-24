@@ -5,11 +5,12 @@ import BannerPiloto from "@/components/BannerPiloto";
 import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
 import Formulario from "@/components/Formulario";
+import { TTexts } from "@/utils/textConstants";
 
 export default function SoftwareTestingVista() {
-  const textPanel1 = <p style={{ paddingLeft: 24 }}>Integracion</p>;
-  const textPanel2 = <p style={{ paddingLeft: 24 }}>Escala</p>;
-  const textPanel3 = <p style={{ paddingLeft: 24 }}>Conocimiento</p>;
+  const textPanel1 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabel1}</p>;
+  const textPanel2 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabel2}</p>;
+  const textPanel3 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabel3}</p>;
 
   const items: CollapseProps["items"] = [
     {
@@ -31,37 +32,21 @@ export default function SoftwareTestingVista() {
 
   return (
     <>
-      <BannerPiloto />
+      <BannerPiloto
+        titleh1={"Pruebas de Software"}
+        titleh3={"Supporting your workforce anytime and anywhere"}
+        titleh6={
+          "Creating a great digital experience can make going to work so much better."
+        }
+      />
 
       <section className={styles.container}>
         <h2 className={styles.title}>
           ¿Qué es el{" "}
           <span className={styles.especialTitle}>Testing de software</span>?
         </h2>
-        <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-          quisquam, ut repellat nemo deleniti, consequatur, beatae quae est
-          corrupti impedit similique nihil porro culpa mollitia sequi ipsa
-          pariatur veniam excepturi.
-        </p>
-        <p className={styles.text}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus
-          pariatur voluptatibus reiciendis dolorem nihil temporibus accusantium,
-          repellendus eaque! Error illum vitae accusamus eaque debitis,
-          cupiditate itaque enim. Pariatur, laborum blanditiis.
-        </p>
-        <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-          deserunt quod? Odio officia doloribus commodi! Dolores laboriosam
-          perferendis ea necessitatibus doloremque labore voluptatibus facilis
-          animi ratione temporibus fugit, incidunt sequi.
-        </p>
-        <p className={styles.text}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos aut
-          deleniti perferendis eveniet consectetur dolore sint illum, sunt
-          eligendi asperiores quasi dolorem delectus tempora. Vero voluptatum
-          sequi quasi aperiam natus.
-        </p>
+        <p className={styles.text}>{TTexts.textoSoftwareTesting1}</p>
+        <p className={styles.text}>{TTexts.textoSoftwareTesting2}</p>
         <button className={styles.button}>DESCARGAR FOLLETO</button>
       </section>
 

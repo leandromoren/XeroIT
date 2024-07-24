@@ -48,8 +48,6 @@ export default function Head() {
         return "UX / UI";
       case BASE_PATH + "servicios/desarrollo-software":
         return "Desarrollo de software";
-      default:
-        return "Qavala";
     }
   }
 
@@ -65,7 +63,7 @@ export default function Head() {
       <meta property="og:url" content="https://qavala.vercel.app" />
       <meta property="og:title" content="Qavala" />
       <meta property="og:site_name" content="Qavala" />
-      <link rel="icon" href="../assets/favicon.ico" />
+      <link rel="icon" type="image/jpg" href="../images/favicon.png"/>
       <link
         href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         rel="stylesheet"

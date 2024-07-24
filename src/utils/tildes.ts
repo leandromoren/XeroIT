@@ -25,5 +25,5 @@ export const TildesLetras = {
     TILDE_F: "\u0304\u0306",
     TILDE_H: "\u0304\u030B",
     TILDE_T: "\u0304\u0308",
-    TILDE_Ñ: "\u0304\u0304",
+    TILDE_ENIE: "\u0304\u0304",
 };
