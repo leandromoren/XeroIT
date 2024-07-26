@@ -1,26 +1,27 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../../styles/SoftwareTestingVista.module.css";
 import BannerPiloto from "@/components/BannerPiloto";
 import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
 import Formulario from "@/components/Formulario";
 import { TTexts } from "@/utils/textConstants";
+import Link from "next/link";
 
 export default function SoftwareTestingVista() {
-  const textPanel1 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabel1}</p>;
-  const textPanel2 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabel2}</p>;
-  const textPanel3 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabel3}</p>;
+  const textPanel1 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabelSoftwareTesting1}</p>;
+  const textPanel2 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabelSoftwareTesting2}</p>;
+  const textPanel3 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabelSoftwareTesting3}</p>;
 
   const items: CollapseProps["items"] = [
     {
       key: "1",
-      label: "Integracion",
+      label: "Integración",
       children: textPanel1,
     },
     {
       key: "2",
-      label: "Escala",
+      label: "Escalable",
       children: textPanel2,
     },
     {
@@ -34,10 +35,8 @@ export default function SoftwareTestingVista() {
     <>
       <BannerPiloto
         titleh1={"Pruebas de Software"}
-        titleh3={"Supporting your workforce anytime and anywhere"}
-        titleh6={
-          "Creating a great digital experience can make going to work so much better."
-        }
+        titleh3={"Ayudamos a construir un producto sin defectos"}
+        titleh6={"Pruebas funcionales, automatizacion y unitarias"}
       />
 
       <section className={styles.container}>
@@ -47,7 +46,9 @@ export default function SoftwareTestingVista() {
         </h2>
         <p className={styles.text}>{TTexts.textoSoftwareTesting1}</p>
         <p className={styles.text}>{TTexts.textoSoftwareTesting2}</p>
-        <button className={styles.button}>DESCARGAR FOLLETO</button>
+        <Link href="/descargas" download className={styles.button}>
+          DESCARGAR FOLLETO
+        </Link>
       </section>
 
       <section className={styles.uniqueSection}>

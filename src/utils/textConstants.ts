@@ -34,9 +34,15 @@ export class TTexts {
   public static nuestraMisionTextTeamView2: String = "Nos esforzamos por ser un socio de confianza para nuestros clientes, ofreciendo asesoramiento experto y apoyo continuo. Nuestra pasión por la texnología, combinada con un enfoque centrado en el cliente, nos permite crear estrategias efectivas y soluciones prácticas que transforman la manera en que las empresas operan y se adaptan en un entorno digital en constante evolución."
 
   // textos del collapse de los servicios
-  public static textoLabel1: String = "Nuestras soluciones Smart Spaces se construyen sobre una plataforma modular, de código abierto, flexible y escalable que es tanto proveedora como tecnológica-agnóstica. Independientemente de los sistemas, proveedores y tecnologías que ya haya desplegado, podemos integrarlos (o actualizarlos) en una sola plataforma y en un solo ecosistema inteligente."
-  public static textoLabel2: String = "Hemos visto a los clientes aumentar los usuarios, dispositivos y volúmenes de datos en 10X, 100X e incluso 1000X en un año dado, y probó nuestra capacidad para manejarlo."
-  public static textoLabel3: String = "Tenemos muchos años de experiencia construyendo soluciones de Smart Spaces para hospitales, operadores de transporte y negocios inmobiliarios. Entendemos los retos a los que se enfrentará cuando se le encargue de mejorar la eficiencia de un edificio o de trabajar para mejorar la experiencia del usuario. Le ayudaremos a identificar el mejor caso de uso, diseño e implementación de los componentes tecnológicos para apoyarlos."
+  public static textoLabelSoftwareTesting1: String = "Integramos al equipo personal completamente capacitado para realizar todo tipo de pruebas que ayudarán a estableces un producto de completa calidad al mercado"
+  public static textoLabelSoftwareTesting2: String = "Nuestro equipo ofrece mantenimiento para continuar mejorando la escalabilidad  y calidad del producto evitando el colapso por trafico web."
+  public static textoLabelSoftwareTesting3: String = "Contamos con el conocimiento necesario para automatizar pruebas utilizando diferentes herramientas y priorizando el rendimiento del producto"
+  public static textoLabelReclutamientoIT1: String = "Con el excelente trabajo de nuestros reclutadoras, somos capaces de descubrir a los mejores talentos del mercado que ayudarán a impulsar el crecimiento de tu negocio"
+  public static textoLabelReclutamientoIT2: String = "Ponernos del lado de nuestros entrevistados y/o nuestros clientes es la clave para entender mejor sus necesidades y poder brindar la mayor calidad y conocimiento posible a su producto"
+  public static textoLabelReclutamientoIT3: String = "El valor de la confianza es clave para que todos y todas sientan libertad de expresar y dar a entender sus ideas para asi plantear nuevas y mejores soluciones al producto"
+
+  // textos de servicio reclutamiento IT
+  public static textoReclutamiento1: String = ""
 
   // textos de servicio software testing
   public static textoSoftwareTesting1: String = "Las pruebas de software son el proceso de evaluar y verificar que un producto o aplicación de software hace lo que se supone que debe. Los beneficios de unas buenas pruebas incluyen la prevención de errores y la mejora del rendimiento."

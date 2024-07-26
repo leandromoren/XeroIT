@@ -14,7 +14,6 @@ import servicesData from "../fixtures/servicesData.json";
 import styles from "../styles/Formulario.module.css";
 import { TTexts } from "@/utils/textConstants";
 import axios from "axios";
-import EmbedVideoYT from "./EmbedVideoYT";
 import { Mentions } from 'antd';
 
 export default function Formulario() {
