@@ -1,5 +1,5 @@
 .container {
-  background-image: url("../../public/images/globant.jpg");
+  background-image: linear-gradient(to top, #03e100, #00f4c4, #00f9ff, #c2f5ff, #ffffff);
   background-size: cover;
   display: flex;
   flex-direction: column;

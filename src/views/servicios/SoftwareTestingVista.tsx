@@ -6,7 +6,6 @@ import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
 import Formulario from "@/components/Formulario";
 import { TTexts } from "@/utils/textConstants";
-import Link from "next/link";
 
 export default function SoftwareTestingVista() {
   const textPanel1 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabelSoftwareTesting1}</p>;
@@ -46,9 +45,9 @@ export default function SoftwareTestingVista() {
         </h2>
         <p className={styles.text}>{TTexts.textoSoftwareTesting1}</p>
         <p className={styles.text}>{TTexts.textoSoftwareTesting2}</p>
-        <Link href="/descargas" download className={styles.button}>
+        <a href="../images/call-center-woman.png" download className={styles.button}>
           DESCARGAR FOLLETO
-        </Link>
+        </a>
       </section>
 
       <section className={styles.uniqueSection}>

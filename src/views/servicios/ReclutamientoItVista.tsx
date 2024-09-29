@@ -5,7 +5,6 @@ import React from "react";
 import styles from "../../styles/ReclutamientoITVista.module.css";
 import { Collapse, CollapseProps } from "antd";
 import { TTexts } from "@/utils/textConstants";
-import Link from "next/link";
 
 export default function ReclutamientoITVista() {
     const textPanel1 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabelReclutamientoIT1}</p>;
@@ -44,7 +43,7 @@ export default function ReclutamientoITVista() {
         </h2>
         <p className={styles.text}>{TTexts.textoSoftwareTesting1}</p>
         <p className={styles.text}>{TTexts.textoSoftwareTesting2}</p>
-        <Link href="/descargas" download className={styles.button}>DESCARGAR FOLLETO</Link>
+        <a href="/file.pdf" download className={styles.button}>DESCARGAR FOLLETO</a>
       </section>
 
       <section className={styles.uniqueSection}>
