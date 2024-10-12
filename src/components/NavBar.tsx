@@ -30,10 +30,6 @@ export default function Navbar() {
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
 
-  const lenguaje = (lang: String) => {
-    return lang
-  }
-
   return (
     <Box>
       <Flex

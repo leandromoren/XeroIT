@@ -17,12 +17,6 @@ export default function UxUiVista() {
     <p style={{ paddingLeft: 24 }}>{TTexts.textoLabelSoftwareTesting3}</p>
   );
 
-  function name(nombre: String) {
-    console.log(nombre + " Moren.")
-  }
-
-  name("Leandro");
-
   const items: CollapseProps["items"] = [
     {
       key: "1",

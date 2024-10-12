@@ -13,7 +13,9 @@ export default function JobUs() {
           <div className={styles.containerP}>
             <p className={styles.pText}>{TTexts.pTextJob}</p>
           </div>
-          <button className={styles.btn}>{TTexts.btnJob}</button>
+          <button type="button" className={styles.btn}>
+            <a href="/empleo/vacantes">{TTexts.btnJob}</a>
+          </button>
         </div>
       </div>
     </div>

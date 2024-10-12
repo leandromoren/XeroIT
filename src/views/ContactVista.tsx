@@ -20,7 +20,7 @@ export default function Contact() {
   const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
   const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
   const gris = useColorModeValue("#1F1F1F", "#1F1F1F");
-  
+
   return (
     <>
       <Box bg={negro} w="auto" minH="screen">
@@ -32,7 +32,7 @@ export default function Contact() {
         >
           <Box w={["full", "full", "1/2"]} p={[20, 30, 40]} my={[10, 0, 0]}>
             <Heading size={["3xl", "4xl"]} fontWeight="semibold" color={verde}>
-             {TTexts.titleContactView}
+              {TTexts.titleContactView}
             </Heading>
             <Text
               color={useColorModeValue("gray.300", "gray.500")}
@@ -65,7 +65,7 @@ export default function Contact() {
             w={["full", "full", "1/2"]}
           >
             <Stack spacing={4}>
-              <form >
+              <form action={"mailto:leandro.moren18@gmail.com"}>
                 <Flex
                   justify="space-between"
                   mb={5}

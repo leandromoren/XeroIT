@@ -161,6 +161,10 @@ export default function Formulario() {
                 required: true,
                 message: "Ingresa un nombre.",
               },
+              {
+                pattern: /^[A-Za-z\s]+$/,
+                message: "El nombre no debe contener caracteres especiales"
+              }
             ]}
           >
             <Input
@@ -224,14 +228,14 @@ export default function Formulario() {
             rules={[
               {
                 required: true,
-                message: "Ingresa una descripción.",
+                message: "Ingresa una descripción...",
               },
             ]}
           >
-            <Mentions 
-              placeholder="Describe tu idea" 
-              allowClear 
-              rows={3} 
+            <Mentions
+              placeholder="Describe tu idea..."
+              allowClear
+              rows={3}
             />
           </Form.Item>
           <Form.Item
@@ -244,8 +248,8 @@ export default function Formulario() {
                   value
                     ? Promise.resolve()
                     : Promise.reject(
-                        new Error("Debes aceptar los términos y condiciones.")
-                      ),
+                      new Error("Debes aceptar los términos y condiciones.")
+                    ),
               },
             ]}
           >
