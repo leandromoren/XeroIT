@@ -7,7 +7,7 @@ export default function Formulario() {
     <form>
       <div className={styles.formHeader}>
         <h1>Contáctanos</h1>
-        <h4>A nosotros nos encanta escucharte!</h4>
+        <h4>¡A nosotros nos encanta escucharte!</h4>
       </div>
       <div className={styles.formContainer}>
         <div className={styles.inputContainer}>
