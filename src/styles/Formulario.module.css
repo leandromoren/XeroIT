@@ -119,3 +119,10 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-align: left;
+}
