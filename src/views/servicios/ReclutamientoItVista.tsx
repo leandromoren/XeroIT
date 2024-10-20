@@ -3,7 +3,7 @@ import BannerPioloto from "@/components/BannerPiloto";
 import Formulario from "@/components/Formulario";
 import React from "react";
 import styles from "../../styles/ReclutamientoITVista.module.css";
-import { Collapse, CollapseProps } from "antd";
+import { Collapse, CollapseProps, Image } from "antd";
 import { TTexts } from "@/utils/textConstants";
 
 export default function ReclutamientoITVista() {
@@ -48,8 +48,10 @@ export default function ReclutamientoITVista() {
 
       <section className={styles.uniqueSection}>
         <div className={styles.imageContainer}>
-          <img
-            src="../images/call-center-woman.png"
+          <Image
+            width={"900"}
+            height={"900"}
+            src={"/images/call-center-woman.png"}
             className={styles.img}
             alt="Smiling Woman"
           />
@@ -61,7 +63,7 @@ export default function ReclutamientoITVista() {
               <Collapse
                 items={items}
                 bordered={false}
-                defaultActiveKey={["1"]}
+                defaultActiveKey={["1","2","3"]}
               />
             </li>
           </ul>

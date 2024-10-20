@@ -5,6 +5,7 @@ import React from "react";
 import styles from "../../styles/UxUiVista.module.css";
 import { TTexts } from "@/utils/textConstants";
 import { Collapse, CollapseProps } from "antd";
+import Image from "next/image";
 
 export default function UxUiVista() {
   const textPanel1 = (
@@ -45,18 +46,19 @@ export default function UxUiVista() {
         <p className={styles.text}>{TTexts.textoSoftwareTesting1}</p>
         <p className={styles.text}>{TTexts.textoSoftwareTesting2}</p>
         <a
-          href="../images/call-center-woman.png"
+          href="some pdf file"
           download
           className={styles.button}
         >
           DESCARGAR FOLLETO
         </a>
       </section>
-
       <section className={styles.uniqueSection}>
         <div className={styles.imageContainer}>
-          <img
-            src="../images/call-center-woman.png"
+          <Image
+            width={"900"}
+            height={"900"}
+            src={"/images/call-center-woman.png"}
             className={styles.img}
             alt="Smiling Woman"
           />
@@ -68,7 +70,7 @@ export default function UxUiVista() {
               <Collapse
                 items={items}
                 bordered={false}
-                defaultActiveKey={["1"]}
+                defaultActiveKey={["1","2","3"]}
               />
             </li>
           </ul>

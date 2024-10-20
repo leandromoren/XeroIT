@@ -5,6 +5,7 @@ import styles from "../styles/ClientSlide.module.css";
 import { TTexts } from "../utils/textConstants";
 import LowStadistics from "./LowStadistics";
 import { Carousel } from "antd";
+import Image from "next/image";
 
 export default function ClientSlide() {
   const [data, setData] = useState(clientsData);
@@ -40,7 +41,7 @@ export default function ClientSlide() {
         <Carousel {...settings} autoplay className={styles.carouselMain}>
           {data.map((n) => (
             <div key={n.id} className={styles.carouselItem}>
-              <img className={styles.image} src={n.logo} alt={n.logo} />
+              <Image width={900} height={900} className={styles.image} src={n.logo} alt={n.logo} />
             </div>
           ))}
         </Carousel>

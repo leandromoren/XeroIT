@@ -22,7 +22,7 @@ export default function Footer() {
     setNosotros(nosotrosData);
     setEmpleo(empleoData);
     setPublicaciones(publicacionesData);
-  });
+  }, []);
 
   return (
     <footer className={styles.footer}>

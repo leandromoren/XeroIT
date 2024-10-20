@@ -1,11 +1,8 @@
 .formContainer {
   width: 100%;
-
   background-color: #fff;
   padding: 30px;
-  border-radius: 10px;
   text-align: center;
-  /* Centramos el formulario */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,8 +18,8 @@
   text-align: center;
   font-size: 36px;
   font-weight: 700;
-  color: #2c3e50;
-  /* Color oscuro y moderno */
+  font-family: 'Geist Mono';
+  color: #ED2939;
   margin: 0;
   padding: 0;
   letter-spacing: 1.2px;
@@ -36,17 +33,17 @@
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #03e100;
+  background-color: #002654;
   /* Línea de acento */
   margin: 8px auto 0;
   /* Alineado en el centro */
-  border-radius: 2px;
 }
 
 .formHeader h4 {
   text-align: center;
   font-size: 18px;
   font-weight: 400;
+  font-family: 'Geist Mono';
   color: #7f8c8d;
   /* Color gris suave para el subtítulo */
   margin: 10px 0 0;
@@ -76,7 +73,6 @@
   width: 100%;
   padding: 15px;
   border: 1px solid #ddd;
-  border-radius: 5px;
   background-color: #f4f4f4;
   font-size: 16px;
   transition: border-color 0.3s ease;
@@ -89,7 +85,7 @@
 
 .input:focus,
 .textarea:focus {
-  border-color: #03e100;
+  border-color: #002654;
   outline: none;
 }
 
@@ -115,15 +111,11 @@
 
 .submitBtn {
   padding: 15px;
-  background-color: #03e100;
-  border-radius: 5px;
+  background-color: #ED2939;
+  font-family: 'Geist Mono';
   color: white;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.submitBtn:hover {
-  background-color: #03e200;
 }

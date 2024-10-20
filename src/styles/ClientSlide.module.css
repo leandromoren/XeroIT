@@ -1,9 +1,10 @@
 .title {
   text-align: center;
   background-color: #ffffff;
+  color: #ED2939;
   width: auto;
   font-size: 40px;
-  font-family: '"Heebo", sans-serif';
+  font-family: 'Geist Mono';
   font-weight: bold;
   margin-top: 10vh;
 }

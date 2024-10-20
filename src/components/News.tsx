@@ -4,6 +4,7 @@ import { Carousel } from "antd";
 import styles from "../styles/News.module.css";
 import newsData from "../fixtures/news.json";
 import { TTexts } from "@/utils/textConstants";
+import Image from "next/image";
 
 export default function News() {
   const [data, setData] = useState(newsData);
@@ -36,7 +37,7 @@ export default function News() {
       <Carousel {...settings} autoplay className={styles.carouselMain}>
         {data.map((n) => (
           <div key={n.id} className={styles.carouselItem}>
-            <img className={styles.image} src={n.image} alt={n.title} />
+            <Image className={styles.image} src={n.image} alt={n.title} />
             <div className={styles.date}>Publicado el: {n.date}</div>
             <div className={styles.title}>{n.title}</div>
             <div className={styles.description}>{n.description}</div>

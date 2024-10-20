@@ -26,20 +26,22 @@ import NextLink from "next/link";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
-  const verde = useColorModeValue("#03E100", "#03E100");
-  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
-  const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
+  const rojo = useColorModeValue("#ED2939", "#03E100");
+  const azul = useColorModeValue("#002654", "#FAFAFA");
+  const blanco = useColorModeValue("#ffffff", "#0A0A0A");
+
+  const fuenteLetraGeistMono: string = 'Geist Mono';
 
   return (
     <Box>
       <Flex
-        bg={negro}
+        bg={azul}
         minH={"80px"}
         py={{ base: 2 }}
         px={{ base: 4, md: 20, lg: 32 }}
         borderBottom={1}
         borderStyle={"solid"}
-        borderColor={negro}
+        borderColor={azul}
         align={"center"}
       >
         <Flex
@@ -52,9 +54,9 @@ export default function Navbar() {
             backgroundColor={blanco}
             icon={
               isOpen ? (
-                <CloseIcon w={3} h={3} color={negro} />
+                <CloseIcon w={3} h={3} color={azul} />
               ) : (
-                <HamburgerIcon w={5} h={5} color={negro} />
+                <HamburgerIcon w={5} h={5} color={azul} />
               )
             }
             variant={"ghost"}
@@ -63,10 +65,10 @@ export default function Navbar() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
-            color={verde}
+            color={rojo}
             fontSize={"2xl"}
             fontWeight={"bold"}
-            fontFamily={'"Heebo", sans-serif'}
+            fontFamily={fuenteLetraGeistMono}
             cursor={"pointer"}
             id="inicio"
           >
@@ -88,12 +90,13 @@ export default function Navbar() {
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
+            fontFamily={fuenteLetraGeistMono}
             color={blanco}
             href="/contacto"
-            bg={negro}
-            border={"2px solid #1F1F1F"}
+            bg={azul}
+            border={"2px solid #ffffff"}
             _hover={{
-              bg: "#1F1F1F",
+              bg: "#ED2939",
             }}
           >
             Cont{"\u00E1"}ctanos
@@ -109,8 +112,8 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const negro = useColorModeValue("#0A0A0A", "white");
-  const blanco = useColorModeValue("#f8f9fa", "gray.800");
+  const azul = useColorModeValue("#002654", "white");
+  const blanco = useColorModeValue("#ffffff", "gray.800");
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -124,11 +127,11 @@ const DesktopNav = () => {
                 fontWeight={"bold"}
                 fontFamily={'"Heebo", sans-serif'}
                 color={blanco}
-                borderBottom="2px solid #0A0A0A"
+                borderBottom="2px solid #002654"
                 _hover={{
                   textDecoration: "none",
                   color: blanco,
-                  borderBottom: "2px solid #03E100",
+                  borderBottom: "2px solid #fff",
                   transition: "all 0.3s ease 0s",
                 }}
               >
@@ -140,7 +143,7 @@ const DesktopNav = () => {
               <PopoverContent
                 border={0}
                 boxShadow={"xl"}
-                bg={negro}
+                bg={azul}
                 p={4}
                 minW={"sm"}
               >
@@ -159,12 +162,12 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
-  const blanco = useColorModeValue("#EDEDED", "#0A0A0A");
+  const azul = useColorModeValue("#002654", "#FAFAFA");
+  const blanco = useColorModeValue("#ffffff", "#0A0A0A");
   const gris = useColorModeValue("#1F1F1F", "#1F1F1F");
   return (
     <Link
-      bg={negro}
+      bg={azul}
       href={href}
       role={"group"}
       display={"block"}
@@ -203,10 +206,10 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 };
 
 const MobileNav = () => {
-  const negro = useColorModeValue("#0A0A0A", "#FAFAFA");
-  const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
+  const azul = useColorModeValue("#002654", "#FAFAFA");
+  const blanco = useColorModeValue("#ffffff", "#0A0A0A");
   return (
-    <Stack bg={negro} p={4} display={{ md: "none" }}>
+    <Stack bg={azul} p={4} display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -217,7 +220,7 @@ const MobileNav = () => {
         fontWeight={600}
         color={blanco}
         href="/contacto"
-        bg={negro}
+        bg={azul}
         border={"2px solid #1F1F1F"}
         _active={{
           bg: "#1F1F1F",
@@ -230,7 +233,7 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const blanco = useColorModeValue("#f8f9fa", "#0A0A0A");
+  const blanco = useColorModeValue("#ffffff", "#0A0A0A");
   const { isOpen, onToggle } = useDisclosure();
 
   return (

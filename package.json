@@ -27,7 +27,7 @@
     "cors": "^2.8.5",
     "express": "^4.21.0",
     "framer-motion": "^11.2.3",
-    "next": "14.2.3",
+    "next": "14.2.15",
     "next-cloudinary": "^6.5.2",
     "qavala": "file:",
     "rate-limiter-flexible": "^5.0.3",

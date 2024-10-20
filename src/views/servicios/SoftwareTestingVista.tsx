@@ -6,6 +6,7 @@ import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
 import Formulario from "@/components/Formulario";
 import { TTexts } from "@/utils/textConstants";
+import Image from "next/image";
 
 export default function SoftwareTestingVista() {
   const textPanel1 = <p style={{ paddingLeft: 24 }}>{TTexts.textoLabelSoftwareTesting1}</p>;
@@ -45,15 +46,17 @@ export default function SoftwareTestingVista() {
         </h2>
         <p className={styles.text}>{TTexts.textoSoftwareTesting1}</p>
         <p className={styles.text}>{TTexts.textoSoftwareTesting2}</p>
-        <a href="../images/call-center-woman.png" download className={styles.button}>
+        <a href=".some pdf file" download className={styles.button}>
           DESCARGAR FOLLETO
         </a>
       </section>
 
       <section className={styles.uniqueSection}>
         <div className={styles.imageContainer}>
-          <img
-            src="../images/call-center-woman.png"
+          <Image
+            width={"900"}
+            height={"900"}
+            src={"/images/call-center-woman.png"}
             className={styles.img}
             alt="Smiling Woman"
           />
@@ -65,7 +68,7 @@ export default function SoftwareTestingVista() {
               <Collapse
                 items={items}
                 bordered={false}
-                defaultActiveKey={["1"]}
+                defaultActiveKey={["1","2","3"]}
               />
             </li>
           </ul>

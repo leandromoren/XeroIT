@@ -4,7 +4,7 @@ import styles from "../styles/Formulario.module.css";
 
 export default function Formulario() {
   return (
-    <form>
+    <form method="POST">
       <div className={styles.formHeader}>
         <h1>Contáctanos</h1>
         <h4>¡A nosotros nos encanta escucharte!</h4>
@@ -21,7 +21,7 @@ export default function Formulario() {
           </div>
           <div className={`${styles.inputWrapper} ${styles.half}`}>
             <input className={styles.input} type="number" required />
-            <label className={styles.label}>Cel. Tel.</label>
+            <label className={styles.label}>Tel.</label>
           </div>
           <div className={`${styles.inputWrapper} ${styles.wide}`}>
             <textarea className={styles.textarea} required></textarea>
