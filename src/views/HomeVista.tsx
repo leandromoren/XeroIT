@@ -1,28 +1,27 @@
 "use client";
-import "next-cloudinary/dist/cld-video-player.css";
-import ClientSlide from "@/components/ClientSlide";
-//import JobUs from "@/components/JobUs";
-import Formulario from "@/components/Formulario";
-import BackgroundVideoHome from "@/components/BackgroundVideoHome";
-import Comunidades from "@/components/Comunidades";
+import Brands from "@/components/Brands";
+import Footer from "@/components/Footer";
+import Heroe from "@/components/Heroe";
+import NavBar from "@/components/NavBar";
+import Team from "@/components/Team";
 
 export default function HomeVista() {
   return (
     <>
       <section>
-        <BackgroundVideoHome />
+        <NavBar />
       </section>
       <section>
-        <ClientSlide />
+        <Heroe />
       </section>
       <section>
-       <Comunidades />
+        <Brands />
       </section>
       <section>
-        {/*<JobUs /> */}
+        <Team />
       </section>
       <section>
-        <Formulario />
+        <Footer />
       </section>
     </>
   );

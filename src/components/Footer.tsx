@@ -1,95 +1,27 @@
-"use client";
-import styles from "../styles/Footer.module.css";
-import servicesData from "../fixtures/servicesData.json";
-import nosotrosData from "../fixtures/nosotrosData.json";
-import publicacionesData from "../fixtures/publicacionesData.json";
-import empleoData from "../fixtures/empleoData.json";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Footer() {
-  const linkedinQavala: string = "https://linkedin.com/in/leandromoren";
-
-  const [servicios, setServicios] = useState(servicesData);
-
-  const [nosotros, setNosotros] = useState(nosotrosData);
-
-  const [publicaciones, setPublicaciones] = useState(publicacionesData);
-
-  const [empleo, setEmpleo] = useState(empleoData);
-
-  useEffect(() => {
-    setServicios(servicesData);
-    setNosotros(nosotrosData);
-    setEmpleo(empleoData);
-    setPublicaciones(publicacionesData);
-  }, []);
-
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        <div className={styles.footerColumn}>
-          <h3>Servicios</h3>
-          <ul>
-            {servicios.map((e) => (
-              <li key={e.id}>
-                <a href={e.href}>{e.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.footerColumn}>
-          <h3>Nosotros</h3>
-          <ul>
-            {nosotros.map((e) => (
-              <li key={e.id}>
-                <a href={e.href}>{e.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.footerColumn}>
-          <h3>Publicaciones</h3>
-          <ul>
-            {publicaciones.map((e) => (
-              <li key={e.id}>
-                <a href={e.href}>{e.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.footerColumn}>
-          <h3>Empleo</h3>
-          <ul>
-            {empleo.map((e) => (
-              <li key={e.id}>
-                <a href={e.href}>{e.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.footerColumn}>
-          <h3>Contacto</h3>
-          <ul>
-            <li>
-              <a href="/contacto">Contacto</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.footerBottom}>
-        <p>&copy;2024 Qavala</p>
-        <div className={styles.footerBottomRight}>
-          <a href="/politica-de-privacidad">Política de privacidad</a> ·
-          <a href="/certificaciones">Certificaciones</a> ·
-          <a href="/politicas">Políticas</a> ·
-          <a href="/terminos-y-condiciones">Términos y condiciones</a>
-        </div>
-        <div className={styles.footerSocial}>
-          <a target="_blank" href={linkedinQavala}>
-            <i className="bx bxl-linkedin"></i>
-          </a>
-        </div>
-      </div>
+    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-black">
+      <p className="text-xs text-muted-foreground">
+        &copy; 2024 IT Consultant. All rights reserved.
+      </p>
+      <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+        <Link
+          href="#"
+          className="text-xs hover:underline underline-offset-4"
+          prefetch={false}
+        >
+          Terminos de servicio
+        </Link>
+        <Link
+          href="#"
+          className="text-xs hover:underline underline-offset-4"
+          prefetch={false}
+        >
+          Privacidad
+        </Link>
+      </nav>
     </footer>
   );
 }

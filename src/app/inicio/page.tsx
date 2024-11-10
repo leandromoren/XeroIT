@@ -4,9 +4,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Space, Spin } from "antd";
 import { useEffect, useState } from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import ErrorBoundary from "@/components/ErrorBoundary";
+import Footer from "@/components/Footer";
 
-const Footer = lazy(() => import("@/components/Footer"));
 const Navbar = lazy(() => import("@/components/NavBar"));
 const HomeVista = lazy(() => import("@/views/HomeVista"));
 
@@ -38,7 +37,6 @@ export default function HomePage() {
         </div>
       ) : (
         <ChakraProvider>
-          <ErrorBoundary>
             <Suspense
               fallback={
                 <div
@@ -55,11 +53,9 @@ export default function HomePage() {
               </div>
               }
             >
-              <Navbar />
+              
               <HomeVista />
-              <Footer />
             </Suspense>
-          </ErrorBoundary>
         </ChakraProvider>
       )}
     </>
