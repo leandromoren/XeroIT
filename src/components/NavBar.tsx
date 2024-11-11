@@ -5,8 +5,8 @@ import { useState } from "react";
 import Banner from "./Banner";
 
 const navigation = [
-  { name: "Inicio", href: "#" },
-  { name: "Nosotros", href: "#" },
+  { name: "Inicio", href: "/inicio" },
+  { name: "Nosotros", href: "#fotero" },
   { name: "Servicios", href: "#" },
   { name: "Contacto", href: "#" },
 ];
@@ -15,7 +15,7 @@ export default function Component() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="">
+    <div>
       <header className="absolute inset-x-0 top-0 z-50">
       <section>
         <Banner />
@@ -26,7 +26,7 @@ export default function Component() {
         >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="h-8 w-auto font-bold text-white">Astramar</span>
+              <span className="h-8 w-auto font-bold text-white">Gratiana Labs</span>
             </a>
           </div>
           <div className="flex lg:hidden">
