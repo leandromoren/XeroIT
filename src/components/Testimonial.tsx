@@ -12,19 +12,19 @@ export default function Testiomonial() {
         <figure className="mt-10">
           <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
             <p>
-              “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              expedita voluptas culpa sapiente alias molestiae. Numquam corrupti
-              in laborum sed rerum et corporis.”
+              "Gratiana Labs nace para encontrar una solución clara, conectar al talento mas destacado con los mejores proyectos IT. Actuamos como enlace para simplificar la experiencia en el proceso de contratación, con el objetivo de formar equipos de alto rendimiento”
             </p>
           </blockquote>
           <figcaption className="mt-10">
             <img
-              alt=""
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              className="mx-auto h-10 w-10 rounded-full"
+              alt="Leandro Moren - CEO"
+              height={100}
+              width={100}
+              src="../../images/yo.jpeg"
+              className="mx-auto h-40 w-40 rounded-full"
             />
             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-              <div className="font-semibold text-gray-900">Judith Black</div>
+              <div className="font-semibold text-gray-900">Leandro Moren</div>
               <svg
                 width={3}
                 height={3}
@@ -34,7 +34,7 @@ export default function Testiomonial() {
               >
                 <circle r={1} cx={1} cy={1} />
               </svg>
-              <div className="text-gray-600">CEO of Workcation</div>
+              <div className="text-gray-600">CEO de Gratiana Labs</div>
             </div>
           </figcaption>
         </figure>

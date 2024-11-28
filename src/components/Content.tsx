@@ -2,7 +2,7 @@ import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/2
 
 export default function Content() {
   return (
-    <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+    <div id='servicios' className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           aria-hidden="true"
@@ -33,7 +33,7 @@ export default function Content() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base/7 font-semibold text-indigo-600">Deploy faster</p>
+              <p className="text-base/7 font-semibold text-indigo-600">Nuestros servicios</p>
               <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                 A better workflow
               </h1>

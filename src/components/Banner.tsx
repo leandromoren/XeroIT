@@ -7,7 +7,7 @@ export default function Banner() {
   if (!isVisible) return null; // No renderizar si no es visible
 
   return (
-    <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+    <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-yellow-500 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
       <div
         aria-hidden="true"
         className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -34,17 +34,17 @@ export default function Banner() {
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <p className="text-sm/6 text-gray-900">
-          <strong className="font-semibold">Nerdearla {new Date().getUTCFullYear()}</strong>
+          <strong className="font-semibold">Gratiana Labs</strong>
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline h-0.5 w-0.5 fill-current">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Inauguración de Gratiana, servicio de consultoria IT
+          ¡Contrata nuestros servicos y conecta con los mejores talentos de todo el país!
         </p>
         <a
-          href="#"
+          href="https://calendly.com/leandro-moren18/let-s-talk"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
-          Enteráte más <span aria-hidden="true">&rarr;</span>
+          Comenzá ahora <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
       <div className="flex flex-1 justify-end">

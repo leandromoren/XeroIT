@@ -8,6 +8,8 @@ import NavBar from "@/components/NavBar";
 import Stats from "@/components/Stats";
 import Team from "@/components/Team";
 import Testimonial from "@/components/Testimonial";
+import "@/styles/global.css";
+
 
 export default function HomeVista() {
   return (
@@ -15,10 +17,10 @@ export default function HomeVista() {
       <section>
         <NavBar />
       </section>
-      <section>
+      <section >
         <Heroe />
       </section>
-      <section>
+      <section >
         <Brands />
       </section>
       <section>
