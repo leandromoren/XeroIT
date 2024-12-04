@@ -1,103 +1,33 @@
-"use client";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
-import Banner from "./Banner";
-import { Rocket } from 'lucide-react';
+import React from 'react';
+import { BrainCog } from 'lucide-react';
 
-const navigation = [
-  { name: "Inicio", href: "/inicio" },
-  { name: "Nosotros", href: "/nosotros" },
-  { name: "Servicios", href: "#servicios" },
-  { name: "Contacto", href: "#contacto" },
-];
+export default function Header() {
 
-export default function Component() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const goToSchedule = (href: string) => {
+      window.location.href = href;
+  }
 
   return (
-    <div>
-      <header className="absolute inset-x-0 top-0 z-50">
-       <section>
-        <Banner />
-      </section> 
-        <nav
-          aria-label="Global"
-          className="flex items-center justify-between p-6 lg:px-8"
-        >
-          <div className="flex lg:flex-1">
-          <a href="#" className="flex items-center gap-2 text-2xl font-bold">
-      <Rocket className="h-8 w-8 text-purple-600" />
-      <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-        Gratiana Labs
-      </span>
-    </a>
+    <header className="bg-black/90 backdrop-blur-sm fixed w-full z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center">
+            <BrainCog className="h-8 w-8 text-yellow-400" />
+            <span className="ml-2 text-xl font-bold bg-gradient-to-r from-yellow-400 via-purple-500 to-yellow-400 text-transparent bg-clip-text">BeSmart Labs</span>
           </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black"
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm/6 font-semibold text-black"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </nav>
-        <Dialog
-          open={mobileMenuOpen}
-          onClose={setMobileMenuOpen}
-          className="lg:hidden"
-        >
-          <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Gratiana Labs</span>
-                <img
-                  alt="Image"
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                  className="h-8 w-auto"
-                />
-              </a>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon aria-hidden="true" className="h-6 w-6" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </DialogPanel>
-        </Dialog>
-      </header>
-    </div>
+          <nav className="hidden md:flex space-x-8">
+            <a href="#servicios" className="text-gray-300 hover:text-yellow-400 transition-colors">Servicios</a>
+            <a href="#contacto" className="text-gray-300 hover:text-yellow-400 transition-colors">Contacto</a>
+            <a href="#nosotros" className="text-gray-300 hover:text-yellow-400 transition-colors">Nosotros</a>
+          </nav>
+          <button 
+            onClick={()=> goToSchedule("https://calendly.com/leandro-moren18/let-s-talk")} 
+            className="px-4 py-2 animate-pulse bg-gradient-to-r from-yellow-400 to-purple-600 text-black font-semibold rounded-lg hover:opacity-90 transition-opacity"
+          >
+            Agenda una reunión
+          </button>
+        </div>
+      </div>
+    </header>
   );
 }

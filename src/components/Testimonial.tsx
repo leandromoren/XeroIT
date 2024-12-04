@@ -1,43 +1,54 @@
-export default function Testiomonial() {
+import React from 'react';
+import { Star } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    role: "CEO at TechStart",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80",
+    content: "This platform has revolutionized how we handle our company's finances. The AI-powered insights are game-changing."
+  },
+  {
+    name: "Michael Chen",
+    role: "Investment Manager",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80",
+    content: "The security features and real-time analytics have made my job significantly easier. Highly recommended!"
+  }
+];
+
+export default function TestimonialSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
-      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-      <div className="mx-auto max-w-2xl lg:max-w-4xl">
-        <img
-          alt=""
-          src="https://tailwindui.com/plus/img/logos/workcation-logo-indigo-600.svg"
-          className="mx-auto h-12"
-        />
-        <figure className="mt-10">
-          <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
-            <p>
-              - Gratiana Labs nace para encontrar una solución clara, conectar al talento mas destacado con los mejores proyectos IT. Actuamos como enlace para simplificar la experiencia en el proceso de contratación, con el objetivo de formar equipos de alto rendimiento
-            </p>
-          </blockquote>
-          <figcaption className="mt-10">
-            <img
-              alt="Leandro Moren - CEO"
-              height={100}
-              width={100}
-              src="../../images/yo.jpeg"
-              className="mx-auto h-40 w-40 rounded-full"
-            />
-            <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-              <div className="font-semibold text-gray-900">Leandro Moren</div>
-              <svg
-                width={3}
-                height={3}
-                viewBox="0 0 2 2"
-                aria-hidden="true"
-                className="fill-gray-900"
-              >
-                <circle r={1} cx={1} cy={1} />
-              </svg>
-              <div className="text-gray-600">CEO de Gratiana Labs</div>
+    <section className="bg-black py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 via-purple-500 to-yellow-400 text-transparent bg-clip-text">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="mt-4 text-gray-400">See what our clients have to say about us</p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.name} className="relative p-8 rounded-xl bg-gradient-to-br from-yellow-900/20 to-purple-900/20 border border-yellow-400/10">
+              <div className="flex gap-2 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="text-gray-300 mb-6">{testimonial.content}</p>
+              <div className="flex items-center gap-4">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="text-yellow-400 font-semibold">{testimonial.name}</h4>
+                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                </div>
+              </div>
             </div>
-          </figcaption>
-        </figure>
+          ))}
+        </div>
       </div>
     </section>
   );

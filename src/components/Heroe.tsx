@@ -1,35 +1,47 @@
-"use client";
-import "@/styles/global.css";
-import { GradientButton } from "./ui/GradientButton";
-import { Sparkles, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
-export default function Heroe() {
+export default function HeroSection() {
+
+  const goToSchedule = (href: string) => {
+    window.location.href = href;
+  }
+
   return (
-    <div>
-      <div className="relative isolate max-h-max px-6 pt-14 lg:px-8">
-        
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="text-center">
-            <h1 className="text-balance text-5xl font-semibold tracking-tight text-black sm:text-7xl">
-              Impúlsate a la cima del mundo digital
+    <div className="relative min-h-screen flex items-center">
+      <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-yellow-900/30" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80')] opacity-20 bg-cover bg-center mix-blend-overlay" />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-left">
+            <h1 className="text-4xl md:text-6xl font-bold">
+              <span className="bg-gradient-to-r from-yellow-400 via-purple-500 to-yellow-400 text-transparent bg-clip-text">
+              Soluciones informáticas a la medida de tu negocio.
+              </span>
             </h1>
-            <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
-              Te ofrecemos servicio profesional <span>desafíos</span> más{" "}
-              <span>complejos</span>.
+            <p className="mt-6 text-xl text-gray-300">
+              Contamos con los mejores talentos en tecnologia para proporcionar la mayor calidad posible en el software.
             </p>
-            <div className="mt-12 flex items-center justify-center gap-x-6">
-              <GradientButton href="https://calendly.com/leandro-moren18/let-s-talk">
-                Agenda una reunión
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </GradientButton>
-              
-              <GradientButton
-                href="https://calendly.com/leandro-moren18/let-s-talk"
-                variant="secondary"
-              >
-                Descubre más
-              </GradientButton>
+            <div className="mt-10 flex gap-4">
+              <button onClick={() => goToSchedule("https://calendly.com/leandro-moren18/let-s-talk")} className="px-8 py-3 bg-gradient-to-r animate-bounce from-yellow-400 to-purple-600 text-black font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center">
+                Charlemos
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+              <button className="px-8 py-3 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors">
+                Más
+              </button>
             </div>
+          </div>
+          <div className="relative hidden md:block">
+            <img 
+              src="../../logos/heroe.jpg"
+              alt="Digital Finance"
+              className="rounded-2xl shadow-2xl shadow-purple-500/20 border border-yellow-400/10"
+            />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-yellow-400 to-purple-600 rounded-full blur-2xl opacity-30" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-purple-600 to-yellow-400 rounded-full blur-2xl opacity-30" />
           </div>
         </div>
       </div>

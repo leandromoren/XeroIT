@@ -14,9 +14,6 @@ module.exports = {
       body: ["Victor Mono"],
     },
     extend: {
-      backgroundImage: {
-		'custom-bg':"url('/background-heroe.avif')"
-	  },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -1,13 +1,12 @@
 "use client";
-import Brands from "@/components/Brands";
-import ContactForm from "@/components/ContactForm";
-import Content from "@/components/Content";
+import Banner from "@/components/Banner";
+import  CTASection  from "@/components/CTASection";
+//import FAQ from "@/components/FAQ";
+import FeaturesSection from "@/components/Features";
 import Footer from "@/components/Footer";
 import Heroe from "@/components/Heroe";
 import NavBar from "@/components/NavBar";
-import Stats from "@/components/Stats";
 import Team from "@/components/Team";
-import Testimonial from "@/components/Testimonial";
 import "@/styles/global.css";
 
 
@@ -15,29 +14,26 @@ export default function HomeVista() {
   return (
     <>
       <section>
+        <Banner />
+      </section>
+      <section>
         <NavBar />
       </section>
       <section >
         <Heroe />
       </section>
-      <section >
-        <Brands />
+      <section>
+        <FeaturesSection />
       </section>
       <section>
         <Team />
       </section>
       <section>
-        <Stats />
+        <CTASection />
       </section>
-      <section>
-        <Content />
-      </section>
-      <section>
-        <Testimonial />
-      </section>
-      <section>
-        <ContactForm />
-      </section>
+      {/* <section>
+        <FAQ />
+      </section> */}
       <section>
         <Footer />
       </section>

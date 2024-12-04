@@ -4,9 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Space, Spin } from "antd";
 import { useEffect, useState } from "react";
 import { LoadingOutlined } from "@ant-design/icons";
-import Footer from "@/components/Footer";
 
-const Navbar = lazy(() => import("@/components/NavBar"));
 const HomeVista = lazy(() => import("@/views/HomeVista"));
 
 export default function HomePage() {
@@ -53,7 +51,6 @@ export default function HomePage() {
               </div>
               }
             >
-              
               <HomeVista />
             </Suspense>
         </ChakraProvider>
