@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrainCog, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import CIcon from '@coreui/icons-react';
+import { cilLemon } from '@coreui/icons';
 
 const footerLinks = {
   product: [
@@ -38,12 +40,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="relative bg-black pt-24 pb-12">
-      <div className="absolute inset-0 bg-gradient-radial from-purple-900/10 via-black to-black" />
-      
+      <div className="absolute inset-0 bg-gradient-radial from-green-900/10 via-black to-black" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-yellow-400/10">
-          {/* Product Links */}
           <div>
             <h3 className="text-yellow-400 font-semibold mb-4">Product</h3>
             <ul className="space-y-3">
@@ -56,8 +55,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Company Links */}
           <div>
             <h3 className="text-yellow-400 font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
@@ -70,8 +67,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Support Links */}
           <div>
             <h3 className="text-yellow-400 font-semibold mb-4">Support</h3>
             <ul className="space-y-3">
@@ -84,8 +79,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Legal Links */}
           <div>
             <h3 className="text-yellow-400 font-semibold mb-4">Legal</h3>
             <ul className="space-y-3">
@@ -99,21 +92,16 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
-          {/* Logo and Copyright */}
           <div className="flex items-center mb-4 md:mb-0">
-            <BrainCog className="h-6 w-6 text-yellow-400" />
-            <span className="ml-2 text-lg font-bold bg-gradient-to-r from-yellow-400 via-purple-500 to-yellow-400 text-transparent bg-clip-text">
-            BeSmart Labs
+          <CIcon icon={cilLemon} width={30} className='bg-yellow-300'/>
+            <span className="ml-2 text-lg font-bold bg-gradient-to-r from-yellow-400 via-green-500 to-yellow-400 text-transparent bg-clip-text">
+            XeroIT
             </span>
             <span className="ml-4 text-sm text-gray-400">
-              © {new Date().getFullYear()} BeSmart Labs. All rights reserved.
+              © {new Date().getFullYear()} XeroIT. All rights reserved.
             </span>
           </div>
-
-          {/* Social Links */}
           <div className="flex gap-4">
             {socialLinks.map((social) => {
               const Icon = social.icon;

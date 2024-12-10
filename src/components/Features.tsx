@@ -5,28 +5,28 @@ const features = [
   {
     icon: Shield,
     secondaryIcon: Lock,
-    title: 'Bank-Grade Security',
+    title: 'Ciberseguridad',
     description: 'Your finances are protected with military-grade encryption and advanced security protocols.',
     highlights: ['256-bit encryption', 'Two-factor authentication', 'Biometric security']
   },
   {
     icon: Zap,
     secondaryIcon: Cpu,
-    title: 'Lightning Fast',
+    title: 'Desarrollo',
     description: 'Execute transactions and analyze data in real-time with our powerful infrastructure.',
     highlights: ['Instant transfers', 'Real-time updates', 'Zero latency']
   },
   {
     icon: Trophy,
     secondaryIcon: BarChart,
-    title: 'Smart Analytics',
+    title: 'Calidad punta a punta',
     description: 'Get insights and recommendations powered by advanced AI algorithms.',
     highlights: ['Predictive analysis', 'Custom reports', 'Market insights']
   },
   {
     icon: Target,
     secondaryIcon: ArrowRight,
-    title: 'Goal Tracking',
+    title: 'Diseño',
     description: 'Set and track your financial goals with our intuitive dashboard.',
     highlights: ['Visual progress', 'Smart milestones', 'Achievement rewards']
   }
@@ -35,10 +35,10 @@ const features = [
 export default function FeaturesSection() {
   return (
     <section id="features" className="relative bg-black py-32">
-      <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-black to-black" />
+      <div className="absolute inset-0 bg-gradient-radial from-green-900/20 via-black to-black" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-purple-500 to-yellow-400 text-transparent bg-clip-text">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-green-500 to-yellow-400 text-transparent bg-clip-text">
             Servicios de calidad
           </h2>
           <p className="mt-6 text-xl text-gray-400">
@@ -53,11 +53,11 @@ export default function FeaturesSection() {
             return (
               <div 
                 key={feature.title} 
-                className="group relative p-8 rounded-2xl bg-gradient-to-br from-yellow-900/10 to-purple-900/10 border border-yellow-400/10 hover:from-yellow-900/20 hover:to-purple-900/20 transition-all duration-300"
+                className="group relative p-8 rounded-2xl bg-gradient-to-br from-yellow-900/10 to-green-900/10 border border-yellow-400/10 hover:from-yellow-900/20 hover:to-green-900/20 transition-all duration-300"
               >
                 <div className="flex items-start gap-6">
                   <div className="relative">
-                    <div className="h-14 w-14 rounded-xl bg-gradient-to-r from-yellow-400 to-purple-600 p-0.5">
+                    <div className="h-14 w-14 rounded-xl bg-gradient-to-r from-yellow-400 to-green-600 p-0.5">
                       <div className="h-full w-full rounded-xl bg-black flex items-center justify-center">
                         <Icon className="h-7 w-7 text-yellow-400" />
                       </div>
@@ -77,7 +77,7 @@ export default function FeaturesSection() {
                     <ul className="space-y-2">
                       {feature.highlights.map((highlight, index) => (
                         <li key={index} className="flex items-center gap-2 text-sm text-gray-500">
-                          <div className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-yellow-400 to-purple-600" />
+                          <div className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-yellow-400 to-green-600" />
                           {highlight}
                         </li>
                       ))}
@@ -85,7 +85,7 @@ export default function FeaturesSection() {
                   </div>
                 </div>
                 
-                <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-yellow-400 to-purple-600 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-yellow-400 to-green-600 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             );
           })}

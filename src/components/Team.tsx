@@ -51,10 +51,10 @@ const team = [
 export default function Team() {
   return (
     <section className="relative bg-black py-32">
-      <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-black to-black" />
+      <div className="absolute inset-0 bg-gradient-radial from-green-900/20 via-black to-black" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center gap-4 mb-4">
-          <div className="h-14 w-14 rounded-full bg-gradient-to-r from-yellow-400 to-purple-600 p-0.5">
+          <div className="h-14 w-14 rounded-full bg-gradient-to-r from-yellow-400 to-green-600 p-0.5">
             <div className="h-full w-full rounded-full bg-black flex items-center justify-center">
               <Users className="h-7 w-7 text-yellow-400" />
             </div>
@@ -62,7 +62,7 @@ export default function Team() {
         </div>
         
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-purple-500 to-yellow-400 text-transparent bg-clip-text">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-green-500 to-yellow-400 text-transparent bg-clip-text">
             Conoce a nuestros profesionales
           </h2>
           <p className="mt-6 text-xl text-gray-400">
@@ -78,10 +78,10 @@ export default function Team() {
             >
               <div className="relative mx-auto mb-8">
                 {/* Glowing background effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 to-green-600 rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
                 
                 {/* Border gradient */}
-                <div className="relative h-48 w-48 mx-auto rounded-full bg-gradient-to-r from-yellow-400 to-purple-600 p-1">
+                <div className="relative h-48 w-48 mx-auto rounded-full bg-gradient-to-r from-yellow-400 to-green-600 p-1">
                   {/* Image container */}
                   <div className="h-full w-full rounded-full overflow-hidden">
                     <img 
@@ -94,7 +94,7 @@ export default function Team() {
               </div>
               
               <h3 className="text-xl font-semibold text-yellow-400 mb-2">{member.name}</h3>
-              <p className="text-sm text-purple-400 mb-3">{member.role}</p>
+              <p className="text-sm text-green-400 mb-3">{member.role}</p>
               <p className="text-sm text-gray-400 mb-4 max-w-xs mx-auto">{member.bio}</p>
               
               <div className="flex justify-center gap-4">
