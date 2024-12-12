@@ -16,7 +16,7 @@ export function Mission() {
         </div>
         <p className="text-gray-400 leading-relaxed mb-6">
           To revolutionize financial technology by creating innovative solutions that 
-          empower individuals and businesses worldwide. We're building a future where 
+          empower individuals and businesses worldwide. We are building a future where 
           advanced financial tools are accessible to everyone, combining cutting-edge 
           technology with uncompromising security.
         </p>
