@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
-const benefits = [
+const beneficios = [
   "Organización",
   "Puntualidad",
   "Soporte 24/7",
@@ -38,10 +38,10 @@ export default function CTASection() {
             </button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {benefits.map((benefit) => (
-              <div key={benefit} className="flex items-center justify-center gap-2">
+            {beneficios.map((beneficio) => (
+              <div key={beneficio} className="flex items-center justify-center gap-2">
                 <CheckCircle className="h-5 w-5 text-yellow-400" />
-                <span className="text-gray-300 text-sm">{benefit}</span>
+                <span className="text-gray-300 text-sm">{beneficio}</span>
               </div>
             ))}
           </div>

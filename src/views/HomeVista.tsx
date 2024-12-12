@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/Features";
 import Footer from "@/components/Footer";
 import Heroe from "@/components/Heroe";
 import NavBar from "@/components/NavBar";
+import Nosotros from "@/components/Nosotros";
 import Team from "@/components/Team";
 import "@/styles/global.css";
 
@@ -30,6 +31,9 @@ export default function HomeVista() {
       </section>
       <section>
         <CTASection />
+      </section>
+      <section>
+        <Nosotros />
       </section>
       {/* <section>
         <FAQ />

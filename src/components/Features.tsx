@@ -6,35 +6,35 @@ const features = [
     icon: Shield,
     secondaryIcon: Lock,
     title: 'Ciberseguridad',
-    description: 'Your finances are protected with military-grade encryption and advanced security protocols.',
-    highlights: ['256-bit encryption', 'Two-factor authentication', 'Biometric security']
+    description: 'Tus datos estan protegidos con encriptacion y protocolos de seguridad avanzados.',
+    highlights: ['256-bit encriptación', 'Two-factor autenticacion', 'Seguridad biometrica']
   },
   {
     icon: Zap,
     secondaryIcon: Cpu,
     title: 'Desarrollo',
-    description: 'Execute transactions and analyze data in real-time with our powerful infrastructure.',
-    highlights: ['Instant transfers', 'Real-time updates', 'Zero latency']
+    description: 'Desarrollo robusto y escalable con el mejor rendimiento.',
+    highlights: ['Buenas prácticas', 'Código de calidad', 'Cero latencia']
   },
   {
     icon: Trophy,
     secondaryIcon: BarChart,
-    title: 'Calidad punta a punta',
-    description: 'Get insights and recommendations powered by advanced AI algorithms.',
-    highlights: ['Predictive analysis', 'Custom reports', 'Market insights']
+    title: 'QA del producto',
+    description: 'Nos aseguramos de entregar un producto de la mejor calidad.',
+    highlights: ['Pruebas de rendimiento', 'E2E', 'Scripts de automatizacion']
   },
   {
     icon: Target,
     secondaryIcon: ArrowRight,
     title: 'Diseño',
-    description: 'Set and track your financial goals with our intuitive dashboard.',
-    highlights: ['Visual progress', 'Smart milestones', 'Achievement rewards']
+    description: 'Diseño UX / UI personalizado y moderno.',
+    highlights: ['Intuitivo', 'Eficiente', 'Dinámico']
   }
 ];
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="relative bg-black py-32">
+    <section id="servicios" className="relative bg-black py-32">
       <div className="absolute inset-0 bg-gradient-radial from-green-900/20 via-black to-black" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">

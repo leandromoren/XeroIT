@@ -7,6 +7,10 @@ export default function HeroSection() {
     window.location.href = href;
   }
 
+  const goToMoreInfo = () => {
+    // todo
+  }
+
   return (
     <div className="relative min-h-screen flex items-center">
       <div className="absolute inset-0 bg-black">
@@ -29,16 +33,16 @@ export default function HeroSection() {
                 Charlemos
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="px-8 py-3 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors">
+              <button onClick={() => goToMoreInfo()} className="px-8 py-3 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors">
                 Más
               </button>
             </div>
           </div>
           <div className="relative hidden md:block">
             <img 
-              src="../../logos/heroe.jpg"
-              alt="Digital Finance"
-              className="rounded-2xl skew-y-3 shadow-2xl shadow-green-500/20 border border-yellow-400/10"
+              src="../../images/hero.png"
+              alt="Work group"
+              className="rounded-2xl shadow-green-500/20 border border-yellow-400/10"
             />
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-yellow-400 to-green-600 rounded-full blur-2xl opacity-30" />
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-green-600 to-yellow-400 rounded-full blur-2xl opacity-30" />

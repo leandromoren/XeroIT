@@ -6,7 +6,7 @@ const team = [
     name: "Leandro Moren",
     role: "CEO - Founder",
     image: "../../logos/leandro.jpg",
-    bio: "Former VP at Goldman Sachs with 15+ years in fintech innovation",
+    bio: "QA y Desarrollador con 2 años de experiencia",
     social: {
       linkedin: "https://www.linkedin.com/in/leandromoren/",
       twitter: "#",
@@ -17,7 +17,7 @@ const team = [
     name: "Franco Corvalan",
     role: "Co-Founder - QA lead",
     image: "../../logos/francoCorvalan.jpeg",
-    bio: "Ex-Google engineer, pioneering AI-driven financial solutions",
+    bio: "Experto en calidad del software con 4 años de experiencia",
     social: {
       linkedin: "https://www.linkedin.com/in/francocorvalan30/",
       twitter: "#",
@@ -28,7 +28,7 @@ const team = [
     name: "Lucas Carbajal",
     role: "Co-Founder - Tech Lead",
     image: "../../logos/lucas.jpg",
-    bio: "Cybersecurity expert with background in blockchain technology",
+    bio: "Desarrollador de software profesional con 6 años de experiencia.",
     social: {
       linkedin: "https://www.linkedin.com/in/lucas-carbajal-ghiglione/",
       twitter: "#",
@@ -39,7 +39,7 @@ const team = [
     name: "Lorena Benitez",
     role: "Front-end Lead",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80",
-    bio: "Product visionary with experience at leading fintech startups",
+    bio: "-",
     social: {
       linkedin: "#",
       twitter: "#",
