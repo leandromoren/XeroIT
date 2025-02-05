@@ -3,12 +3,8 @@ import { ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
 
-  const goToSchedule = (href: string) => {
+  const navigate = (href: string) => {
     window.location.href = href;
-  }
-
-  const goToMoreInfo = () => {
-    // todo
   }
 
   return (
@@ -29,11 +25,11 @@ export default function HeroSection() {
               Contamos con los mejores talentos en tecnologia para proporcionar la mayor calidad posible en el software.
             </p>
             <div className="mt-10 flex gap-4">
-              <button onClick={() => goToSchedule("https://calendly.com/leandro-moren18/let-s-talk")} className="px-8 py-3 bg-gradient-to-r animate-bounce from-yellow-400 to-green-600 text-black font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center">
+              <button onClick={() => navigate("https://calendly.com/leandro-moren18/let-s-talk")} className="px-8 py-3 bg-gradient-to-r animate-bounce from-yellow-400 to-green-600 text-black font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center">
                 Charlemos
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button onClick={() => goToMoreInfo()} className="px-8 py-3 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors">
+              <button onClick={() => navigate("#servicios")} className="px-8 py-3 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors">
                 Más
               </button>
             </div>

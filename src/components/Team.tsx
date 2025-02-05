@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { Linkedin, Twitter, Mail, Users } from 'lucide-react';
 
@@ -26,7 +27,7 @@ const team = [
   },
   {
     name: "Lucas Carbajal",
-    role: "Co-Founder - Tech Lead",
+    role: "Back End - Tech Lead",
     image: "../../logos/lucas.jpg",
     bio: "Desarrollador de software profesional con 6 años de experiencia.",
     social: {
@@ -36,8 +37,8 @@ const team = [
     }
   },
   {
-    name: "Lorena Benitez",
-    role: "Front-end Lead",
+    name: "Lourdes Leites",
+    role: "Front-end Developer",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80",
     bio: "-",
     social: {
