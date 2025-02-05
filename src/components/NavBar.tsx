@@ -7,6 +7,8 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   const CORREO_EMPRESA:string = "mailto:quantica-consulting@gmail.com";
+  const UBICACION_EMPRESA:string = "https://www.google.com/maps?q=AV. Siempre Viva 123";
+  const WHATSAPP_EMPRESA:string = "https://wa.me/5491112345678";
 
   const toggleModal = () => {
     setOpen(!open);
@@ -90,13 +92,13 @@ export default function Header() {
                     </div>
                     <div className="mt-2 flex m-1">
                       <CIcon icon={cilPhone}  width={20}/>
-                      <a className="text-sm text-gray-500 p-1" href={CORREO_EMPRESA}>
+                      <a className="text-sm text-gray-500 p-1" href={WHATSAPP_EMPRESA}>
                         Tel: +54 9 11 1234-5678
                       </a>
                     </div>
                     <div className="mt-2 flex m-1">
                       <CIcon icon={cilLocationPin}  width={20}/>
-                      <a className="text-sm text-gray-500 p-1" href={CORREO_EMPRESA}>
+                      <a className="text-sm text-gray-500 p-1" href={UBICACION_EMPRESA}>
                         Ubicacion AV. Siempre Viva 123
                       </a>
                     </div>
