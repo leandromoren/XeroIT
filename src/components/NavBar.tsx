@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import CIcon from "@coreui/icons-react";
 import { cilLemon, cibGmail, cilPhone, cilLocationPin } from "@coreui/icons";
